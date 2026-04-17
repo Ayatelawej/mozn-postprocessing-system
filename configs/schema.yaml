@@ -1,0 +1,5 @@
+# Canonical schema
+raw_station_columns:
+base_forecast_columns:
+processed_feature_columns:
+prediction_columns:

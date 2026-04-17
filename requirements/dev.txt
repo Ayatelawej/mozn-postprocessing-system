@@ -1,0 +1,9 @@
+jupyter
+jupyterlab
+pytest
+pytest-cov
+ruff
+black
+mypy
+pre-commit
+ipykernel

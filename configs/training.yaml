@@ -1,0 +1,66 @@
+validation:
+  strategy: walk_forward
+  final_holdout: true
+  issue_time_framing: true
+  horizon_start_h: 1
+  horizon_end_h: 72
+
+feature_policy:
+  use_compact_feature_backbone: true
+  allow_target_specific_routing: true
+  benchmark_against_base_forecast: true
+  normalize_numeric_features: true
+
+target_routing:
+  core_regression:
+    - temperature
+    - relative_humidity
+    - dew_point
+    - wind_speed
+    - uv
+  experimental_regression:
+    - pressure
+    - wind_gust
+  specialized_classification:
+    - rain_occurrence
+  specialized_regression:
+    - rain_amount
+  circular:
+    - wind_direction
+  derived_only:
+    - wind_chill
+    - heat_index
+
+models:
+  baseline_regressors:
+    - ridge
+    - elastic_net
+    - huber
+    - hist_gradient_boosting
+  tree_regressors:
+    - random_forest
+    - extra_trees
+    - xgboost
+    - lightgbm
+    - catboost
+  sequence_regressors:
+    - lstm
+    - gru
+    - tcn
+  rain_classifiers:
+    - logistic_regression
+    - hist_gradient_boosting_classifier
+    - xgboost_classifier
+    - lightgbm_classifier
+    - catboost_classifier
+  wind_direction_methods:
+    - wrapped_residual
+    - sin_cos_ridge
+    - sin_cos_xgboost
+    - sin_cos_catboost
+
+selection_policy:
+  keep_baseline_family_locked: true
+  allow_experimental_expansion: true
+  scrap_if_underperforms_base: true
+  compare_by_target_and_horizon: true

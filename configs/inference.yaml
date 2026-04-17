@@ -1,0 +1,12 @@
+runtime:
+  mode: batch_first
+  save_predictions: true
+  fallback_to_base_on_failure: true
+
+output:
+  prediction_table_name: canonical_predictions
+
+serving:
+  enable_api_layer: true
+  host: 0.0.0.0
+  port: 8000

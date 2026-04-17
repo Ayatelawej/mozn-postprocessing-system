@@ -1,0 +1,10 @@
+-r dev.txt
+xgboost
+lightgbm
+catboost
+optuna
+torch
+pytorch-lightning
+statsmodels
+torchvision
+torchaudio

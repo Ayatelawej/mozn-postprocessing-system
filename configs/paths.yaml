@@ -1,0 +1,22 @@
+project_root: .
+
+data:
+  raw_dir: data/raw
+  external_dir: data/external
+  interim_dir: data/interim
+  parquet_dir: data/parquet
+  processed_dir: data/processed
+  predictions_dir: data/predictions
+
+models:
+  artifacts_dir: models/artifacts
+  manifests_dir: models/manifests
+
+reports:
+  diagnostics_dir: reports/diagnostics
+  figures_dir: reports/figures
+
+notebooks:
+  reference_dir: notebooks/reference
+  diagnostics_dir: notebooks/diagnostics
+  validation_dir: notebooks/validation

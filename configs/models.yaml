@@ -1,0 +1,6 @@
+# Model registry
+classical_models:
+sequence_models:
+experimental_models:
+target_model_map:
+acceptance_thresholds:
