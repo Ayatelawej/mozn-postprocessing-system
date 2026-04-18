@@ -4,6 +4,7 @@ targets:
     - relative_humidity
     - dew_point
     - wind_speed
+    - uv
 
   experimental:
     - pressure
@@ -13,7 +14,6 @@ targets:
     - rain_occurrence
     - rain_amount
     - wind_direction
-    - uv
 
   derived:
     - wind_chill
