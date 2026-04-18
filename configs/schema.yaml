@@ -1,5 +1,79 @@
-# Canonical schema
-raw_station_columns:
-base_forecast_columns:
-processed_feature_columns:
-prediction_columns:
+dataset_contract:
+  version: 1
+  timezone: UTC
+  primary_keys:
+    - station_id
+    - timestamp_utc
+
+raw_station_required_columns:
+  - station_id
+  - timestamp_utc
+
+raw_station_optional_columns:
+  - temperature_c
+  - relative_humidity_pct
+  - dew_point_c
+  - wind_speed_kmh
+  - wind_gust_kmh
+  - wind_direction_deg
+  - pressure_raw_hpa
+  - pressure_surface_hpa
+  - pressure_msl_hpa
+  - rain_total_mm
+  - rain_rate_mm_per_h
+  - uv_index
+  - solar_radiation_wm2
+
+baseline_required_columns:
+  - station_id
+  - issue_time_utc
+  - valid_time_utc
+  - lead_h
+
+baseline_optional_columns:
+  - base_temperature_c
+  - base_relative_humidity_pct
+  - base_dew_point_c
+  - base_wind_speed_kmh
+  - base_wind_gust_kmh
+  - base_wind_direction_deg
+  - base_surface_pressure_hpa
+  - base_msl_pressure_hpa
+  - base_rain_total_mm
+  - base_rain_rate_mm_per_h
+  - base_uv_index
+  - base_solar_radiation_wm2
+
+canonical_train_table_required_columns:
+  - station_id
+  - issue_time_utc
+  - valid_time_utc
+  - lead_h
+  - timestamp_utc
+
+canonical_feature_groups:
+  - station_history
+  - residual_history
+  - baseline_features
+  - qc_flags
+  - station_health_flags
+  - alignment_features
+  - metadata
+
+canonical_targets:
+  core:
+    - temperature
+    - relative_humidity
+    - dew_point
+    - wind_speed
+    - uv
+  experimental:
+    - pressure
+    - wind_gust
+  specialized:
+    - rain_occurrence
+    - rain_amount
+    - wind_direction
+  derived:
+    - wind_chill
+    - heat_index

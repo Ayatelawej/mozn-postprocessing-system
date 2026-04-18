@@ -2,10 +2,18 @@ project_root: .
 
 data:
   raw_dir: data/raw
+  raw_station_dir: data/raw/stations
+  raw_metadata_dir: data/raw/metadata
   external_dir: data/external
+  external_openmeteo_dir: data/external/openmeteo
+  external_reference_dir: data/external/reference
   interim_dir: data/interim
-  parquet_dir: data/parquet
+  interim_stations_clean_dir: data/interim/stations_clean
+  interim_aligned_dir: data/interim/aligned
   processed_dir: data/processed
+  processed_train_tables_dir: data/processed/train_tables
+  processed_inference_tables_dir: data/processed/inference_tables
+  manifests_dir: data/manifests
   predictions_dir: data/predictions
 
 models:
@@ -20,3 +28,6 @@ notebooks:
   reference_dir: notebooks/reference
   diagnostics_dir: notebooks/diagnostics
   validation_dir: notebooks/validation
+
+docs:
+  data_dir: docs/data
