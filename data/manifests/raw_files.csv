@@ -1,1 +1,2 @@
 file_name,file_role,source_type,source_name,station_id,time_coverage_start,time_coverage_end,timezone,row_count,status,notes
+station_hourly_merged_countrywide_v1.csv,raw_station_observations,pooled_station_merge,internal_countrywide_merge,ALL_STATIONS,,,UTC,,active,Primary pooled hourly station dataset for the post-processing system
