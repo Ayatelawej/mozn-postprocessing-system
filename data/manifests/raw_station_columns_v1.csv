@@ -1,0 +1,42 @@
+column_name,dtype,non_null_count,missing_count,missing_pct,example_value
+station_id,str,111417,0,0.0,I90583612
+hour_utc,str,111417,0,0.0,2025-10-07 18:00:00+00:00
+n_raw_records,float64,84648,26769,24.025957,2.0
+latitude,float64,111417,0,0.0,31.976779
+longitude,float64,111417,0,0.0,12.482434
+qc_status,float64,84648,26769,24.025957,-1.0
+epoch,float64,109270,2147,1.926995,1759859972.0
+solar_radiation_high_wm2,float64,79253,32164,28.868126,0.0
+uv_high,float64,79253,32164,28.868126,0.0
+winddir_avg_deg,float64,79253,32164,28.868126,50.5
+humidity_avg_pct,float64,79253,32164,28.868126,61.5
+humidity_high_pct,float64,79253,32164,28.868126,62.0
+humidity_low_pct,float64,79253,32164,28.868126,61.5
+temp_avg_c,float64,79253,32164,28.868126,17.0
+temp_high_c,float64,79253,32164,28.868126,17.5
+temp_low_c,float64,79253,32164,28.868126,17.0
+windspeed_avg_kmh,float64,79253,32164,28.868126,0.0
+windspeed_high_kmh,float64,79253,32164,28.868126,1.0
+windspeed_low_kmh,float64,79253,32164,28.868126,0.0
+windgust_avg_kmh,float64,79253,32164,28.868126,1.0
+windgust_high_kmh,float64,79253,32164,28.868126,3.0
+windgust_low_kmh,float64,79253,32164,28.868126,0.0
+dewpoint_avg_c,float64,79253,32164,28.868126,10.0
+dewpoint_high_c,float64,79253,32164,28.868126,10.0
+dewpoint_low_c,float64,79253,32164,28.868126,10.0
+windchill_avg_c,float64,79253,32164,28.868126,17.0
+windchill_high_c,float64,79253,32164,28.868126,17.5
+windchill_low_c,float64,79253,32164,28.868126,17.0
+heatindex_avg_c,float64,79253,32164,28.868126,17.0
+heatindex_high_c,float64,79253,32164,28.868126,17.5
+heatindex_low_c,float64,79253,32164,28.868126,17.0
+pressure_max_hpa,float64,84541,26876,24.121992,1014.56
+pressure_min_hpa,float64,84541,26876,24.121992,1013.88
+pressure_trend_hpa,float64,84488,26929,24.169561,0.41
+precip_rate_mmh,float64,82868,28549,25.623558,0.0
+precip_total_mm,float64,82868,28549,25.623558,0.0
+timestamp_utc_dt,str,111417,0,0.0,2025-10-07 18:00:00+00:00
+timestamp_utc,str,111417,0,0.0,2025-10-07 18:00:00
+timestamp_local,str,84648,26769,24.025957,2025-10-07 19:59:32
+data_present,int64,111417,0,0.0,1
+elevation,float64,111417,0,0.0,202.0
