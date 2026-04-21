@@ -5,10 +5,8 @@ This folder contains public or project-available metadata files related to the w
 ## Current contents
 
 - station manuals
-- supporting PDF documentation
 
 ## Notes
 
 - These files are used to interpret setup-sensitive variables such as wind direction, gust, pressure, humidity drift, rain maintenance, and other installation-related behavior
 - The filenames may be renamed later to more descriptive names
-- No synthetic metadata files should be created unless real source information exists

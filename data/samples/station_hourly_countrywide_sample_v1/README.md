@@ -6,7 +6,7 @@ This sample is a lightweight subset of the pooled hourly station dataset.
 
 - Show the raw structure
 - Help validate schema and parsing
-- Support reproducibility without requiring the full bulky dataset inside the repository
+- Support reproducibility without requiring the full bulky dataset
 
 ## Notes
 

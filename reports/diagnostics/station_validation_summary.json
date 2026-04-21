@@ -1,0 +1,55 @@
+{
+  "row_count": 111417,
+  "station_count": 26,
+  "time_coverage_start_utc": "2025-06-15 15:00:00",
+  "time_coverage_end_utc": "2026-03-31 23:00:00",
+  "flag_missing_station_id_rows": 0,
+  "flag_missing_timestamp_utc_rows": 0,
+  "flag_station_never_active_rows": 0,
+  "flag_data_absent_rows": 26769,
+  "flag_before_first_present_rows": 0,
+  "flag_after_last_present_rows": 1433,
+  "flag_warmup_rows": 4368,
+  "targets": {
+    "temperature": {
+      "ready_rows": 76248,
+      "ready_pct": 68.434799
+    },
+    "relative_humidity": {
+      "ready_rows": 76248,
+      "ready_pct": 68.434799
+    },
+    "dew_point": {
+      "ready_rows": 76248,
+      "ready_pct": 68.434799
+    },
+    "wind_speed": {
+      "ready_rows": 76248,
+      "ready_pct": 68.434799
+    },
+    "uv": {
+      "ready_rows": 76245,
+      "ready_pct": 68.432106
+    },
+    "pressure": {
+      "ready_rows": 81532,
+      "ready_pct": 73.177343
+    },
+    "wind_gust": {
+      "ready_rows": 76248,
+      "ready_pct": 68.434799
+    },
+    "rain_occurrence": {
+      "ready_rows": 79861,
+      "ready_pct": 71.677572
+    },
+    "rain_amount": {
+      "ready_rows": 79861,
+      "ready_pct": 71.677572
+    },
+    "wind_direction": {
+      "ready_rows": 76248,
+      "ready_pct": 68.434799
+    }
+  }
+}

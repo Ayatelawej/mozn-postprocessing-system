@@ -11,7 +11,6 @@ This directory contains the data foundation for the Mozn AI post-processing syst
 - `raw/metadata/`
   - Station metadata
   - Manuals
-  - Public calibration or deployment references
   - Station lists and supporting documentation
 
 - `external/openmeteo/`
@@ -38,10 +37,10 @@ This directory contains the data foundation for the Mozn AI post-processing syst
 ## Rules
 
 - Raw files are immutable once placed
-- Generated outputs must be reproducible from code
-- Large open datasets may be distributed outside the git repository if they are documented and publicly accessible
-- The repository must document how to rebuild all processed tables from raw and external inputs
+- Generated outputs are reproducible from code
+- Large open datasets (may) be distributed outside the git repository if they are documented and publicly accessible
+- The repository documents how to rebuild all processed tables from raw and external inputs
 
 ## Key principle
 
-The final system must be portable, open, and reproducible.
+The final system will be portable, open, and reproducible.

@@ -1,0 +1,90 @@
+version: 1
+
+warmup:
+  default_days: 7
+  station_override_days: {}
+
+activity_reference:
+  data_present_positive_threshold: 0
+
+global_required_columns:
+  - station_id
+  - timestamp_utc
+  - data_present
+
+target_columns:
+  temperature:
+    - temperature_c
+  relative_humidity:
+    - relative_humidity_pct
+  dew_point:
+    - dew_point_c
+  wind_speed:
+    - wind_speed_kmh
+  uv:
+    - uv_index
+  pressure:
+    - pressure_max_hpa
+    - pressure_min_hpa
+  wind_gust:
+    - wind_gust_kmh
+  rain_occurrence:
+    - rain_total_mm
+  rain_amount:
+    - rain_total_mm
+  wind_direction:
+    - wind_direction_deg
+
+hard_range_rules:
+  temperature_c:
+    min: -40
+    max: 60
+    source: manual_outdoor_temperature
+  relative_humidity_pct:
+    min: 0
+    max: 100
+    source: physical_humidity_bound
+  dew_point_c:
+    min: -60
+    max: 60
+    source: broad_physical_dew_point_bound
+  wind_speed_kmh:
+    min: 0
+    max: 180
+    source: manual_wind_speed_0_to_50_mps
+  wind_gust_kmh:
+    min: 0
+    max: 180
+    source: manual_wind_speed_0_to_50_mps_applied_to_gust
+  wind_direction_deg:
+    min: 0
+    max: 360
+    source: manual_wind_direction
+  pressure_max_hpa:
+    min: 300
+    max: 1100
+    source: manual_barometric_pressure
+  pressure_min_hpa:
+    min: 300
+    max: 1100
+    source: manual_barometric_pressure
+  rain_total_mm:
+    min: 0
+    max: 9999
+    source: manual_rain_total
+  rain_rate_mm_per_h:
+    min: 0
+    source: non_negative_only_pending_rate_policy
+  uv_index:
+    min: 0
+    max: 16
+    source: manual_uv_1_to_15_plus_with_margin
+  solar_radiation_wm2:
+    min: 0
+    source: non_negative_only_pending_unit_policy
+
+advisory_bands:
+  relative_humidity_pct:
+    min: 20
+    max: 90
+    source: manual_accuracy_guaranteed_band

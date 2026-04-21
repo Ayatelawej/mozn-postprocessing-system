@@ -1,6 +1,4 @@
 -r dev.txt
-xgboost
-lightgbm
 catboost
 optuna
 torch
