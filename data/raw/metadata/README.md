@@ -1,12 +1,20 @@
-# Station Metadata and Manuals
+# Station Metadata
 
-This folder contains public or project-available metadata files related to the weather station network.
+This folder contains raw station metadata files related to the weather station network.
 
-## Current contents
+## Intended contents
 
-- station manuals
+- station registries
+- metadata tables
+- deployment-related metadata tied directly to the data layer
+- other raw metadata files used by the pipeline
+
+## Note on manuals
+
+Weather-station manuals and supporting setup references are stored under `docs/manuals/`.
 
 ## Notes
 
-- These files are used to interpret setup-sensitive variables such as wind direction, gust, pressure, humidity drift, rain maintenance, and other installation-related behavior
-- The filenames may be renamed later to more descriptive names
+- Raw metadata files should remain stable once landed
+- This folder should not be used as a general document archive
+- Installation-sensitive interpretation should reference the manuals stored in `docs/manuals/`

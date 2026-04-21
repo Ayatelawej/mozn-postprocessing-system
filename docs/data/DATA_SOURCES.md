@@ -10,11 +10,17 @@ Stored under `data/raw/stations/`
 
 This is the pooled hourly station dataset used as the main raw station input for the post-processing system.
 
-## Station metadata and manuals
+## Station metadata
 
 Stored under `data/raw/metadata/`
 
-Current contents include station-related manuals and supporting metadata PDFs used to interpret sensor and installation behavior.
+This location is reserved for station metadata tables, registries, and other raw metadata files tied directly to the data layer.
+
+## Station manuals and setup references
+
+Stored under `docs/manuals/`
+
+Current contents include station manuals and supporting PDF references used to interpret installation-sensitive behavior such as wind direction setup, wind speed and gust behavior, pressure interpretation, humidity drift, rainfall maintenance, and sunlight-related measurements.
 
 ## Baseline forecast source
 

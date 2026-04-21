@@ -4,7 +4,7 @@ Open-source weather forecast post-processing system for correcting baseline fore
 
 ## Current status
 
-The repository currently contains the data foundation and early preprocessing pipeline for the post-processing system.
+The repository currently contains the data foundation, preprocessing pipeline, and station-side validation layer for the post-processing system.
 
 Completed so far:
 
@@ -14,7 +14,11 @@ Completed so far:
 - station registry and raw file manifest
 - raw CSV inspection and profiling
 - raw CSV to partitioned parquet conversion
-- first-pass standardized station table generation
+- standardized station table generation
+- target-specific station validation and gating
+- station-level readiness diagnostics
+- target-level readiness diagnostics
+- variable-level missingness and range diagnostics
 
 ## Project goal
 
@@ -57,16 +61,16 @@ Build a reproducible, portable, open-source post-processing pipeline that:
 ## Repository structure
 
 - `configs/`
-  - project configuration, schema, target definitions, mappings
+  - project configuration, schema, target definitions, mappings, validation rules
 
 - `data/`
   - raw data, metadata, manifests, samples, parquet outputs
 
 - `docs/`
-  - data contract, data-source notes, phase documentation
+  - data contract, data-source notes, manuals, phase documentation, working rules
 
 - `scripts/`
-  - reproducible pipeline scripts for inspection, conversion, standardization, training, and inference
+  - reproducible pipeline scripts for inspection, conversion, standardization, validation, training, and inference
 
 - `src/`
   - reusable project package code
@@ -94,21 +98,33 @@ Primary raw station input:
 
 - `data/raw/stations/station_hourly_merged_countrywide_v1.csv`
 
-Current preprocessing outputs:
+Current preprocessing and validation outputs:
 
 - raw station profile JSON
 - raw station column manifest CSV
 - partitioned parquet station dataset
 - standardized station parquet build artifact
+- station validation summary JSON
+- station-level validation summary CSV
+- target-level validation summary CSV
+- variable-level validation summary CSV
+
+## Manuals and supporting references
+
+Weather-station manuals and supporting setup references are stored under:
+
+- `docs/manuals/`
+
+These documents support interpretation of installation-sensitive variables such as wind direction, wind speed, gust, pressure, humidity drift, rainfall behavior, and sunlight-related measurements.
 
 ## Next steps
 
-- validate and gate the standardized data layer
-- add QC-focused checks and missingness rules
-- normalize timestamp handling and schema enforcement
-- design baseline forecast ingestion
-- build canonical train and inference tables
+- begin baseline forecast ingestion through project code
+- standardize baseline forecast schema
+- prepare station and forecast alignment
+- build canonical training and inference tables
 - begin target-specific modeling and evaluation
+- prepare inference outputs for backend integration and deployment
 
 ## Reproducibility
 
