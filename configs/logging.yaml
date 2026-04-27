@@ -1,4 +1,35 @@
 # Logging settings
-log_level:
-log_dir:
-json_logging:
+log_level: INFO
+log_dir: logs
+json_logging: true
+
+handlers:
+  console:
+    enabled: true
+    level: INFO
+    format: human
+  file:
+    enabled: true
+    level: DEBUG
+    format: json
+    filename: mozn_postprocessing.log
+    rotation:
+      max_bytes: 10485760
+      backup_count: 5
+
+fields:
+  always_include:
+    - timestamp
+    - level
+    - logger_name
+  inference_call:
+    - station_id
+    - issue_time_utc
+    - lead_h
+    - target
+    - fallback_reason
+  training_call:
+    - target
+    - model_name
+    - fold_id
+    - horizon

@@ -16,9 +16,9 @@ raw_station_optional_columns:
   - wind_speed_kmh
   - wind_gust_kmh
   - wind_direction_deg
-  - pressure_raw_hpa
-  - pressure_surface_hpa
-  - pressure_msl_hpa
+  - pressure_max_hpa
+  - pressure_min_hpa
+  - pressure_trend_hpa
   - rain_total_mm
   - rain_rate_mm_per_h
   - uv_index

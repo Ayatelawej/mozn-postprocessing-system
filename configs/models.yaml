@@ -1,6 +1,84 @@
 # Model registry
 classical_models:
+  ridge:
+    alpha: 1.0
+    max_iter: 1000
+  hist_gradient_boosting:
+    loss: squared_error
+    learning_rate: 0.05
+    max_iter: 300
+    max_depth: 6
+    min_samples_leaf: 20
+    random_state: 42
+  hist_gradient_boosting_classifier:
+    loss: log_loss
+    learning_rate: 0.05
+    max_iter: 300
+    max_depth: 6
+    min_samples_leaf: 20
+    class_weight: balanced
+    random_state: 42
+  sin_cos_ridge:
+    alpha: 1.0
+  sin_cos_xgboost:
+    n_estimators: 300
+    max_depth: 6
+    learning_rate: 0.05
+    random_state: 42
+
 sequence_models:
-experimental_models:
+  lstm:
+    hidden_size: 96
+    num_layers: 2
+    dropout: 0.2
+    lookback_hours: 48
+    output_horizons: 72
+    batch_size: 256
+    max_epochs: 50
+    early_stopping_patience: 8
+    optimizer: adamw
+    learning_rate: 0.001
+    weight_decay: 0.0001
+    scheduler: reduce_lr_on_plateau
+    scheduler_patience: 3
+    scheduler_factor: 0.5
+
+experimental_models: {}
+
 target_model_map:
+  temperature:       [ridge, hist_gradient_boosting, lstm]
+  relative_humidity: [ridge, hist_gradient_boosting, lstm]
+  dew_point:         [ridge, hist_gradient_boosting, lstm]
+  wind_speed:        [ridge, hist_gradient_boosting, lstm]
+  uv:                [ridge, hist_gradient_boosting]
+  pressure:          [ridge, hist_gradient_boosting]
+  wind_gust:         []
+  wind_direction:    [sin_cos_ridge, sin_cos_xgboost]
+  rain_occurrence:   [hist_gradient_boosting_classifier]
+  rain_amount:       [hist_gradient_boosting]
+
 acceptance_thresholds:
+  core_residual:
+    min_bias_reduction_pct_of_prototype: 50
+    min_mae_improvement_pct: 0
+    max_horizon_regression_pct: 50
+    max_loso_cv: 0.5
+  pressure:
+    min_bias_reduction_pct: 40
+    max_station_gate_fail_rate: 0.5
+  wind_direction:
+    max_circular_error_ratio_to_baseline: 0.85
+  rain_occurrence:
+    min_f1: 0.60
+    max_brier: 0.05
+  rain_amount:
+    requires_rain_occurrence_approval: true
+    max_mae_vs_baseline: 1.0
+  uv:
+    min_daytime_mae_improvement_pct_1_to_24: 10
+    full_horizon_range_min_improvement_pct: 10
+    restricted_horizon_range: [1, 12]
+
+selection_policy_notes:
+  - "target_model_map duplicates v1_training_subset in training.yaml intentionally — this file is the per-model-parameter source, training.yaml is the per-target-plan source. Keep them in sync."
+  - "experimental_models is empty in v1. Catboost, xgboost (non-sin-cos), lightgbm, random_forest, extra_trees, gru, tcn, and the other classifiers stay in training.yaml's catalogue but aren't trained until a retrain."

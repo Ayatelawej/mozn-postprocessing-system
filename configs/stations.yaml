@@ -1,5 +1,4 @@
 station_defaults:
-  warmup_days: 18
   enable_station_health_gates: true
   enable_qc: true
 

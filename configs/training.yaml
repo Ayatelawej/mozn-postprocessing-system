@@ -64,3 +64,48 @@ selection_policy:
   allow_experimental_expansion: true
   scrap_if_underperforms_base: true
   compare_by_target_and_horizon: true
+
+v1_training_subset:
+  core_residual:
+    targets:
+      - temperature
+      - relative_humidity
+      - dew_point
+      - wind_speed
+    models:
+      - ridge
+      - hist_gradient_boosting
+      - lstm
+  uv:
+    targets:
+      - uv
+    models:
+      - ridge
+      - hist_gradient_boosting
+  experimental_pressure:
+    targets:
+      - pressure
+    models:
+      - ridge
+      - hist_gradient_boosting
+  experimental_gust:
+    targets:
+      - wind_gust
+    models: []
+    note: "Skipped in v1 per locked decision: gust station-setup fault detection work first."
+  wind_direction:
+    targets:
+      - wind_direction
+    models:
+      - sin_cos_ridge
+      - sin_cos_xgboost
+  rain_occurrence:
+    targets:
+      - rain_occurrence
+    models:
+      - hist_gradient_boosting_classifier
+  rain_amount:
+    targets:
+      - rain_amount
+    models:
+      - hist_gradient_boosting
