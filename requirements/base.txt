@@ -8,5 +8,6 @@ pydantic
 requests
 httpx
 python-dotenv
+tenacity
 lightgbm
 xgboost
