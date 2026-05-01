@@ -28,3 +28,4 @@ data/processed/
 data/predictions/
 models/artifacts/
 data/external/openmeteo/
+.tmp/
