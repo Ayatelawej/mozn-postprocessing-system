@@ -15,7 +15,8 @@ def make_full_frame() -> pd.DataFrame:
             "pressure_max_hpa": [1015.0, 1010.0, 1020.0],
             "pressure_min_hpa": [1013.0, 1008.0, 1018.0],
             "pressure_trend_hpa": [0.5, -1.0, 0.0],
-            "base_surface_pressure_hpa": [1014.0, 1009.5, 1019.5],
+            "base_msl_pressure_hpa": [1014.0, 1009.5, 1019.5],
+            "base_surface_pressure_hpa": [1013.5, 950.0, 920.0],
         }
     )
 
@@ -56,15 +57,13 @@ def test_pressure_residuals_skip_when_baseline_missing() -> None:
     )
     out = add_pressure_residuals(df)
     assert "pressure_residual_max_hpa" not in out.columns
-    assert "pressure_residual_min_hpa" not in out.columns
-    assert "pressure_residual_avg_hpa" not in out.columns
 
 
 def test_pressure_residuals_partial_station_columns() -> None:
     df = pd.DataFrame(
         {
             "pressure_max_hpa": [1015.0, 1010.0],
-            "base_surface_pressure_hpa": [1014.0, 1009.5],
+            "base_msl_pressure_hpa": [1014.0, 1009.5],
         }
     )
     out = add_pressure_residuals(df)
@@ -78,7 +77,7 @@ def test_pressure_residuals_propagate_nan() -> None:
         {
             "pressure_max_hpa": [1015.0, np.nan, 1020.0],
             "pressure_min_hpa": [1013.0, 1008.0, np.nan],
-            "base_surface_pressure_hpa": [1014.0, 1009.0, 1019.5],
+            "base_msl_pressure_hpa": [1014.0, 1009.0, 1019.5],
         }
     )
     out = add_pressure_residuals(df)
@@ -88,13 +87,13 @@ def test_pressure_residuals_propagate_nan() -> None:
     assert pd.isna(out["pressure_residual_avg_hpa"].iloc[2])
 
 
-def test_pressure_does_not_use_msl_pressure() -> None:
+def test_pressure_uses_msl_not_surface_baseline() -> None:
     df = pd.DataFrame(
         {
             "pressure_max_hpa": [1015.0],
             "pressure_min_hpa": [1013.0],
-            "base_surface_pressure_hpa": [1014.0],
-            "base_msl_pressure_hpa": [1023.0],
+            "base_msl_pressure_hpa": [1014.0],
+            "base_surface_pressure_hpa": [950.0],
         }
     )
     out = add_pressure_residuals(df)

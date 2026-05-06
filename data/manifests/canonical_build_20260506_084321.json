@@ -1,0 +1,131 @@
+{
+  "built_utc": "2026-05-06T08:43:21.467404+00:00",
+  "validated_input_path": "C:\\Users\\m\\Desktop\\Mozn AI\\mozn-postprocessing-system\\data\\interim\\stations_clean\\station_hourly_countrywide_validated.parquet",
+  "canonical_output_path": "C:\\Users\\m\\Desktop\\Mozn AI\\mozn-postprocessing-system\\data\\processed\\canonical_hourly_v1.parquet",
+  "row_count": 111417,
+  "column_count": 250,
+  "station_count": 26,
+  "trainable_rows_per_target": {
+    "temperature": 76248,
+    "relative_humidity": 76248,
+    "dew_point": 76248,
+    "wind_speed": 76248,
+    "uv": 76245,
+    "pressure": 81532,
+    "wind_gust": 76248,
+    "wind_direction": 76248,
+    "rain_occurrence": 79861,
+    "rain_amount": 79861
+  },
+  "elapsed_seconds_total": 3.568,
+  "stages": [
+    {
+      "name": "load_station",
+      "seconds": 0.069,
+      "rows": 111417,
+      "columns": 97
+    },
+    {
+      "name": "merge_elevation",
+      "seconds": 0.019,
+      "rows": 111417,
+      "columns": 97
+    },
+    {
+      "name": "load_hourly_baseline",
+      "seconds": 0.292,
+      "rows": 113304,
+      "columns": 24
+    },
+    {
+      "name": "load_daily_baseline",
+      "seconds": 0.266,
+      "rows": 4721,
+      "columns": 9
+    },
+    {
+      "name": "merge_hourly_baseline",
+      "seconds": 0.032,
+      "rows": 111417,
+      "columns": 119
+    },
+    {
+      "name": "merge_daily_baseline",
+      "seconds": 0.06,
+      "rows": 111417,
+      "columns": 126
+    },
+    {
+      "name": "time_features",
+      "seconds": 0.085,
+      "rows": 111417,
+      "columns": 129
+    },
+    {
+      "name": "circular_wind_features",
+      "seconds": 0.156,
+      "rows": 111417,
+      "columns": 137
+    },
+    {
+      "name": "solar_features",
+      "seconds": 0.053,
+      "rows": 111417,
+      "columns": 140
+    },
+    {
+      "name": "radiation_features",
+      "seconds": 0.246,
+      "rows": 111417,
+      "columns": 145
+    },
+    {
+      "name": "rain_features",
+      "seconds": 0.137,
+      "rows": 111417,
+      "columns": 151
+    },
+    {
+      "name": "lag_features",
+      "seconds": 0.694,
+      "rows": 111417,
+      "columns": 235
+    },
+    {
+      "name": "core_residuals",
+      "seconds": 0.118,
+      "rows": 111417,
+      "columns": 240
+    },
+    {
+      "name": "pressure_residuals",
+      "seconds": 0.104,
+      "rows": 111417,
+      "columns": 244
+    },
+    {
+      "name": "wind_direction_residual",
+      "seconds": 0.111,
+      "rows": 111417,
+      "columns": 247
+    },
+    {
+      "name": "rain_targets",
+      "seconds": 0.109,
+      "rows": 111417,
+      "columns": 250
+    },
+    {
+      "name": "derived_features",
+      "seconds": 0.229,
+      "rows": 111417,
+      "columns": 250
+    },
+    {
+      "name": "write_canonical",
+      "seconds": 0.782,
+      "rows": 111417,
+      "columns": 250
+    }
+  ]
+}

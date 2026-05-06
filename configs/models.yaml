@@ -52,7 +52,7 @@ target_model_map:
   wind_speed:        [ridge, hist_gradient_boosting, lstm]
   uv:                [ridge, hist_gradient_boosting]
   pressure:          [ridge, hist_gradient_boosting]
-  wind_gust:         []
+  wind_gust:         [ridge, hist_gradient_boosting]
   wind_direction:    [sin_cos_ridge, sin_cos_xgboost]
   rain_occurrence:   [hist_gradient_boosting_classifier]
   rain_amount:       [hist_gradient_boosting]

@@ -35,3 +35,38 @@ The `data/external/reference/` folder is intentionally empty for now because no 
 ## Reproducibility rule
 
 If a bulky file is not committed directly to the repository, its source or reproduction path must be documented here.
+
+## Known calibration and convention issues
+
+These are findings from the pooled-data diagnostic across all 26 stations (May 2026). Documented here so future builds, retrains, and reviewers don't repeat the analysis or apply incorrect corrections.
+
+### Pressure: stations report MSL, not surface
+
+Empirical finding from the canonical-table dry run across stations at 4m, 144m, and 815m elevation: raw `pressure_max_hpa` from the FT0360 stations is approximately constant across elevations (1012-1014 hPa). At 815m elevation, true surface pressure should be ~924 hPa; the fact that the station reports 1013 hPa means the FT0360 firmware applies its own elevation correction internally and reports MSL pressure to the data acquisition layer.
+
+Therefore, the right comparison for residuals is `pressure_max_hpa` (already MSL) minus `base_msl_pressure_hpa` directly. No external elevation correction is needed.
+
+Direct station-MSL minus Open-Meteo-MSL residuals across the three test stations:
+- INUQAT8 (4m): mean -3 hPa, std 5 hPa
+- IJABAL15 (144m): mean -5 hPa, std 9 hPa
+- IJABAL16 (815m): mean -5 hPa, std 6 hPa
+
+All small, all negative, all in similar range. This is genuine calibration drift, not a convention mismatch.
+
+The earlier diagnostic across all 26 stations (May 4) showed pressure offsets correlated with elevation, which led to an initial hypothesis that an elevation correction was required. That diagnostic compared station-MSL to `base_surface_pressure_hpa` (Open-Meteo's at-elevation surface pressure), which decreases with elevation by definition. The correlation was an artifact of comparing different pressure conventions, not a calibration drift pattern.
+
+Outlier identification (stations with calibration drift beyond the typical -3 to -5 hPa range) deferred to the full 26-station diagnostic run.
+
+### Pressure trend: firmware-threshold-filtered
+
+The `pressure_trend_hpa` column is computed by station firmware using a configurable trend-detection threshold (2-4 hPa per FT0360 manual section 9.3, default 2 hPa). The threshold filters out small pressure changes before reporting; the reported trend is therefore partially synthetic.
+
+Threshold settings on the 26 deployed stations are not centrally documented. Operational assumption is that all stations use the default 2 hPa unless otherwise verified. This column is excluded from the feature set to avoid baking firmware calibration choices into model behaviour.
+
+### Wind gust: systematic underreporting against ECMWF
+
+24 of 26 stations show negative mean gust offset against `base_wind_gust_kmh` (ECMWF), ranging from -3 to -26 km/h with per-station std 6-14 km/h. Pattern is consistent with expected physical behaviour: anemometer cup inertia and installation sheltering cause physical stations to under-report gusts relative to the modelled grid cell, especially when the FT0360 manual section 4.2 "4× obstruction height" rule is violated at the install site.
+
+The per-hour gust residual is dominated by this baseline bias and is too noisy for direct anomaly use. The per-station mean offset, however, is informative as an exposure-quality signal — stations with the most negative gust offsets are the most poorly exposed installations.
+
+For v1 post-processing: gust is treated as a normal regression target and benchmarked alongside other variables. The per-station offset is implicitly absorbed by the residual correction. If gust underperforms the acceptance threshold in Block 2, the per-station offset interpretation may be useful for the post-July retrain.

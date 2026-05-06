@@ -83,6 +83,7 @@ def test_models_v1_subset_targets_match_target_model_map() -> None:
                 "wind_speed",
                 "uv",
                 "pressure",
+                "wind_gust",
                 "wind_direction",
                 "rain_occurrence",
                 "rain_amount",
@@ -102,7 +103,7 @@ def test_training_v1_subset_locked_decisions() -> None:
     config = get_config()
     subset = config.training.v1_training_subset
     assert "lstm" in subset["core_residual"]["models"]
-    assert subset["experimental_gust"]["models"] == []
+    assert subset["experimental_gust"]["models"] == ["ridge", "hist_gradient_boosting"]
 
 
 def test_deployment_api_port_matches_env_example() -> None:

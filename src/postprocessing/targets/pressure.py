@@ -12,7 +12,7 @@ def add_pressure_avg(df: pd.DataFrame) -> pd.DataFrame:
 
 def add_pressure_residuals(df: pd.DataFrame) -> pd.DataFrame:
     out = add_pressure_avg(df)
-    baseline = "base_surface_pressure_hpa"
+    baseline = "base_msl_pressure_hpa"
     if baseline not in out.columns:
         return out
 
