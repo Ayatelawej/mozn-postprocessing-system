@@ -46,6 +46,10 @@ class DocPaths(BaseModel):
     data_dir: Path
 
 
+class ConfigPaths(BaseModel):
+    data_quality_overrides: Path
+
+
 class ProjectPaths(BaseModel):
     project_root: Path
     data: DataPaths
@@ -53,6 +57,7 @@ class ProjectPaths(BaseModel):
     reports: ReportPaths
     notebooks: NotebookPaths
     docs: DocPaths
+    configs: ConfigPaths
     config_dir: Path
     log_dir: Path
 
@@ -97,6 +102,9 @@ def get_paths() -> ProjectPaths:
         reports=ReportPaths(**section("reports")),
         notebooks=NotebookPaths(**section("notebooks")),
         docs=DocPaths(**section("docs")),
+        configs=ConfigPaths(
+            data_quality_overrides=resolved_root / "configs" / "data_quality_overrides.yaml"
+        ),
         config_dir=resolved_root / "configs",
         log_dir=log_dir,
     )

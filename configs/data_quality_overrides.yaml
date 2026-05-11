@@ -1,0 +1,21 @@
+overrides:
+  - station_id: IMURQU7
+    target: rain_occurrence
+    status: unusable
+    reason: "Clogged-gauge surge artifacts. ~40 hours show rain_total_mm values up to 5933 mm with rate vs total inconsistent (e.g., total=5933mm with rate=0 for 11 of 12 hours in same event). Cumulative-counter pattern persists across gauge-cleaning events. Other variables fine."
+    flagged_date: "2026-04-30"
+    review_for_block_2: true
+
+  - station_id: IMURQU7
+    target: rain_amount
+    status: unusable
+    reason: "Same gauge issue as rain_occurrence."
+    flagged_date: "2026-04-30"
+    review_for_block_2: true
+
+  - station_id: IJABAL13
+    target: pressure
+    status: unusable
+    reason: "Sensor instability: residual mean -38 hPa with std 40 hPa across 3,808 observations. Hour-to-hour pressure readings vary by tens of hPa, far beyond physical synoptic variation. Probably broken sensor. Other variables (temperature, humidity, wind) appear fine."
+    flagged_date: "2026-04-30"
+    review_for_block_2: true

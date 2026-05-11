@@ -103,3 +103,70 @@ def test_trainable_rows_per_target_skips_missing_columns() -> None:
     df = pd.DataFrame({"gate_temperature_ready": [True, False, True]})
     counts = trainable_rows_per_target(df)
     assert counts == {"temperature": 2}
+
+
+def make_overrides_yaml(tmp_path, entries: list[dict]) -> "Path":
+    import yaml
+
+    path = tmp_path / "test_overrides.yaml"
+    path.write_text(yaml.safe_dump({"overrides": entries}), encoding="utf-8")
+    return path
+
+
+def test_load_overrides_reads_yaml(tmp_path) -> None:
+    from postprocessing.qc.gates import load_overrides
+
+    path = make_overrides_yaml(
+        tmp_path,
+        [
+            {
+                "station_id": "FOO",
+                "target": "rain_occurrence",
+                "status": "unusable",
+                "reason": "test",
+            },
+        ],
+    )
+    overrides = load_overrides(path)
+    assert len(overrides) == 1
+    assert overrides[0]["station_id"] == "FOO"
+
+
+def test_load_overrides_returns_empty_when_file_missing(tmp_path) -> None:
+    from postprocessing.qc.gates import load_overrides
+
+    overrides = load_overrides(tmp_path / "does_not_exist.yaml")
+    assert overrides == []
+
+
+def test_is_trainable_apply_overrides_false_bypasses(monkeypatch, tmp_path) -> None:
+    from postprocessing.qc import gates
+
+    path = make_overrides_yaml(
+        tmp_path,
+        [
+            {
+                "station_id": "A",
+                "target": "temperature",
+                "status": "unusable",
+                "reason": "test",
+            },
+        ],
+    )
+
+    def fake_load_overrides(p=None):
+        import yaml
+
+        return list(yaml.safe_load(path.read_text())["overrides"])
+
+    monkeypatch.setattr(gates, "load_overrides", fake_load_overrides)
+
+    df = make_validated_frame()
+    mask_with_overrides = gates.is_trainable(df, "temperature", apply_overrides=True)
+    mask_without_overrides = gates.is_trainable(df, "temperature", apply_overrides=False)
+
+    assert mask_without_overrides.sum() > mask_with_overrides.sum()
+    a_rows_with = mask_with_overrides[df["station_id"] == "A"]
+    assert not a_rows_with.any()
+    a_rows_without = mask_without_overrides[df["station_id"] == "A"]
+    assert a_rows_without.any()

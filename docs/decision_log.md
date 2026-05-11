@@ -42,3 +42,15 @@ The initial revision was wrong — applied the correction in the wrong direction
 
 **Files still to update:**
 - The four "anomalous" stations originally flagged for manual review (IBIRAL3, IJABAL13, IJABAL14, IMURQU5) need re-evaluation under the corrected math. Some flags may disappear; others may intensify. Defer to full 26-station diagnostic run.
+
+## 2026-04-30 — Wind speed and gust residuals correlate with station elevation
+
+**Finding from Block 1 pooled EDA** (`reports/block1_pooled_diagnostic.md`):
+
+Per-station mean wind speed residual correlates with elevation at Pearson r = 0.35 (n = 26 stations). Wind gust residual shows the same pattern at r = 0.30. The pattern is: lower-elevation stations have more negative residuals (station reads lower than baseline), higher-elevation stations have less negative residuals.
+
+**Interpretation:** This is the exposure-quality signal flagged in `DATA_SOURCES.md`. Low-elevation stations in Libya are more often sheltered by urban features or valley topography and under-report wind relative to the modelled grid. High-elevation stations are typically more exposed and read closer to grid-cell wind. Not a fault — a structural feature of where the network is deployed.
+
+**Implication for Block 2:** The wind speed and gust models cannot generalise across elevations using a station-agnostic regressor without exposure-quality information. Station_id remains forbidden as a feature (locked decision #13), but elevation_m is already a feature. The model can implicitly learn the exposure pattern via elevation, but only if we make sure elevation_m is in the feature set during wind training. Verify this in Block 2 model setup.
+
+**No code change needed in Block 1.** Documented for awareness. Block 2 wind speed and gust training scripts must include elevation_m as a feature (at minimum) and may benefit from additional exposure-quality features (coastal distance, terrain roughness) if performance is insufficient.
