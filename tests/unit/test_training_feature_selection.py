@@ -21,7 +21,7 @@ def test_features_for_temperature_lead_1_includes_expected():
     assert "station_latitude" in features
     assert "temperature_c_lag_1h" in features
     assert "temperature_c_lag_24h" in features
-    assert "temperature_c_roll_3h_mean" in features
+    assert "temperature_c_roll_mean_3h" in features
     assert "base_temperature_c_lead_1h" in features
     assert "hour_sin_lead_1h" in features
 

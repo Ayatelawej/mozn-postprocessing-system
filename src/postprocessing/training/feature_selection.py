@@ -15,7 +15,7 @@ def _lags(var: str, offsets: tuple[int, ...] = LAG_OFFSETS) -> tuple[str, ...]:
 
 def _rolls(var: str, windows: tuple[int, ...] = ROLL_WINDOWS) -> tuple[str, ...]:
     return tuple(
-        f"{var}_roll_{w}h_{stat}"
+        f"{var}_roll_{stat}_{w}h"
         for w in windows for stat in ("mean", "std")
     )
 
