@@ -1,0 +1,984 @@
+{
+  "lead": 1,
+  "alphas": [
+    0.1,
+    1.0,
+    10.0
+  ],
+  "targets": [
+    "temperature",
+    "relative_humidity",
+    "dew_point",
+    "wind_speed",
+    "wind_gust",
+    "pressure"
+  ],
+  "summaries": {
+    "temperature": {
+      "by_alpha": {
+        "0.1": {
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 1.2868840592717175,
+          "network_mean_corrected_mae": 0.6132228170646391,
+          "network_mean_mae_reduction_pct": 47.30230095013648,
+          "network_median_mae_reduction_pct": 45.59871437619506,
+          "network_mean_baseline_bias": -0.4788338916557855,
+          "network_mean_corrected_bias": -0.013765233841000037,
+          "network_bias_correction_pct": 97.12525907608575,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "IBARAS3",
+            "baseline_mae": 3.3704456094364352,
+            "corrected_mae": 0.7236585509098139,
+            "mae_reduction_pct": 78.52929153095532,
+            "baseline_bias": -3.3631716906946267,
+            "corrected_bias": -0.5738958487272942,
+            "bias_correction_pct": 82.93587418343301
+          },
+          "worst_station": {
+            "station_id": "IALWAH18",
+            "baseline_mae": 0.9750486486486487,
+            "corrected_mae": 0.8412933090002442,
+            "mae_reduction_pct": 13.717811909567825,
+            "baseline_bias": 0.37811891891891897,
+            "corrected_bias": 0.7302116822004066,
+            "bias_correction_pct": -93.1169390540302
+          },
+          "median_station": {
+            "station_id": "IJANZO3",
+            "baseline_mae": 1.0004482964734012,
+            "corrected_mae": 0.5442567352829858,
+            "mae_reduction_pct": 45.59871437619506,
+            "baseline_bias": -0.5856843992827258,
+            "corrected_bias": -0.020751993097493145,
+            "bias_correction_pct": 96.45679599406992
+          }
+        },
+        "1.0": {
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 1.2868840592717175,
+          "network_mean_corrected_mae": 0.6132258203586975,
+          "network_mean_mae_reduction_pct": 47.30220855851776,
+          "network_median_mae_reduction_pct": 45.59812813336396,
+          "network_mean_baseline_bias": -0.4788338916557855,
+          "network_mean_corrected_bias": -0.013762967445586183,
+          "network_bias_correction_pct": 97.12573239166623,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "IBARAS3",
+            "baseline_mae": 3.3704456094364352,
+            "corrected_mae": 0.7236870406326126,
+            "mae_reduction_pct": 78.52844625035743,
+            "baseline_bias": -3.3631716906946267,
+            "corrected_bias": -0.5739368024295186,
+            "bias_correction_pct": 82.93465647271258
+          },
+          "worst_station": {
+            "station_id": "IALWAH18",
+            "baseline_mae": 0.9750486486486487,
+            "corrected_mae": 0.8413580555330584,
+            "mae_reduction_pct": 13.711171570862271,
+            "baseline_bias": 0.37811891891891897,
+            "corrected_bias": 0.7303073308307104,
+            "bias_correction_pct": -93.14223496637896
+          },
+          "median_station": {
+            "station_id": "IJANZO3",
+            "baseline_mae": 1.0004482964734012,
+            "corrected_mae": 0.5442626003394028,
+            "mae_reduction_pct": 45.59812813336396,
+            "baseline_bias": -0.5856843992827258,
+            "corrected_bias": -0.020748423901459364,
+            "bias_correction_pct": 96.45740540009781
+          }
+        },
+        "10.0": {
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 1.2868840592717175,
+          "network_mean_corrected_mae": 0.6132563497629641,
+          "network_mean_mae_reduction_pct": 47.30121345803844,
+          "network_median_mae_reduction_pct": 45.59233994430743,
+          "network_mean_baseline_bias": -0.4788338916557855,
+          "network_mean_corrected_bias": -0.01374012897304911,
+          "network_bias_correction_pct": 97.13050199401376,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "IBARAS3",
+            "baseline_mae": 3.3704456094364352,
+            "corrected_mae": 0.7239751222062175,
+            "mae_reduction_pct": 78.51989896590345,
+            "baseline_bias": -3.3631716906946267,
+            "corrected_bias": -0.5743472174597921,
+            "bias_correction_pct": 82.92245325896023
+          },
+          "worst_station": {
+            "station_id": "IALWAH18",
+            "baseline_mae": 0.9750486486486487,
+            "corrected_mae": 0.8419948890261848,
+            "mae_reduction_pct": 13.645858574017552,
+            "baseline_bias": 0.37811891891891897,
+            "corrected_bias": 0.7312457260796521,
+            "bias_correction_pct": -93.39040960192078
+          },
+          "median_station": {
+            "station_id": "IJANZO3",
+            "baseline_mae": 1.0004482964734012,
+            "corrected_mae": 0.5443205081782154,
+            "mae_reduction_pct": 45.59233994430743,
+            "baseline_bias": -0.5856843992827258,
+            "corrected_bias": -0.02071299740823852,
+            "bias_correction_pct": 96.46345413441006
+          }
+        }
+      },
+      "best_alpha": 0.1,
+      "best_summary": {
+        "n_stations": 26,
+        "n_failure_stations": 0,
+        "network_mean_baseline_mae": 1.2868840592717175,
+        "network_mean_corrected_mae": 0.6132228170646391,
+        "network_mean_mae_reduction_pct": 47.30230095013648,
+        "network_median_mae_reduction_pct": 45.59871437619506,
+        "network_mean_baseline_bias": -0.4788338916557855,
+        "network_mean_corrected_bias": -0.013765233841000037,
+        "network_bias_correction_pct": 97.12525907608575,
+        "bias_meaningful": true,
+        "best_station": {
+          "station_id": "IBARAS3",
+          "baseline_mae": 3.3704456094364352,
+          "corrected_mae": 0.7236585509098139,
+          "mae_reduction_pct": 78.52929153095532,
+          "baseline_bias": -3.3631716906946267,
+          "corrected_bias": -0.5738958487272942,
+          "bias_correction_pct": 82.93587418343301
+        },
+        "worst_station": {
+          "station_id": "IALWAH18",
+          "baseline_mae": 0.9750486486486487,
+          "corrected_mae": 0.8412933090002442,
+          "mae_reduction_pct": 13.717811909567825,
+          "baseline_bias": 0.37811891891891897,
+          "corrected_bias": 0.7302116822004066,
+          "bias_correction_pct": -93.1169390540302
+        },
+        "median_station": {
+          "station_id": "IJANZO3",
+          "baseline_mae": 1.0004482964734012,
+          "corrected_mae": 0.5442567352829858,
+          "mae_reduction_pct": 45.59871437619506,
+          "baseline_bias": -0.5856843992827258,
+          "corrected_bias": -0.020751993097493145,
+          "bias_correction_pct": 96.45679599406992
+        }
+      }
+    },
+    "relative_humidity": {
+      "by_alpha": {
+        "0.1": {
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 6.883107232455158,
+          "network_mean_corrected_mae": 2.416013112644425,
+          "network_mean_mae_reduction_pct": 64.53664867956648,
+          "network_median_mae_reduction_pct": 65.64376183777678,
+          "network_mean_baseline_bias": 0.19121914324208739,
+          "network_mean_corrected_bias": 0.03460239532267605,
+          "network_bias_correction_pct": null,
+          "bias_meaningful": false,
+          "best_station": {
+            "station_id": "IJABAL15",
+            "baseline_mae": 7.687394007914076,
+            "corrected_mae": 2.0908238556596355,
+            "mae_reduction_pct": 72.80191631250904,
+            "baseline_bias": -3.495195025438101,
+            "corrected_bias": -0.3434386173885308,
+            "bias_correction_pct": 90.17397842212014
+          },
+          "worst_station": {
+            "station_id": "IALWAH18",
+            "baseline_mae": 4.659783783783784,
+            "corrected_mae": 2.448442887482454,
+            "mae_reduction_pct": 47.45586917566595,
+            "baseline_bias": 0.07535135135135135,
+            "corrected_bias": 1.524701233285395,
+            "bias_correction_pct": -1923.4557256656965
+          },
+          "median_station": {
+            "station_id": "ITRIPO33",
+            "baseline_mae": 7.331654456654457,
+            "corrected_mae": 2.518880666359458,
+            "mae_reduction_pct": 65.64376183777678,
+            "baseline_bias": 1.0273199023199022,
+            "corrected_bias": -0.029474746964009188,
+            "bias_correction_pct": 97.13090860038348
+          }
+        },
+        "1.0": {
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 6.883107232455158,
+          "network_mean_corrected_mae": 2.4159345856651155,
+          "network_mean_mae_reduction_pct": 64.53784459380641,
+          "network_median_mae_reduction_pct": 65.6409035255566,
+          "network_mean_baseline_bias": 0.19121914324208739,
+          "network_mean_corrected_bias": 0.03460270184489375,
+          "network_bias_correction_pct": null,
+          "bias_meaningful": false,
+          "best_station": {
+            "station_id": "IJABAL15",
+            "baseline_mae": 7.687394007914076,
+            "corrected_mae": 2.090925331583627,
+            "mae_reduction_pct": 72.80059628228962,
+            "baseline_bias": -3.495195025438101,
+            "corrected_bias": -0.3435177743506964,
+            "bias_correction_pct": 90.17171368548631
+          },
+          "worst_station": {
+            "station_id": "IALWAH18",
+            "baseline_mae": 4.659783783783784,
+            "corrected_mae": 2.448370039780816,
+            "mae_reduction_pct": 47.457432503601716,
+            "baseline_bias": 0.07535135135135135,
+            "corrected_bias": 1.5248487602166645,
+            "bias_correction_pct": -1923.6515110479409
+          },
+          "median_station": {
+            "station_id": "ITRIPO33",
+            "baseline_mae": 7.331654456654457,
+            "corrected_mae": 2.519090227934734,
+            "mae_reduction_pct": 65.6409035255566,
+            "baseline_bias": 1.0273199023199022,
+            "corrected_bias": -0.029466345276579212,
+            "bias_correction_pct": 97.13172642620492
+          }
+        },
+        "10.0": {
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 6.883107232455158,
+          "network_mean_corrected_mae": 2.415220453265367,
+          "network_mean_mae_reduction_pct": 64.54874167173213,
+          "network_median_mae_reduction_pct": 65.61269196315752,
+          "network_mean_baseline_bias": 0.19121914324208739,
+          "network_mean_corrected_bias": 0.03460735831119439,
+          "network_bias_correction_pct": null,
+          "bias_meaningful": false,
+          "best_station": {
+            "station_id": "IJABAL15",
+            "baseline_mae": 7.687394007914076,
+            "corrected_mae": 2.0919887381287285,
+            "mae_reduction_pct": 72.78676316089624,
+            "baseline_bias": -3.495195025438101,
+            "corrected_bias": -0.34430680035158207,
+            "bias_correction_pct": 90.14913909393582
+          },
+          "worst_station": {
+            "station_id": "IALWAH18",
+            "baseline_mae": 4.659783783783784,
+            "corrected_mae": 2.447743529684129,
+            "mae_reduction_pct": 47.47087755010511,
+            "baseline_bias": 0.07535135135135135,
+            "corrected_bias": 1.5263361611039958,
+            "bias_correction_pct": -1925.6254648797653
+          },
+          "median_station": {
+            "station_id": "ITRIPO33",
+            "baseline_mae": 7.331654456654457,
+            "corrected_mae": 2.5211586022066577,
+            "mae_reduction_pct": 65.61269196315752,
+            "baseline_bias": 1.0273199023199022,
+            "corrected_bias": -0.029367873486503875,
+            "bias_correction_pct": 97.14131173549885
+          }
+        }
+      },
+      "best_alpha": 10.0,
+      "best_summary": {
+        "n_stations": 26,
+        "n_failure_stations": 0,
+        "network_mean_baseline_mae": 6.883107232455158,
+        "network_mean_corrected_mae": 2.415220453265367,
+        "network_mean_mae_reduction_pct": 64.54874167173213,
+        "network_median_mae_reduction_pct": 65.61269196315752,
+        "network_mean_baseline_bias": 0.19121914324208739,
+        "network_mean_corrected_bias": 0.03460735831119439,
+        "network_bias_correction_pct": null,
+        "bias_meaningful": false,
+        "best_station": {
+          "station_id": "IJABAL15",
+          "baseline_mae": 7.687394007914076,
+          "corrected_mae": 2.0919887381287285,
+          "mae_reduction_pct": 72.78676316089624,
+          "baseline_bias": -3.495195025438101,
+          "corrected_bias": -0.34430680035158207,
+          "bias_correction_pct": 90.14913909393582
+        },
+        "worst_station": {
+          "station_id": "IALWAH18",
+          "baseline_mae": 4.659783783783784,
+          "corrected_mae": 2.447743529684129,
+          "mae_reduction_pct": 47.47087755010511,
+          "baseline_bias": 0.07535135135135135,
+          "corrected_bias": 1.5263361611039958,
+          "bias_correction_pct": -1925.6254648797653
+        },
+        "median_station": {
+          "station_id": "ITRIPO33",
+          "baseline_mae": 7.331654456654457,
+          "corrected_mae": 2.5211586022066577,
+          "mae_reduction_pct": 65.61269196315752,
+          "baseline_bias": 1.0273199023199022,
+          "corrected_bias": -0.029367873486503875,
+          "bias_correction_pct": 97.14131173549885
+        }
+      }
+    },
+    "dew_point": {
+      "by_alpha": {
+        "0.1": {
+          "n_stations": 26,
+          "n_failure_stations": 1,
+          "network_mean_baseline_mae": 1.8329209033890304,
+          "network_mean_corrected_mae": 0.7069669089877919,
+          "network_mean_mae_reduction_pct": 60.71244208423198,
+          "network_median_mae_reduction_pct": 65.52656864715514,
+          "network_mean_baseline_bias": 0.2536101060380212,
+          "network_mean_corrected_bias": 0.0006058140219549897,
+          "network_bias_correction_pct": 99.76112386394249,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "IJABAL15",
+            "baseline_mae": 2.50751837196156,
+            "corrected_mae": 0.6475997309698265,
+            "mae_reduction_pct": 74.17367951472963,
+            "baseline_bias": -1.9291124929338612,
+            "corrected_bias": -0.3637471252039813,
+            "bias_correction_pct": 81.14432794684866
+          },
+          "worst_station": {
+            "station_id": "IALWAH18",
+            "baseline_mae": 1.5754594594594595,
+            "corrected_mae": 1.6358527553133302,
+            "mae_reduction_pct": -3.8333767010794175,
+            "baseline_bias": 0.7488216216216217,
+            "corrected_bias": 1.6046574341533273,
+            "bias_correction_pct": -114.29101241472405
+          },
+          "median_station": {
+            "station_id": "IJABAL13",
+            "baseline_mae": 1.6037262872628726,
+            "corrected_mae": 0.552859480727094,
+            "mae_reduction_pct": 65.52656864715514,
+            "baseline_bias": 0.637940379403794,
+            "corrected_bias": 0.02204017248525005,
+            "bias_correction_pct": 96.54510465290686
+          }
+        },
+        "1.0": {
+          "n_stations": 26,
+          "n_failure_stations": 1,
+          "network_mean_baseline_mae": 1.8329209033890304,
+          "network_mean_corrected_mae": 0.7069676812830686,
+          "network_mean_mae_reduction_pct": 60.71237020351585,
+          "network_median_mae_reduction_pct": 65.52595376526862,
+          "network_mean_baseline_bias": 0.2536101060380212,
+          "network_mean_corrected_bias": 0.0006069446670161558,
+          "network_bias_correction_pct": 99.76067804375067,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "IJABAL15",
+            "baseline_mae": 2.50751837196156,
+            "corrected_mae": 0.6476277176821639,
+            "mae_reduction_pct": 74.17256340277406,
+            "baseline_bias": -1.9291124929338612,
+            "corrected_bias": -0.3637617427676709,
+            "bias_correction_pct": 81.14357021168581
+          },
+          "worst_station": {
+            "station_id": "IALWAH18",
+            "baseline_mae": 1.5754594594594595,
+            "corrected_mae": 1.6358607275501837,
+            "mae_reduction_pct": -3.8338827272298013,
+            "baseline_bias": 0.7488216216216217,
+            "corrected_bias": 1.6046726475780726,
+            "bias_correction_pct": -114.29304406342463
+          },
+          "median_station": {
+            "station_id": "IJABAL13",
+            "baseline_mae": 1.6037262872628726,
+            "corrected_mae": 0.5528693417495436,
+            "mae_reduction_pct": 65.52595376526862,
+            "baseline_bias": 0.637940379403794,
+            "corrected_bias": 0.0220397931184086,
+            "bias_correction_pct": 96.5451641203514
+          }
+        },
+        "10.0": {
+          "n_stations": 26,
+          "n_failure_stations": 1,
+          "network_mean_baseline_mae": 1.8329209033890304,
+          "network_mean_corrected_mae": 0.7069789913889133,
+          "network_mean_mae_reduction_pct": 60.711452729052716,
+          "network_median_mae_reduction_pct": 65.52003189747553,
+          "network_mean_baseline_bias": 0.2536101060380212,
+          "network_mean_corrected_bias": 0.0006189733351725428,
+          "network_bias_correction_pct": 99.75593506708296,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "IJABAL15",
+            "baseline_mae": 2.50751837196156,
+            "corrected_mae": 0.6479026183367966,
+            "mae_reduction_pct": 74.16160034632325,
+            "baseline_bias": -1.9291124929338612,
+            "corrected_bias": -0.3639036698991109,
+            "bias_correction_pct": 81.13621309114671
+          },
+          "worst_station": {
+            "station_id": "IALWAH18",
+            "baseline_mae": 1.5754594594594595,
+            "corrected_mae": 1.6359189266240746,
+            "mae_reduction_pct": -3.8375768288800454,
+            "baseline_bias": 0.7488216216216217,
+            "corrected_bias": 1.6048008603583883,
+            "bias_correction_pct": -114.31016600229681
+          },
+          "median_station": {
+            "station_id": "IJABAL13",
+            "baseline_mae": 1.6037262872628726,
+            "corrected_mae": 0.5529643123000386,
+            "mae_reduction_pct": 65.52003189747553,
+            "baseline_bias": 0.637940379403794,
+            "corrected_bias": 0.0220334479290159,
+            "bias_correction_pct": 96.54615875709139
+          }
+        }
+      },
+      "best_alpha": 0.1,
+      "best_summary": {
+        "n_stations": 26,
+        "n_failure_stations": 1,
+        "network_mean_baseline_mae": 1.8329209033890304,
+        "network_mean_corrected_mae": 0.7069669089877919,
+        "network_mean_mae_reduction_pct": 60.71244208423198,
+        "network_median_mae_reduction_pct": 65.52656864715514,
+        "network_mean_baseline_bias": 0.2536101060380212,
+        "network_mean_corrected_bias": 0.0006058140219549897,
+        "network_bias_correction_pct": 99.76112386394249,
+        "bias_meaningful": true,
+        "best_station": {
+          "station_id": "IJABAL15",
+          "baseline_mae": 2.50751837196156,
+          "corrected_mae": 0.6475997309698265,
+          "mae_reduction_pct": 74.17367951472963,
+          "baseline_bias": -1.9291124929338612,
+          "corrected_bias": -0.3637471252039813,
+          "bias_correction_pct": 81.14432794684866
+        },
+        "worst_station": {
+          "station_id": "IALWAH18",
+          "baseline_mae": 1.5754594594594595,
+          "corrected_mae": 1.6358527553133302,
+          "mae_reduction_pct": -3.8333767010794175,
+          "baseline_bias": 0.7488216216216217,
+          "corrected_bias": 1.6046574341533273,
+          "bias_correction_pct": -114.29101241472405
+        },
+        "median_station": {
+          "station_id": "IJABAL13",
+          "baseline_mae": 1.6037262872628726,
+          "corrected_mae": 0.552859480727094,
+          "mae_reduction_pct": 65.52656864715514,
+          "baseline_bias": 0.637940379403794,
+          "corrected_bias": 0.02204017248525005,
+          "bias_correction_pct": 96.54510465290686
+        }
+      }
+    },
+    "wind_speed": {
+      "by_alpha": {
+        "0.1": {
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 7.369997143235624,
+          "network_mean_corrected_mae": 1.9763314257274611,
+          "network_mean_mae_reduction_pct": 67.05882767997406,
+          "network_median_mae_reduction_pct": 71.6725024183294,
+          "network_mean_baseline_bias": -5.75844977073262,
+          "network_mean_corrected_bias": -0.04583073398394732,
+          "network_bias_correction_pct": 99.20411333243051,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "INUQAT10",
+            "baseline_mae": 13.742228212039533,
+            "corrected_mae": 1.0575052337288458,
+            "mae_reduction_pct": 92.30470330275575,
+            "baseline_bias": -13.742228212039533,
+            "corrected_bias": -0.1293930504446686,
+            "bias_correction_pct": 99.05842743659788
+          },
+          "worst_station": {
+            "station_id": "IMISRA12",
+            "baseline_mae": 4.287230133210841,
+            "corrected_mae": 2.63530790632513,
+            "mae_reduction_pct": 38.53122355362189,
+            "baseline_bias": -1.4400091869545244,
+            "corrected_bias": 1.117249601222232,
+            "bias_correction_pct": 22.413717124603682
+          },
+          "median_station": {
+            "station_id": "INUQAT8",
+            "baseline_mae": 5.994062832800852,
+            "corrected_mae": 1.6979680040054774,
+            "mae_reduction_pct": 71.6725024183294,
+            "baseline_bias": -5.568876464323749,
+            "corrected_bias": 0.05827058768038773,
+            "bias_correction_pct": 98.95363834960803
+          }
+        },
+        "1.0": {
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 7.369997143235624,
+          "network_mean_corrected_mae": 1.976331110818807,
+          "network_mean_mae_reduction_pct": 67.05933298036473,
+          "network_median_mae_reduction_pct": 71.67140592189018,
+          "network_mean_baseline_bias": -5.75844977073262,
+          "network_mean_corrected_bias": -0.04579204706295296,
+          "network_bias_correction_pct": 99.20478516117842,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "INUQAT10",
+            "baseline_mae": 13.742228212039533,
+            "corrected_mae": 1.057739598540686,
+            "mae_reduction_pct": 92.30299786744916,
+            "baseline_bias": -13.742228212039533,
+            "corrected_bias": -0.1295063607135757,
+            "bias_correction_pct": 99.05760289586723
+          },
+          "worst_station": {
+            "station_id": "IMISRA12",
+            "baseline_mae": 4.287230133210841,
+            "corrected_mae": 2.635232861934621,
+            "mae_reduction_pct": 38.53297397028201,
+            "baseline_bias": -1.4400091869545244,
+            "corrected_bias": 1.1170892070540002,
+            "bias_correction_pct": 22.42485553744749
+          },
+          "median_station": {
+            "station_id": "INUQAT8",
+            "baseline_mae": 5.994062832800852,
+            "corrected_mae": 1.6980337286910037,
+            "mae_reduction_pct": 71.67140592189018,
+            "baseline_bias": -5.568876464323749,
+            "corrected_bias": 0.05827562609538584,
+            "bias_correction_pct": 98.95354787507459
+          }
+        },
+        "10.0": {
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 7.369997143235624,
+          "network_mean_corrected_mae": 1.9763305025341962,
+          "network_mean_mae_reduction_pct": 67.06429780985681,
+          "network_median_mae_reduction_pct": 71.66038146564868,
+          "network_mean_baseline_bias": -5.75844977073262,
+          "network_mean_corrected_bias": -0.04540232482286747,
+          "network_bias_correction_pct": 99.21155299376535,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "INUQAT10",
+            "baseline_mae": 13.742228212039533,
+            "corrected_mae": 1.0600596281172294,
+            "mae_reduction_pct": 92.28611538274038,
+            "baseline_bias": -13.742228212039533,
+            "corrected_bias": -0.13065021664282656,
+            "bias_correction_pct": 99.0492792389493
+          },
+          "worst_station": {
+            "station_id": "IMISRA12",
+            "baseline_mae": 4.287230133210841,
+            "corrected_mae": 2.6344777288307193,
+            "mae_reduction_pct": 38.55058751283602,
+            "baseline_bias": -1.4400091869545244,
+            "corrected_bias": 1.1154596623234638,
+            "bias_correction_pct": 22.538017644002007
+          },
+          "median_station": {
+            "station_id": "INUQAT8",
+            "baseline_mae": 5.994062832800852,
+            "corrected_mae": 1.698694541525094,
+            "mae_reduction_pct": 71.66038146564868,
+            "baseline_bias": -5.568876464323749,
+            "corrected_bias": 0.05832773594937732,
+            "bias_correction_pct": 98.95261214137096
+          }
+        }
+      },
+      "best_alpha": 10.0,
+      "best_summary": {
+        "n_stations": 26,
+        "n_failure_stations": 0,
+        "network_mean_baseline_mae": 7.369997143235624,
+        "network_mean_corrected_mae": 1.9763305025341962,
+        "network_mean_mae_reduction_pct": 67.06429780985681,
+        "network_median_mae_reduction_pct": 71.66038146564868,
+        "network_mean_baseline_bias": -5.75844977073262,
+        "network_mean_corrected_bias": -0.04540232482286747,
+        "network_bias_correction_pct": 99.21155299376535,
+        "bias_meaningful": true,
+        "best_station": {
+          "station_id": "INUQAT10",
+          "baseline_mae": 13.742228212039533,
+          "corrected_mae": 1.0600596281172294,
+          "mae_reduction_pct": 92.28611538274038,
+          "baseline_bias": -13.742228212039533,
+          "corrected_bias": -0.13065021664282656,
+          "bias_correction_pct": 99.0492792389493
+        },
+        "worst_station": {
+          "station_id": "IMISRA12",
+          "baseline_mae": 4.287230133210841,
+          "corrected_mae": 2.6344777288307193,
+          "mae_reduction_pct": 38.55058751283602,
+          "baseline_bias": -1.4400091869545244,
+          "corrected_bias": 1.1154596623234638,
+          "bias_correction_pct": 22.538017644002007
+        },
+        "median_station": {
+          "station_id": "INUQAT8",
+          "baseline_mae": 5.994062832800852,
+          "corrected_mae": 1.698694541525094,
+          "mae_reduction_pct": 71.66038146564868,
+          "baseline_bias": -5.568876464323749,
+          "corrected_bias": 0.05832773594937732,
+          "bias_correction_pct": 98.95261214137096
+        }
+      }
+    },
+    "wind_gust": {
+      "by_alpha": {
+        "0.1": {
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 16.99242439272322,
+          "network_mean_corrected_mae": 2.438401297390041,
+          "network_mean_mae_reduction_pct": 82.9711541839775,
+          "network_median_mae_reduction_pct": 85.21972355745844,
+          "network_mean_baseline_bias": -16.710235771550394,
+          "network_mean_corrected_bias": 0.019827800541107596,
+          "network_bias_correction_pct": 99.8813433825101,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "INUQAT10",
+            "baseline_mae": 23.992303084755918,
+            "corrected_mae": 1.5141818861206415,
+            "mae_reduction_pct": 93.688884802882,
+            "baseline_bias": -23.992303084755918,
+            "corrected_bias": -0.6241608691118404,
+            "bias_correction_pct": 97.39849539701584
+          },
+          "worst_station": {
+            "station_id": "IJABAL13",
+            "baseline_mae": 8.586822493224933,
+            "corrected_mae": 4.530863866842782,
+            "mae_reduction_pct": 47.23468581751088,
+            "baseline_bias": -3.8526761517615173,
+            "corrected_bias": 1.1746859216046046,
+            "bias_correction_pct": 69.50987118220368
+          },
+          "median_station": {
+            "station_id": "IMISRA13",
+            "baseline_mae": 14.032151898734178,
+            "corrected_mae": 2.0739908414702546,
+            "mae_reduction_pct": 85.21972355745844,
+            "baseline_bias": -14.006497890295359,
+            "corrected_bias": 0.3990298589912025,
+            "bias_correction_pct": 97.1511089915797
+          }
+        },
+        "1.0": {
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 16.99242439272322,
+          "network_mean_corrected_mae": 2.4384512887994827,
+          "network_mean_mae_reduction_pct": 82.97105261983072,
+          "network_median_mae_reduction_pct": 85.21896639787019,
+          "network_mean_baseline_bias": -16.710235771550394,
+          "network_mean_corrected_bias": 0.01974972705622943,
+          "network_bias_correction_pct": 99.88181060203917,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "INUQAT10",
+            "baseline_mae": 23.992303084755918,
+            "corrected_mae": 1.514286962298558,
+            "mae_reduction_pct": 93.68844684501882,
+            "baseline_bias": -23.992303084755918,
+            "corrected_bias": -0.6238387397032711,
+            "bias_correction_pct": 97.39983803347482
+          },
+          "worst_station": {
+            "station_id": "IJABAL13",
+            "baseline_mae": 8.586822493224933,
+            "corrected_mae": 4.530577577030508,
+            "mae_reduction_pct": 47.23801987749057,
+            "baseline_bias": -3.8526761517615173,
+            "corrected_bias": 1.1742356296598115,
+            "bias_correction_pct": 69.52155895265352
+          },
+          "median_station": {
+            "station_id": "IMISRA13",
+            "baseline_mae": 14.032151898734178,
+            "corrected_mae": 2.074097087253795,
+            "mae_reduction_pct": 85.21896639787019,
+            "baseline_bias": -14.006497890295359,
+            "corrected_bias": 0.39933326280263914,
+            "bias_correction_pct": 97.14894282689092
+          }
+        },
+        "10.0": {
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 16.99242439272322,
+          "network_mean_corrected_mae": 2.438968971318183,
+          "network_mean_mae_reduction_pct": 82.96987772039671,
+          "network_median_mae_reduction_pct": 85.21134804484733,
+          "network_mean_baseline_bias": -16.710235771550394,
+          "network_mean_corrected_bias": 0.01897542602257575,
+          "network_bias_correction_pct": 99.88644429508959,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "INUQAT10",
+            "baseline_mae": 23.992303084755918,
+            "corrected_mae": 1.515320101448109,
+            "mae_reduction_pct": 93.68414071756662,
+            "baseline_bias": -23.992303084755918,
+            "corrected_bias": -0.6206454082936114,
+            "bias_correction_pct": 97.41314784953698
+          },
+          "worst_station": {
+            "station_id": "IJABAL13",
+            "baseline_mae": 8.586822493224933,
+            "corrected_mae": 4.527746602361765,
+            "mae_reduction_pct": 47.27098870467869,
+            "baseline_bias": -3.8526761517615173,
+            "corrected_bias": 1.1697711331517333,
+            "bias_correction_pct": 69.63743935194523
+          },
+          "median_station": {
+            "station_id": "IMISRA13",
+            "baseline_mae": 14.032151898734178,
+            "corrected_mae": 2.0751661061221425,
+            "mae_reduction_pct": 85.21134804484733,
+            "baseline_bias": -14.006497890295359,
+            "corrected_bias": 0.40235003858891627,
+            "bias_correction_pct": 97.12740442514406
+          }
+        }
+      },
+      "best_alpha": 0.1,
+      "best_summary": {
+        "n_stations": 26,
+        "n_failure_stations": 0,
+        "network_mean_baseline_mae": 16.99242439272322,
+        "network_mean_corrected_mae": 2.438401297390041,
+        "network_mean_mae_reduction_pct": 82.9711541839775,
+        "network_median_mae_reduction_pct": 85.21972355745844,
+        "network_mean_baseline_bias": -16.710235771550394,
+        "network_mean_corrected_bias": 0.019827800541107596,
+        "network_bias_correction_pct": 99.8813433825101,
+        "bias_meaningful": true,
+        "best_station": {
+          "station_id": "INUQAT10",
+          "baseline_mae": 23.992303084755918,
+          "corrected_mae": 1.5141818861206415,
+          "mae_reduction_pct": 93.688884802882,
+          "baseline_bias": -23.992303084755918,
+          "corrected_bias": -0.6241608691118404,
+          "bias_correction_pct": 97.39849539701584
+        },
+        "worst_station": {
+          "station_id": "IJABAL13",
+          "baseline_mae": 8.586822493224933,
+          "corrected_mae": 4.530863866842782,
+          "mae_reduction_pct": 47.23468581751088,
+          "baseline_bias": -3.8526761517615173,
+          "corrected_bias": 1.1746859216046046,
+          "bias_correction_pct": 69.50987118220368
+        },
+        "median_station": {
+          "station_id": "IMISRA13",
+          "baseline_mae": 14.032151898734178,
+          "corrected_mae": 2.0739908414702546,
+          "mae_reduction_pct": 85.21972355745844,
+          "baseline_bias": -14.006497890295359,
+          "corrected_bias": 0.3990298589912025,
+          "bias_correction_pct": 97.1511089915797
+        }
+      }
+    },
+    "pressure": {
+      "by_alpha": {
+        "0.1": {
+          "n_stations": 25,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 6.529036434761261,
+          "network_mean_corrected_mae": 0.4361955802019463,
+          "network_mean_mae_reduction_pct": 92.59097146162534,
+          "network_median_mae_reduction_pct": 93.25907293150695,
+          "network_mean_baseline_bias": -4.677628667116194,
+          "network_mean_corrected_bias": 0.018166330544245796,
+          "network_bias_correction_pct": 99.61163376067117,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "IBIRAL3",
+            "baseline_mae": 16.041293686583995,
+            "corrected_mae": 0.38010423065502347,
+            "mae_reduction_pct": 97.63046398824478,
+            "baseline_bias": -16.041293686583995,
+            "corrected_bias": -0.15949917341601272,
+            "bias_correction_pct": 99.00569632018265
+          },
+          "worst_station": {
+            "station_id": "IJANZO4",
+            "baseline_mae": 5.847845468053492,
+            "corrected_mae": 0.8992002354225828,
+            "mae_reduction_pct": 84.6233926608548,
+            "baseline_bias": -3.9864784546805345,
+            "corrected_bias": 0.334799621114273,
+            "bias_correction_pct": 91.60161970219144
+          },
+          "median_station": {
+            "station_id": "IZAWIY5",
+            "baseline_mae": 5.654017504234897,
+            "corrected_mae": 0.3811331964003057,
+            "mae_reduction_pct": 93.25907293150695,
+            "baseline_bias": -3.319172783738001,
+            "corrected_bias": -0.012935964201739342,
+            "bias_correction_pct": 99.6102654171811
+          }
+        },
+        "1.0": {
+          "n_stations": 25,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 6.529036434761261,
+          "network_mean_corrected_mae": 0.4362225092661612,
+          "network_mean_mae_reduction_pct": 92.59048533299105,
+          "network_median_mae_reduction_pct": 93.2583345022124,
+          "network_mean_baseline_bias": -4.677628667116194,
+          "network_mean_corrected_bias": 0.0181789901960665,
+          "network_bias_correction_pct": 99.61136311815719,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "IBIRAL3",
+            "baseline_mae": 16.041293686583995,
+            "corrected_mae": 0.3801163045501793,
+            "mae_reduction_pct": 97.63038872065484,
+            "baseline_bias": -16.041293686583995,
+            "corrected_bias": -0.1595210599758298,
+            "bias_correction_pct": 99.00555988131279
+          },
+          "worst_station": {
+            "station_id": "IJANZO4",
+            "baseline_mae": 5.847845468053492,
+            "corrected_mae": 0.8995850722388925,
+            "mae_reduction_pct": 84.61681183004436,
+            "baseline_bias": -3.9864784546805345,
+            "corrected_bias": 0.3349297979015936,
+            "bias_correction_pct": 91.5983542439982
+          },
+          "median_station": {
+            "station_id": "IZAWIY5",
+            "baseline_mae": 5.654017504234897,
+            "corrected_mae": 0.3811749473218752,
+            "mae_reduction_pct": 93.2583345022124,
+            "baseline_bias": -3.319172783738001,
+            "corrected_bias": -0.01292588115801164,
+            "bias_correction_pct": 99.61056919900824
+          }
+        },
+        "10.0": {
+          "n_stations": 25,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 6.529036434761261,
+          "network_mean_corrected_mae": 0.43650474531811306,
+          "network_mean_mae_reduction_pct": 92.58539419003216,
+          "network_median_mae_reduction_pct": 93.25101550701962,
+          "network_mean_baseline_bias": -4.677628667116194,
+          "network_mean_corrected_bias": 0.01829835202492837,
+          "network_bias_correction_pct": 99.60881135876463,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "IBIRAL3",
+            "baseline_mae": 16.041293686583995,
+            "corrected_mae": 0.38022685693433195,
+            "mae_reduction_pct": 97.62969954691165,
+            "baseline_bias": -16.041293686583995,
+            "corrected_bias": -0.15975237052740057,
+            "bias_correction_pct": 99.00411791188009
+          },
+          "worst_station": {
+            "station_id": "IJANZO4",
+            "baseline_mae": 5.847845468053492,
+            "corrected_mae": 0.9034601825040417,
+            "mae_reduction_pct": 84.55054622356896,
+            "baseline_bias": -3.9864784546805345,
+            "corrected_bias": 0.33617425387351013,
+            "bias_correction_pct": 91.56713731943523
+          },
+          "median_station": {
+            "station_id": "IZAWIY5",
+            "baseline_mae": 5.654017504234897,
+            "corrected_mae": 0.3815887645912098,
+            "mae_reduction_pct": 93.25101550701962,
+            "baseline_bias": -3.319172783738001,
+            "corrected_bias": -0.012835961725284943,
+            "bias_correction_pct": 99.61327829065803
+          }
+        }
+      },
+      "best_alpha": 0.1,
+      "best_summary": {
+        "n_stations": 25,
+        "n_failure_stations": 0,
+        "network_mean_baseline_mae": 6.529036434761261,
+        "network_mean_corrected_mae": 0.4361955802019463,
+        "network_mean_mae_reduction_pct": 92.59097146162534,
+        "network_median_mae_reduction_pct": 93.25907293150695,
+        "network_mean_baseline_bias": -4.677628667116194,
+        "network_mean_corrected_bias": 0.018166330544245796,
+        "network_bias_correction_pct": 99.61163376067117,
+        "bias_meaningful": true,
+        "best_station": {
+          "station_id": "IBIRAL3",
+          "baseline_mae": 16.041293686583995,
+          "corrected_mae": 0.38010423065502347,
+          "mae_reduction_pct": 97.63046398824478,
+          "baseline_bias": -16.041293686583995,
+          "corrected_bias": -0.15949917341601272,
+          "bias_correction_pct": 99.00569632018265
+        },
+        "worst_station": {
+          "station_id": "IJANZO4",
+          "baseline_mae": 5.847845468053492,
+          "corrected_mae": 0.8992002354225828,
+          "mae_reduction_pct": 84.6233926608548,
+          "baseline_bias": -3.9864784546805345,
+          "corrected_bias": 0.334799621114273,
+          "bias_correction_pct": 91.60161970219144
+        },
+        "median_station": {
+          "station_id": "IZAWIY5",
+          "baseline_mae": 5.654017504234897,
+          "corrected_mae": 0.3811331964003057,
+          "mae_reduction_pct": 93.25907293150695,
+          "baseline_bias": -3.319172783738001,
+          "corrected_bias": -0.012935964201739342,
+          "bias_correction_pct": 99.6102654171811
+        }
+      }
+    }
+  }
+}
