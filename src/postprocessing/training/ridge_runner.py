@@ -47,10 +47,13 @@ class TrainResult:
     missing_features: list[str]
     baseline_mae: float
     baseline_rmse: float
+    baseline_bias: float
     corrected_mae: float
     corrected_rmse: float
+    corrected_bias: float
     mae_reduction_pct: float
     rmse_reduction_pct: float
+    bias_correction_pct: float
 
     def as_dict(self) -> dict:
         return asdict(self)
@@ -62,8 +65,19 @@ def baseline_column_for(target: str) -> str:
     return BASELINE_COLUMN[target]
 
 
-def train_ridge(
+def prepare_for_target(
     canonical: pd.DataFrame,
+    target: str,
+    lead: int,
+) -> pd.DataFrame:
+    framed = prepare_target_frame(canonical, target, leads=(lead,))
+    if len(framed) == 0:
+        raise RuntimeError(f"No trainable rows for target '{target}'")
+    return framed
+
+
+def fit_ridge(
+    framed: pd.DataFrame,
     target: str,
     lead: int,
     holdout_station: str,
@@ -72,12 +86,8 @@ def train_ridge(
 ) -> tuple[TrainResult, dict]:
     if not predicts_residual(target):
         raise NotImplementedError(
-            f"ridge_runner.train_ridge supports residual targets only; got '{target}'"
+            f"ridge_runner.fit_ridge supports residual targets only; got '{target}'"
         )
-
-    framed = prepare_target_frame(canonical, target, leads=(lead,))
-    if len(framed) == 0:
-        raise RuntimeError(f"No trainable rows for target '{target}'")
 
     target_col_base = target_columns_for(target)[0]
     target_col = f"{target_col_base}_lead_{lead}h"
@@ -124,9 +134,15 @@ def train_ridge(
     corrected_mae = float(np.mean(np.abs(corrected_errors)))
     baseline_rmse = float(np.sqrt(np.mean(baseline_errors ** 2)))
     corrected_rmse = float(np.sqrt(np.mean(corrected_errors ** 2)))
+    baseline_bias = float(np.mean(baseline_errors))
+    corrected_bias = float(np.mean(corrected_errors))
 
     mae_red = 100.0 * (baseline_mae - corrected_mae) / baseline_mae if baseline_mae > 0 else 0.0
     rmse_red = 100.0 * (baseline_rmse - corrected_rmse) / baseline_rmse if baseline_rmse > 0 else 0.0
+    if abs(baseline_bias) > 1e-9:
+        bias_corr = 100.0 * (abs(baseline_bias) - abs(corrected_bias)) / abs(baseline_bias)
+    else:
+        bias_corr = 0.0
 
     result = TrainResult(
         target=target,
@@ -139,10 +155,13 @@ def train_ridge(
         missing_features=missing_features,
         baseline_mae=baseline_mae,
         baseline_rmse=baseline_rmse,
+        baseline_bias=baseline_bias,
         corrected_mae=corrected_mae,
         corrected_rmse=corrected_rmse,
+        corrected_bias=corrected_bias,
         mae_reduction_pct=mae_red,
         rmse_reduction_pct=rmse_red,
+        bias_correction_pct=bias_corr,
     )
 
     artifact = {
@@ -161,6 +180,22 @@ def train_ridge(
     }
 
     return result, artifact
+
+
+def train_ridge(
+    canonical: pd.DataFrame,
+    target: str,
+    lead: int,
+    holdout_station: str,
+    *,
+    alpha: float = 1.0,
+) -> tuple[TrainResult, dict]:
+    if not predicts_residual(target):
+        raise NotImplementedError(
+            f"ridge_runner.fit_ridge supports residual targets only; got '{target}'"
+        )
+    framed = prepare_for_target(canonical, target, lead)
+    return fit_ridge(framed, target, lead, holdout_station, alpha=alpha)
 
 
 def save_artifact(artifact: dict, path: Path) -> None:

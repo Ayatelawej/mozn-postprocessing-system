@@ -40,6 +40,7 @@ VALIDITY_TIME_RADIATION_DERIVED: tuple[str, ...] = (
 FEATURE_SPECS: dict[str, dict[str, tuple[str, ...]]] = {
     "temperature": {
         "issue_time": (
+            "temperature_residual_c",
             *SHARED_METADATA,
             *_lags("temperature_c"),
             *_lags("relative_humidity_pct"),
@@ -56,6 +57,7 @@ FEATURE_SPECS: dict[str, dict[str, tuple[str, ...]]] = {
     },
     "relative_humidity": {
         "issue_time": (
+            "relative_humidity_residual_pct",
             *SHARED_METADATA,
             *_lags("temperature_c"),
             *_lags("relative_humidity_pct"),
@@ -71,6 +73,7 @@ FEATURE_SPECS: dict[str, dict[str, tuple[str, ...]]] = {
     },
     "dew_point": {
         "issue_time": (
+            "dew_point_residual_c",
             *SHARED_METADATA,
             *_lags("temperature_c"),
             *_lags("relative_humidity_pct"),
@@ -85,6 +88,7 @@ FEATURE_SPECS: dict[str, dict[str, tuple[str, ...]]] = {
     },
     "wind_speed": {
         "issue_time": (
+            "wind_speed_residual_kmh",
             *SHARED_METADATA,
             *_lags("wind_speed_kmh"),
             *_rolls("wind_speed_kmh"),
@@ -100,6 +104,7 @@ FEATURE_SPECS: dict[str, dict[str, tuple[str, ...]]] = {
     },
     "wind_gust": {
         "issue_time": (
+            "wind_gust_residual_kmh",
             *SHARED_METADATA,
             *_lags("wind_speed_kmh"),
             *_rolls("wind_speed_kmh"),
@@ -114,6 +119,7 @@ FEATURE_SPECS: dict[str, dict[str, tuple[str, ...]]] = {
     },
     "pressure": {
         "issue_time": (
+            "pressure_residual_max_hpa",
             *SHARED_METADATA,
             *_lags("pressure_max_hpa"),
             *_rolls("pressure_max_hpa"),

@@ -6,6 +6,8 @@ import pytest
 
 from postprocessing.training.ridge_runner import (
     baseline_column_for,
+    fit_ridge,
+    prepare_for_target,
     train_ridge,
 )
 
@@ -85,6 +87,9 @@ def test_train_ridge_produces_valid_result_and_artifact():
     assert result.n_val > 0
     assert result.baseline_mae > 0
     assert result.corrected_mae >= 0
+    assert isinstance(result.baseline_bias, float)
+    assert isinstance(result.corrected_bias, float)
+    assert isinstance(result.bias_correction_pct, float)
     assert "model" in artifact
     assert "scaler" in artifact
     assert "imputation_stats" in artifact
@@ -101,7 +106,10 @@ def test_train_ridge_reduces_mae_on_learnable_signal():
         f"Ridge failed to reduce MAE: baseline={result.baseline_mae:.4f}, "
         f"corrected={result.corrected_mae:.4f}"
     )
-    assert result.mae_reduction_pct > 0
+    assert result.mae_reduction_pct > 50.0, (
+        f"With residual-at-T feature, expected >50% MAE reduction on synthetic; "
+        f"got {result.mae_reduction_pct:.2f}%"
+    )
 
 
 def test_train_ridge_rejects_non_residual_target():
@@ -114,3 +122,24 @@ def test_train_ridge_unknown_holdout_raises():
     df = _make_synthetic_canonical()
     with pytest.raises(ValueError):
         train_ridge(df, "temperature", lead=1, holdout_station="S99")
+
+
+def test_prepare_for_target_and_fit_ridge_match_train_ridge():
+    df = _make_synthetic_canonical(n_stations=4, n_hours=300, seed=7)
+    direct, _ = train_ridge(df, "temperature", lead=1, holdout_station="S01", alpha=1.0)
+    framed = prepare_for_target(df, "temperature", lead=1)
+    composed, _ = fit_ridge(framed, "temperature", 1, "S01", alpha=1.0)
+    assert direct.n_train == composed.n_train
+    assert direct.n_val == composed.n_val
+    assert abs(direct.corrected_mae - composed.corrected_mae) < 1e-9
+    assert abs(direct.baseline_bias - composed.baseline_bias) < 1e-9
+
+
+def test_bias_correction_pct_sign_and_zero_baseline():
+    df = _make_synthetic_canonical(n_stations=4, n_hours=300, seed=3)
+    result, _ = train_ridge(df, "temperature", lead=1, holdout_station="S02", alpha=0.1)
+    if abs(result.baseline_bias) > 1e-9:
+        if abs(result.corrected_bias) < abs(result.baseline_bias):
+            assert result.bias_correction_pct > 0
+        else:
+            assert result.bias_correction_pct <= 0

@@ -113,3 +113,33 @@ def test_audit_catches_station_id(monkeypatch):
     monkeypatch.setattr(fs, "FEATURE_SPECS", fake)
     with pytest.raises(AssertionError, match="station_id"):
         audit_feature_lists()
+
+
+def test_residual_targets_include_residual_feature_at_issue_time():
+    expected = {
+        "temperature": "temperature_residual_c",
+        "relative_humidity": "relative_humidity_residual_pct",
+        "dew_point": "dew_point_residual_c",
+        "wind_speed": "wind_speed_residual_kmh",
+        "wind_gust": "wind_gust_residual_kmh",
+        "pressure": "pressure_residual_max_hpa",
+    }
+    for target, residual_col in expected.items():
+        for lead in (1, 12, 72):
+            features = features_for(target, lead)
+            assert residual_col in features, (
+                f"{residual_col} missing from {target} features at lead={lead}"
+            )
+            leaded_target = f"{residual_col}_lead_{lead}h"
+            assert leaded_target not in features, (
+                f"{leaded_target} (target) must not be in features for {target} lead={lead}"
+            )
+
+
+def test_residual_feature_not_added_to_uv_or_rain():
+    for target in ("uv", "rain_occurrence", "rain_amount", "wind_direction"):
+        for lead in (1, 12, 72):
+            features = features_for(target, lead)
+            assert not any(c.endswith("_residual_c") or c.endswith("_residual_pct") or c.endswith("_residual_kmh") or c.endswith("_residual_hpa") for c in features), (
+                f"Unexpected residual-style feature in {target} at lead={lead}: {features}"
+            )
