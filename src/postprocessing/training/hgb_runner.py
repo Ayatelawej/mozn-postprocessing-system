@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import json
 from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -8,8 +7,7 @@ from pathlib import Path
 import joblib
 import numpy as np
 import pandas as pd
-from sklearn.linear_model import Ridge
-from sklearn.preprocessing import StandardScaler
+from sklearn.ensemble import HistGradientBoostingRegressor
 
 from postprocessing.training.data_loader import (
     loso_split,
@@ -23,26 +21,39 @@ from postprocessing.training.imputation import (
     compute_imputation_stats,
 )
 from postprocessing.training.preparation import prepare_for_target
-
-
-BASELINE_COLUMN: dict[str, str] = {
-    "temperature": "base_temperature_c",
-    "relative_humidity": "base_relative_humidity_pct",
-    "dew_point": "base_dew_point_c",
-    "wind_speed": "base_wind_speed_kmh",
-    "wind_gust": "base_wind_gust_kmh",
-    "pressure": "base_msl_pressure_hpa",
-}
+from postprocessing.training.ridge_runner import (
+    BASELINE_COLUMN,
+    baseline_column_for,
+)
 
 
 @dataclass
-class TrainResult:
+class HGBConfig:
+    max_depth: int
+    learning_rate: float
+    max_iter: int = 500
+    early_stopping: bool = True
+    validation_fraction: float = 0.15
+    n_iter_no_change: int = 25
+    random_state: int = 42
+
+    def as_dict(self) -> dict:
+        return asdict(self)
+
+    def label(self) -> str:
+        return f"d{self.max_depth}_lr{self.learning_rate}"
+
+
+@dataclass
+class HGBTrainResult:
     target: str
     lead: int
     holdout_station: str
-    alpha: float
+    config_label: str
+    config: dict
     n_train: int
     n_val: int
+    n_iter_used: int
     feature_columns: list[str]
     missing_features: list[str]
     baseline_mae: float
@@ -59,23 +70,17 @@ class TrainResult:
         return asdict(self)
 
 
-def baseline_column_for(target: str) -> str:
-    if target not in BASELINE_COLUMN:
-        raise KeyError(f"No baseline column registered for target '{target}'")
-    return BASELINE_COLUMN[target]
-
-
-def fit_ridge(
+def fit_hgb(
     framed: pd.DataFrame,
     target: str,
     lead: int,
     holdout_station: str,
     *,
-    alpha: float = 1.0,
-) -> tuple[TrainResult, dict]:
+    config: HGBConfig,
+) -> tuple[HGBTrainResult, dict]:
     if not predicts_residual(target):
         raise NotImplementedError(
-            f"ridge_runner.fit_ridge supports residual targets only; got '{target}'"
+            f"hgb_runner.fit_hgb supports residual targets only; got '{target}'"
         )
 
     target_col_base = target_columns_for(target)[0]
@@ -108,13 +113,18 @@ def fit_ridge(
     if len(X_val) == 0:
         raise RuntimeError(f"No validation rows for holdout '{holdout_station}'")
 
-    scaler = StandardScaler()
-    X_train_scaled = scaler.fit_transform(X_train)
-    X_val_scaled = scaler.transform(X_val)
-
-    model = Ridge(alpha=alpha)
-    model.fit(X_train_scaled, y_train)
-    y_pred = model.predict(X_val_scaled)
+    model = HistGradientBoostingRegressor(
+        max_depth=config.max_depth,
+        learning_rate=config.learning_rate,
+        max_iter=config.max_iter,
+        early_stopping=config.early_stopping,
+        validation_fraction=config.validation_fraction,
+        n_iter_no_change=config.n_iter_no_change,
+        random_state=config.random_state,
+    )
+    model.fit(X_train, y_train)
+    y_pred = model.predict(X_val)
+    n_iter_used = int(getattr(model, "n_iter_", config.max_iter))
 
     baseline_errors = y_val
     corrected_errors = y_val - y_pred
@@ -133,13 +143,15 @@ def fit_ridge(
     else:
         bias_corr = 0.0
 
-    result = TrainResult(
+    result = HGBTrainResult(
         target=target,
         lead=lead,
         holdout_station=holdout_station,
-        alpha=alpha,
+        config_label=config.label(),
+        config=config.as_dict(),
         n_train=int(len(X_train)),
         n_val=int(len(X_val)),
+        n_iter_used=n_iter_used,
         feature_columns=present_features,
         missing_features=missing_features,
         baseline_mae=baseline_mae,
@@ -155,7 +167,7 @@ def fit_ridge(
 
     artifact = {
         "model": model,
-        "scaler": scaler,
+        "scaler": None,
         "imputation_stats": stats,
         "feature_columns": present_features,
         "missing_features": missing_features,
@@ -165,38 +177,31 @@ def fit_ridge(
         "predicts_residual": predicts_residual(target),
         "trained_at": datetime.now(timezone.utc).isoformat(),
         "holdout_station": holdout_station,
-        "alpha": alpha,
+        "config": config.as_dict(),
+        "config_label": config.label(),
+        "n_iter_used": n_iter_used,
+        "model_class": "HistGradientBoostingRegressor",
     }
 
     return result, artifact
 
 
-def train_ridge(
+def train_hgb(
     canonical: pd.DataFrame,
     target: str,
     lead: int,
     holdout_station: str,
     *,
-    alpha: float = 1.0,
-) -> tuple[TrainResult, dict]:
+    config: HGBConfig,
+) -> tuple[HGBTrainResult, dict]:
     if not predicts_residual(target):
         raise NotImplementedError(
-            f"ridge_runner.fit_ridge supports residual targets only; got '{target}'"
+            f"hgb_runner.fit_hgb supports residual targets only; got '{target}'"
         )
     framed = prepare_for_target(canonical, target, lead)
-    return fit_ridge(framed, target, lead, holdout_station, alpha=alpha)
+    return fit_hgb(framed, target, lead, holdout_station, config=config)
 
 
 def save_artifact(artifact: dict, path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     joblib.dump(artifact, path)
-
-
-def load_artifact(path: Path) -> dict:
-    return joblib.load(path)
-
-
-def save_result_json(result: TrainResult, path: Path) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w") as f:
-        json.dump(result.as_dict(), f, indent=2)

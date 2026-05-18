@@ -1,0 +1,2157 @@
+{
+  "lead": 1,
+  "configs": [
+    {
+      "max_depth": 3,
+      "learning_rate": 0.05,
+      "max_iter": 500,
+      "early_stopping": true,
+      "validation_fraction": 0.15,
+      "n_iter_no_change": 25,
+      "random_state": 42
+    },
+    {
+      "max_depth": 3,
+      "learning_rate": 0.1,
+      "max_iter": 500,
+      "early_stopping": true,
+      "validation_fraction": 0.15,
+      "n_iter_no_change": 25,
+      "random_state": 42
+    },
+    {
+      "max_depth": 6,
+      "learning_rate": 0.05,
+      "max_iter": 500,
+      "early_stopping": true,
+      "validation_fraction": 0.15,
+      "n_iter_no_change": 25,
+      "random_state": 42
+    },
+    {
+      "max_depth": 6,
+      "learning_rate": 0.1,
+      "max_iter": 500,
+      "early_stopping": true,
+      "validation_fraction": 0.15,
+      "n_iter_no_change": 25,
+      "random_state": 42
+    },
+    {
+      "max_depth": 10,
+      "learning_rate": 0.05,
+      "max_iter": 500,
+      "early_stopping": true,
+      "validation_fraction": 0.15,
+      "n_iter_no_change": 25,
+      "random_state": 42
+    },
+    {
+      "max_depth": 10,
+      "learning_rate": 0.1,
+      "max_iter": 500,
+      "early_stopping": true,
+      "validation_fraction": 0.15,
+      "n_iter_no_change": 25,
+      "random_state": 42
+    }
+  ],
+  "targets": [
+    "temperature",
+    "relative_humidity",
+    "dew_point",
+    "wind_speed",
+    "wind_gust",
+    "pressure"
+  ],
+  "summaries": {
+    "temperature": {
+      "by_config": {
+        "d3_lr0.05": {
+          "config": {
+            "max_depth": 3,
+            "learning_rate": 0.05,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 1.2868840592717175,
+          "network_mean_corrected_mae": 0.5968814124832705,
+          "network_mean_mae_reduction_pct": 48.710118904286645,
+          "network_median_mae_reduction_pct": 46.923599284178636,
+          "network_mean_baseline_bias": -0.4788338916557855,
+          "network_mean_corrected_bias": 0.04895967920333926,
+          "network_bias_correction_pct": 89.77522684661294,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "IBARAS3",
+            "baseline_mae": 3.3704456094364352,
+            "corrected_mae": 0.6551693649545374,
+            "mae_reduction_pct": 80.56134289423863,
+            "baseline_bias": -3.3631716906946267,
+            "corrected_bias": -0.3636483657776314,
+            "bias_correction_pct": 89.18733864275232
+          },
+          "worst_station": {
+            "station_id": "ITRIPO32",
+            "baseline_mae": 0.7746511627906977,
+            "corrected_mae": 0.5091145912133481,
+            "mae_reduction_pct": 34.27821248221564,
+            "baseline_bias": -0.12418604651162789,
+            "corrected_bias": -0.009584745508124859,
+            "bias_correction_pct": 92.28194650094815
+          },
+          "median_station": {
+            "station_id": "IMURQU7",
+            "baseline_mae": 1.204155844155844,
+            "corrected_mae": 0.6391225810871372,
+            "mae_reduction_pct": 46.923599284178636,
+            "baseline_bias": -0.8752669552669553,
+            "corrected_bias": -0.27631208317711237,
+            "bias_correction_pct": 68.43110761643715
+          },
+          "mean_n_iter_used": 500.0
+        },
+        "d3_lr0.1": {
+          "config": {
+            "max_depth": 3,
+            "learning_rate": 0.1,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 1.2868840592717175,
+          "network_mean_corrected_mae": 0.6050211884581059,
+          "network_mean_mae_reduction_pct": 48.0010817958279,
+          "network_median_mae_reduction_pct": 46.28329137222563,
+          "network_mean_baseline_bias": -0.4788338916557855,
+          "network_mean_corrected_bias": 0.08094154666969389,
+          "network_bias_correction_pct": 83.09611159941045,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "IBARAS3",
+            "baseline_mae": 3.3704456094364352,
+            "corrected_mae": 0.6533705937669234,
+            "mae_reduction_pct": 80.61471183698549,
+            "baseline_bias": -3.3631716906946267,
+            "corrected_bias": -0.38182254797275667,
+            "bias_correction_pct": 88.64695046556201
+          },
+          "worst_station": {
+            "station_id": "INALUT3",
+            "baseline_mae": 1.0401542649727769,
+            "corrected_mae": 0.7611705731128785,
+            "mae_reduction_pct": 26.82137652602905,
+            "baseline_bias": -0.5127495462794918,
+            "corrected_bias": 0.5713515278222757,
+            "bias_correction_pct": -11.428967995778766
+          },
+          "median_station": {
+            "station_id": "IMURQU7",
+            "baseline_mae": 1.204155844155844,
+            "corrected_mae": 0.6468328862295116,
+            "mae_reduction_pct": 46.28329137222563,
+            "baseline_bias": -0.8752669552669553,
+            "corrected_bias": -0.2988663646470994,
+            "bias_correction_pct": 65.8542616228502
+          },
+          "mean_n_iter_used": 500.0
+        },
+        "d6_lr0.05": {
+          "config": {
+            "max_depth": 6,
+            "learning_rate": 0.05,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 1.2868840592717175,
+          "network_mean_corrected_mae": 0.6041406156926974,
+          "network_mean_mae_reduction_pct": 48.016344341459344,
+          "network_median_mae_reduction_pct": 46.215950547727566,
+          "network_mean_baseline_bias": -0.4788338916557855,
+          "network_mean_corrected_bias": 0.07518583626038919,
+          "network_bias_correction_pct": 84.29813812877781,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "IBARAS3",
+            "baseline_mae": 3.3704456094364352,
+            "corrected_mae": 0.6728703821263132,
+            "mae_reduction_pct": 80.03615960327507,
+            "baseline_bias": -3.3631716906946267,
+            "corrected_bias": -0.4130051965402451,
+            "bias_correction_pct": 87.71977066520374
+          },
+          "worst_station": {
+            "station_id": "INALUT3",
+            "baseline_mae": 1.0401542649727769,
+            "corrected_mae": 1.0203551970334712,
+            "mae_reduction_pct": 1.9034741870547272,
+            "baseline_bias": -0.5127495462794918,
+            "corrected_bias": 0.882754703417221,
+            "bias_correction_pct": -72.16099162300286
+          },
+          "median_station": {
+            "station_id": "IMISRA13",
+            "baseline_mae": 0.9917018284106892,
+            "corrected_mae": 0.533377401811495,
+            "mae_reduction_pct": 46.215950547727566,
+            "baseline_bias": 0.3515893108298172,
+            "corrected_bias": 0.09072634152249799,
+            "bias_correction_pct": 74.1953641001296
+          },
+          "mean_n_iter_used": 500.0
+        },
+        "d6_lr0.1": {
+          "config": {
+            "max_depth": 6,
+            "learning_rate": 0.1,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 26,
+          "n_failure_stations": 1,
+          "network_mean_baseline_mae": 1.2868840592717175,
+          "network_mean_corrected_mae": 0.6056271565450883,
+          "network_mean_mae_reduction_pct": 48.04243435383395,
+          "network_median_mae_reduction_pct": 47.66078690132986,
+          "network_mean_baseline_bias": -0.4788338916557855,
+          "network_mean_corrected_bias": 0.0748085717655317,
+          "network_bias_correction_pct": 84.37692630593732,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "IBARAS3",
+            "baseline_mae": 3.3704456094364352,
+            "corrected_mae": 0.7118858818667994,
+            "mae_reduction_pct": 78.8785827050972,
+            "baseline_bias": -3.3631716906946267,
+            "corrected_bias": -0.47964780965642856,
+            "bias_correction_pct": 85.73823004684716
+          },
+          "worst_station": {
+            "station_id": "INALUT3",
+            "baseline_mae": 1.0401542649727769,
+            "corrected_mae": 1.1011053711413092,
+            "mae_reduction_pct": -5.859814089223353,
+            "baseline_bias": -0.5127495462794918,
+            "corrected_bias": 0.9575273496889047,
+            "bias_correction_pct": -86.74367566713974
+          },
+          "median_station": {
+            "station_id": "IBIRAL3",
+            "baseline_mae": 1.0875514729173266,
+            "corrected_mae": 0.5692158829679255,
+            "mae_reduction_pct": 47.66078690132986,
+            "baseline_bias": -0.2832435856826101,
+            "corrected_bias": 0.060055130752660175,
+            "bias_correction_pct": 78.79735542539161
+          },
+          "mean_n_iter_used": 499.03846153846155
+        },
+        "d10_lr0.05": {
+          "config": {
+            "max_depth": 10,
+            "learning_rate": 0.05,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 1.2868840592717175,
+          "network_mean_corrected_mae": 0.6001251512603982,
+          "network_mean_mae_reduction_pct": 48.41800044649845,
+          "network_median_mae_reduction_pct": 46.33046468432022,
+          "network_mean_baseline_bias": -0.4788338916557855,
+          "network_mean_corrected_bias": 0.06491708948101718,
+          "network_bias_correction_pct": 86.44267028456635,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "IBARAS3",
+            "baseline_mae": 3.3704456094364352,
+            "corrected_mae": 0.6598794913581837,
+            "mae_reduction_pct": 80.42159501074042,
+            "baseline_bias": -3.3631716906946267,
+            "corrected_bias": -0.37177562789821866,
+            "bias_correction_pct": 88.94568395283345
+          },
+          "worst_station": {
+            "station_id": "INALUT3",
+            "baseline_mae": 1.0401542649727769,
+            "corrected_mae": 0.9028072410803188,
+            "mae_reduction_pct": 13.204485961133148,
+            "baseline_bias": -0.5127495462794918,
+            "corrected_bias": 0.7301983172831396,
+            "bias_correction_pct": -42.40837901885141
+          },
+          "median_station": {
+            "station_id": "IMISRA13",
+            "baseline_mae": 0.9917018284106892,
+            "corrected_mae": 0.5322417630251169,
+            "mae_reduction_pct": 46.33046468432022,
+            "baseline_bias": 0.3515893108298172,
+            "corrected_bias": 0.09153730596956342,
+            "bias_correction_pct": 73.96470735884488
+          },
+          "mean_n_iter_used": 500.0
+        },
+        "d10_lr0.1": {
+          "config": {
+            "max_depth": 10,
+            "learning_rate": 0.1,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 1.2868840592717175,
+          "network_mean_corrected_mae": 0.5975108491781473,
+          "network_mean_mae_reduction_pct": 48.84512707678054,
+          "network_median_mae_reduction_pct": 47.522279463960594,
+          "network_mean_baseline_bias": -0.4788338916557855,
+          "network_mean_corrected_bias": 0.0628875157262543,
+          "network_bias_correction_pct": 86.86652786652337,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "IBARAS3",
+            "baseline_mae": 3.3704456094364352,
+            "corrected_mae": 0.7104783172982595,
+            "mae_reduction_pct": 78.92034467759719,
+            "baseline_bias": -3.3631716906946267,
+            "corrected_bias": -0.4683467812895234,
+            "bias_correction_pct": 86.0742529860915
+          },
+          "worst_station": {
+            "station_id": "INALUT3",
+            "baseline_mae": 1.0401542649727769,
+            "corrected_mae": 0.8345389631715736,
+            "mae_reduction_pct": 19.7677699092629,
+            "baseline_bias": -0.5127495462794918,
+            "corrected_bias": 0.6436652087009466,
+            "bias_correction_pct": -25.532087423846246
+          },
+          "median_station": {
+            "station_id": "IBIRAL3",
+            "baseline_mae": 1.0875514729173266,
+            "corrected_mae": 0.5707222226431349,
+            "mae_reduction_pct": 47.522279463960594,
+            "baseline_bias": -0.2832435856826101,
+            "corrected_bias": 0.07061714511244638,
+            "bias_correction_pct": 75.0684044822195
+          },
+          "mean_n_iter_used": 499.2307692307692
+        }
+      },
+      "best_config_label": "d10_lr0.1",
+      "best_summary": {
+        "config": {
+          "max_depth": 10,
+          "learning_rate": 0.1,
+          "max_iter": 500,
+          "early_stopping": true,
+          "validation_fraction": 0.15,
+          "n_iter_no_change": 25,
+          "random_state": 42
+        },
+        "n_stations": 26,
+        "n_failure_stations": 0,
+        "network_mean_baseline_mae": 1.2868840592717175,
+        "network_mean_corrected_mae": 0.5975108491781473,
+        "network_mean_mae_reduction_pct": 48.84512707678054,
+        "network_median_mae_reduction_pct": 47.522279463960594,
+        "network_mean_baseline_bias": -0.4788338916557855,
+        "network_mean_corrected_bias": 0.0628875157262543,
+        "network_bias_correction_pct": 86.86652786652337,
+        "bias_meaningful": true,
+        "best_station": {
+          "station_id": "IBARAS3",
+          "baseline_mae": 3.3704456094364352,
+          "corrected_mae": 0.7104783172982595,
+          "mae_reduction_pct": 78.92034467759719,
+          "baseline_bias": -3.3631716906946267,
+          "corrected_bias": -0.4683467812895234,
+          "bias_correction_pct": 86.0742529860915
+        },
+        "worst_station": {
+          "station_id": "INALUT3",
+          "baseline_mae": 1.0401542649727769,
+          "corrected_mae": 0.8345389631715736,
+          "mae_reduction_pct": 19.7677699092629,
+          "baseline_bias": -0.5127495462794918,
+          "corrected_bias": 0.6436652087009466,
+          "bias_correction_pct": -25.532087423846246
+        },
+        "median_station": {
+          "station_id": "IBIRAL3",
+          "baseline_mae": 1.0875514729173266,
+          "corrected_mae": 0.5707222226431349,
+          "mae_reduction_pct": 47.522279463960594,
+          "baseline_bias": -0.2832435856826101,
+          "corrected_bias": 0.07061714511244638,
+          "bias_correction_pct": 75.0684044822195
+        },
+        "mean_n_iter_used": 499.2307692307692
+      }
+    },
+    "relative_humidity": {
+      "by_config": {
+        "d3_lr0.05": {
+          "config": {
+            "max_depth": 3,
+            "learning_rate": 0.05,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 6.883107232455158,
+          "network_mean_corrected_mae": 2.3388692267336615,
+          "network_mean_mae_reduction_pct": 65.76073942298362,
+          "network_median_mae_reduction_pct": 66.78239314840559,
+          "network_mean_baseline_bias": 0.19121914324208739,
+          "network_mean_corrected_bias": -0.028496148359120267,
+          "network_bias_correction_pct": null,
+          "bias_meaningful": false,
+          "best_station": {
+            "station_id": "IJABAL15",
+            "baseline_mae": 7.687394007914076,
+            "corrected_mae": 2.089489715652005,
+            "mae_reduction_pct": 72.81927121855726,
+            "baseline_bias": -3.495195025438101,
+            "corrected_bias": -0.5503982913564903,
+            "bias_correction_pct": 84.25271587563267
+          },
+          "worst_station": {
+            "station_id": "IALWAH18",
+            "baseline_mae": 4.659783783783784,
+            "corrected_mae": 2.062010775585538,
+            "mae_reduction_pct": 55.74878854333521,
+            "baseline_bias": 0.07535135135135135,
+            "corrected_bias": -0.025417375911867168,
+            "bias_correction_pct": 66.26818835225663
+          },
+          "median_station": {
+            "station_id": "IJANZO3",
+            "baseline_mae": 7.142408846383741,
+            "corrected_mae": 2.372537290325251,
+            "mae_reduction_pct": 66.78239314840559,
+            "baseline_bias": 3.790346682606097,
+            "corrected_bias": 0.5267226966564502,
+            "bias_correction_pct": 86.10357466577976
+          },
+          "mean_n_iter_used": 500.0
+        },
+        "d3_lr0.1": {
+          "config": {
+            "max_depth": 3,
+            "learning_rate": 0.1,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 6.883107232455158,
+          "network_mean_corrected_mae": 2.2709089421052435,
+          "network_mean_mae_reduction_pct": 66.750718678534,
+          "network_median_mae_reduction_pct": 67.6098367006456,
+          "network_mean_baseline_bias": 0.19121914324208739,
+          "network_mean_corrected_bias": -0.02861294225165046,
+          "network_bias_correction_pct": null,
+          "bias_meaningful": false,
+          "best_station": {
+            "station_id": "IJABAL15",
+            "baseline_mae": 7.687394007914076,
+            "corrected_mae": 2.0418935164336847,
+            "mae_reduction_pct": 73.43841730589611,
+            "baseline_bias": -3.495195025438101,
+            "corrected_bias": -0.5719030388890463,
+            "bias_correction_pct": 83.63744984967295
+          },
+          "worst_station": {
+            "station_id": "IALWAH18",
+            "baseline_mae": 4.659783783783784,
+            "corrected_mae": 2.030696560245903,
+            "mae_reduction_pct": 56.4207985934283,
+            "baseline_bias": 0.07535135135135135,
+            "corrected_bias": 0.10870498791568217,
+            "bias_correction_pct": -44.26415182497276
+          },
+          "median_station": {
+            "station_id": "IJANZO2",
+            "baseline_mae": 7.3126528117359415,
+            "corrected_mae": 2.368580187236103,
+            "mae_reduction_pct": 67.6098367006456,
+            "baseline_bias": -0.203239608801956,
+            "corrected_bias": -0.6408991859991824,
+            "bias_correction_pct": -215.3416746750864
+          },
+          "mean_n_iter_used": 500.0
+        },
+        "d6_lr0.05": {
+          "config": {
+            "max_depth": 6,
+            "learning_rate": 0.05,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 6.883107232455158,
+          "network_mean_corrected_mae": 2.201788565261848,
+          "network_mean_mae_reduction_pct": 67.76633057440485,
+          "network_median_mae_reduction_pct": 68.78495604231071,
+          "network_mean_baseline_bias": 0.19121914324208739,
+          "network_mean_corrected_bias": -0.03856341872561759,
+          "network_bias_correction_pct": null,
+          "bias_meaningful": false,
+          "best_station": {
+            "station_id": "IJABAL15",
+            "baseline_mae": 7.687394007914076,
+            "corrected_mae": 2.0425457179592303,
+            "mae_reduction_pct": 73.42993326663814,
+            "baseline_bias": -3.495195025438101,
+            "corrected_bias": -0.6951665327673959,
+            "bias_correction_pct": 80.1107941700546
+          },
+          "worst_station": {
+            "station_id": "IALWAH18",
+            "baseline_mae": 4.659783783783784,
+            "corrected_mae": 1.9815447520861666,
+            "mae_reduction_pct": 57.47560736654748,
+            "baseline_bias": 0.07535135135135135,
+            "corrected_bias": 0.0010537681164781724,
+            "bias_correction_pct": 98.60152724857632
+          },
+          "median_station": {
+            "station_id": "IJABAL16",
+            "baseline_mae": 6.92877447883765,
+            "corrected_mae": 2.16281999929833,
+            "mae_reduction_pct": 68.78495604231071,
+            "baseline_bias": -0.03142766898294378,
+            "corrected_bias": 0.05758177197820194,
+            "bias_correction_pct": -83.2199900331531
+          },
+          "mean_n_iter_used": 500.0
+        },
+        "d6_lr0.1": {
+          "config": {
+            "max_depth": 6,
+            "learning_rate": 0.1,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 6.883107232455158,
+          "network_mean_corrected_mae": 2.1407466464447613,
+          "network_mean_mae_reduction_pct": 68.65975037267634,
+          "network_median_mae_reduction_pct": 69.69029883301377,
+          "network_mean_baseline_bias": 0.19121914324208739,
+          "network_mean_corrected_bias": -0.04010384173786823,
+          "network_bias_correction_pct": null,
+          "bias_meaningful": false,
+          "best_station": {
+            "station_id": "IJABAL15",
+            "baseline_mae": 7.687394007914076,
+            "corrected_mae": 2.008879543409112,
+            "mae_reduction_pct": 73.86787328266256,
+            "baseline_bias": -3.495195025438101,
+            "corrected_bias": -0.730333426662492,
+            "bias_correction_pct": 79.10464448057661
+          },
+          "worst_station": {
+            "station_id": "IALWAH18",
+            "baseline_mae": 4.659783783783784,
+            "corrected_mae": 1.9547739142154936,
+            "mae_reduction_pct": 58.05011552213693,
+            "baseline_bias": 0.07535135135135135,
+            "corrected_bias": 0.1746608691189639,
+            "bias_correction_pct": -131.79527106892627
+          },
+          "median_station": {
+            "station_id": "IZAWIY7",
+            "baseline_mae": 6.67593123209169,
+            "corrected_mae": 2.023454806560493,
+            "mae_reduction_pct": 69.69029883301377,
+            "baseline_bias": 2.8962750716332377,
+            "corrected_bias": 0.20324060636236765,
+            "bias_correction_pct": 92.98268978824038
+          },
+          "mean_n_iter_used": 500.0
+        },
+        "d10_lr0.05": {
+          "config": {
+            "max_depth": 10,
+            "learning_rate": 0.05,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 6.883107232455158,
+          "network_mean_corrected_mae": 2.1938512129574983,
+          "network_mean_mae_reduction_pct": 67.87882453075534,
+          "network_median_mae_reduction_pct": 68.8244639476169,
+          "network_mean_baseline_bias": 0.19121914324208739,
+          "network_mean_corrected_bias": -0.03456352012539204,
+          "network_bias_correction_pct": null,
+          "bias_meaningful": false,
+          "best_station": {
+            "station_id": "IJABAL15",
+            "baseline_mae": 7.687394007914076,
+            "corrected_mae": 2.022943083884376,
+            "mae_reduction_pct": 73.68493039641547,
+            "baseline_bias": -3.495195025438101,
+            "corrected_bias": -0.6787411272314967,
+            "bias_correction_pct": 80.58073663152973
+          },
+          "worst_station": {
+            "station_id": "IALWAH18",
+            "baseline_mae": 4.659783783783784,
+            "corrected_mae": 1.9878045924946728,
+            "mae_reduction_pct": 57.34126979427019,
+            "baseline_bias": 0.07535135135135135,
+            "corrected_bias": -0.06100273128202856,
+            "bias_correction_pct": 19.042286318685196
+          },
+          "median_station": {
+            "station_id": "IJABAL16",
+            "baseline_mae": 6.92877447883765,
+            "corrected_mae": 2.16008258563835,
+            "mae_reduction_pct": 68.8244639476169,
+            "baseline_bias": -0.03142766898294378,
+            "corrected_bias": 0.01920928604597723,
+            "bias_correction_pct": 38.8777893250614
+          },
+          "mean_n_iter_used": 500.0
+        },
+        "d10_lr0.1": {
+          "config": {
+            "max_depth": 10,
+            "learning_rate": 0.1,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 6.883107232455158,
+          "network_mean_corrected_mae": 2.137118139083147,
+          "network_mean_mae_reduction_pct": 68.70552633908008,
+          "network_median_mae_reduction_pct": 69.88981629597653,
+          "network_mean_baseline_bias": 0.19121914324208739,
+          "network_mean_corrected_bias": -0.0365475187301758,
+          "network_bias_correction_pct": null,
+          "bias_meaningful": false,
+          "best_station": {
+            "station_id": "IJABAL15",
+            "baseline_mae": 7.687394007914076,
+            "corrected_mae": 2.0040891578997106,
+            "mae_reduction_pct": 73.93018809967947,
+            "baseline_bias": -3.495195025438101,
+            "corrected_bias": -0.7083238004277389,
+            "bias_correction_pct": 79.7343554430427
+          },
+          "worst_station": {
+            "station_id": "IALWAH18",
+            "baseline_mae": 4.659783783783784,
+            "corrected_mae": 1.9622922533663538,
+            "mae_reduction_pct": 57.888770285969024,
+            "baseline_bias": 0.07535135135135135,
+            "corrected_bias": 0.029220466232874685,
+            "bias_correction_pct": 61.22104553025956
+          },
+          "median_station": {
+            "station_id": "INALUT3",
+            "baseline_mae": 6.4505444646098,
+            "corrected_mae": 1.942270788203729,
+            "mae_reduction_pct": 69.88981629597653,
+            "baseline_bias": -1.1996370235934664,
+            "corrected_bias": -0.18751622562965287,
+            "bias_correction_pct": 84.3689197697521
+          },
+          "mean_n_iter_used": 500.0
+        }
+      },
+      "best_config_label": "d10_lr0.1",
+      "best_summary": {
+        "config": {
+          "max_depth": 10,
+          "learning_rate": 0.1,
+          "max_iter": 500,
+          "early_stopping": true,
+          "validation_fraction": 0.15,
+          "n_iter_no_change": 25,
+          "random_state": 42
+        },
+        "n_stations": 26,
+        "n_failure_stations": 0,
+        "network_mean_baseline_mae": 6.883107232455158,
+        "network_mean_corrected_mae": 2.137118139083147,
+        "network_mean_mae_reduction_pct": 68.70552633908008,
+        "network_median_mae_reduction_pct": 69.88981629597653,
+        "network_mean_baseline_bias": 0.19121914324208739,
+        "network_mean_corrected_bias": -0.0365475187301758,
+        "network_bias_correction_pct": null,
+        "bias_meaningful": false,
+        "best_station": {
+          "station_id": "IJABAL15",
+          "baseline_mae": 7.687394007914076,
+          "corrected_mae": 2.0040891578997106,
+          "mae_reduction_pct": 73.93018809967947,
+          "baseline_bias": -3.495195025438101,
+          "corrected_bias": -0.7083238004277389,
+          "bias_correction_pct": 79.7343554430427
+        },
+        "worst_station": {
+          "station_id": "IALWAH18",
+          "baseline_mae": 4.659783783783784,
+          "corrected_mae": 1.9622922533663538,
+          "mae_reduction_pct": 57.888770285969024,
+          "baseline_bias": 0.07535135135135135,
+          "corrected_bias": 0.029220466232874685,
+          "bias_correction_pct": 61.22104553025956
+        },
+        "median_station": {
+          "station_id": "INALUT3",
+          "baseline_mae": 6.4505444646098,
+          "corrected_mae": 1.942270788203729,
+          "mae_reduction_pct": 69.88981629597653,
+          "baseline_bias": -1.1996370235934664,
+          "corrected_bias": -0.18751622562965287,
+          "bias_correction_pct": 84.3689197697521
+        },
+        "mean_n_iter_used": 500.0
+      }
+    },
+    "dew_point": {
+      "by_config": {
+        "d3_lr0.05": {
+          "config": {
+            "max_depth": 3,
+            "learning_rate": 0.05,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 1.8329209033890304,
+          "network_mean_corrected_mae": 0.6525388320353238,
+          "network_mean_mae_reduction_pct": 63.82066103558273,
+          "network_median_mae_reduction_pct": 63.75808871042397,
+          "network_mean_baseline_bias": 0.2536101060380212,
+          "network_mean_corrected_bias": 0.02998472132782957,
+          "network_bias_correction_pct": 88.17684287260451,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "IJABAL15",
+            "baseline_mae": 2.50751837196156,
+            "corrected_mae": 0.6120761581901785,
+            "mae_reduction_pct": 75.59036196766252,
+            "baseline_bias": -1.9291124929338612,
+            "corrected_bias": 0.0737023731434513,
+            "bias_correction_pct": 96.17946732430507
+          },
+          "worst_station": {
+            "station_id": "IDERNA7",
+            "baseline_mae": 1.715767154973015,
+            "corrected_mae": 0.8753158914461244,
+            "mae_reduction_pct": 48.98399302556348,
+            "baseline_bias": 1.2225520431765613,
+            "corrected_bias": 0.5285572529817175,
+            "bias_correction_pct": 56.7660734009846
+          },
+          "median_station": {
+            "station_id": "IJANZO4",
+            "baseline_mae": 1.9729850746268658,
+            "corrected_mae": 0.7150475005028443,
+            "mae_reduction_pct": 63.75808871042397,
+            "baseline_bias": 0.9443283582089553,
+            "corrected_bias": -0.047047813626719524,
+            "bias_correction_pct": 95.01785441284936
+          },
+          "mean_n_iter_used": 500.0
+        },
+        "d3_lr0.1": {
+          "config": {
+            "max_depth": 3,
+            "learning_rate": 0.1,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 1.8329209033890304,
+          "network_mean_corrected_mae": 0.6399564690427865,
+          "network_mean_mae_reduction_pct": 64.4850155469876,
+          "network_median_mae_reduction_pct": 65.24693344112393,
+          "network_mean_baseline_bias": 0.2536101060380212,
+          "network_mean_corrected_bias": 0.05529895349186235,
+          "network_bias_correction_pct": 78.19528789457155,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "IJABAL15",
+            "baseline_mae": 2.50751837196156,
+            "corrected_mae": 0.6085269934696023,
+            "mae_reduction_pct": 75.73190289355412,
+            "baseline_bias": -1.9291124929338612,
+            "corrected_bias": 0.12804367791175938,
+            "bias_correction_pct": 93.36256032860862
+          },
+          "worst_station": {
+            "station_id": "IDERNA7",
+            "baseline_mae": 1.715767154973015,
+            "corrected_mae": 0.88084796245473,
+            "mae_reduction_pct": 48.661567515052255,
+            "baseline_bias": 1.2225520431765613,
+            "corrected_bias": 0.4916120073851513,
+            "bias_correction_pct": 59.78805073133786
+          },
+          "median_station": {
+            "station_id": "IMURQU5",
+            "baseline_mae": 2.0487973760932943,
+            "corrected_mae": 0.712019915770209,
+            "mae_reduction_pct": 65.24693344112393,
+            "baseline_bias": 1.1377186588921282,
+            "corrected_bias": 0.29456534433760995,
+            "bias_correction_pct": 74.10912249391711
+          },
+          "mean_n_iter_used": 500.0
+        },
+        "d6_lr0.05": {
+          "config": {
+            "max_depth": 6,
+            "learning_rate": 0.05,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 1.8329209033890304,
+          "network_mean_corrected_mae": 0.6322799114105065,
+          "network_mean_mae_reduction_pct": 64.90262044967561,
+          "network_median_mae_reduction_pct": 65.80051747025854,
+          "network_mean_baseline_bias": 0.2536101060380212,
+          "network_mean_corrected_bias": 0.043263347405704304,
+          "network_bias_correction_pct": 82.94100023000729,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "IJABAL15",
+            "baseline_mae": 2.50751837196156,
+            "corrected_mae": 0.6049315630350709,
+            "mae_reduction_pct": 75.87528889920554,
+            "baseline_bias": -1.9291124929338612,
+            "corrected_bias": 0.03411167050885593,
+            "bias_correction_pct": 98.23174280225733
+          },
+          "worst_station": {
+            "station_id": "IDERNA7",
+            "baseline_mae": 1.715767154973015,
+            "corrected_mae": 0.8951747379472997,
+            "mae_reduction_pct": 47.82656053575179,
+            "baseline_bias": 1.2225520431765613,
+            "corrected_bias": 0.5494508133626054,
+            "bias_correction_pct": 55.057061461779135
+          },
+          "median_station": {
+            "station_id": "INUQAT10",
+            "baseline_mae": 1.6839472896076673,
+            "corrected_mae": 0.575901259119429,
+            "mae_reduction_pct": 65.80051747025854,
+            "baseline_bias": 0.2646600778676251,
+            "corrected_bias": -0.0954708119763568,
+            "bias_correction_pct": 63.92700676824088
+          },
+          "mean_n_iter_used": 500.0
+        },
+        "d6_lr0.1": {
+          "config": {
+            "max_depth": 6,
+            "learning_rate": 0.1,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 1.8329209033890304,
+          "network_mean_corrected_mae": 0.6253562075611174,
+          "network_mean_mae_reduction_pct": 65.32116513428086,
+          "network_median_mae_reduction_pct": 66.46914863872449,
+          "network_mean_baseline_bias": 0.2536101060380212,
+          "network_mean_corrected_bias": 0.033556333008261476,
+          "network_bias_correction_pct": 86.76853476681615,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "IJABAL15",
+            "baseline_mae": 2.50751837196156,
+            "corrected_mae": 0.596874718411216,
+            "mae_reduction_pct": 76.19659640043642,
+            "baseline_bias": -1.9291124929338612,
+            "corrected_bias": -0.001734061058612275,
+            "bias_correction_pct": 99.9101109414322
+          },
+          "worst_station": {
+            "station_id": "IDERNA7",
+            "baseline_mae": 1.715767154973015,
+            "corrected_mae": 0.9662895860338669,
+            "mae_reduction_pct": 43.68177621111622,
+            "baseline_bias": 1.2225520431765613,
+            "corrected_bias": 0.6167874376366137,
+            "bias_correction_pct": 49.54918761298597
+          },
+          "median_station": {
+            "station_id": "IJANZO4",
+            "baseline_mae": 1.9729850746268658,
+            "corrected_mae": 0.6615586927532852,
+            "mae_reduction_pct": 66.46914863872449,
+            "baseline_bias": 0.9443283582089553,
+            "corrected_bias": -0.02252930640708203,
+            "bias_correction_pct": 97.614250783508
+          },
+          "mean_n_iter_used": 500.0
+        },
+        "d10_lr0.05": {
+          "config": {
+            "max_depth": 10,
+            "learning_rate": 0.05,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 1.8329209033890304,
+          "network_mean_corrected_mae": 0.6310255123796658,
+          "network_mean_mae_reduction_pct": 64.94141185196902,
+          "network_median_mae_reduction_pct": 65.8242084903656,
+          "network_mean_baseline_bias": 0.2536101060380212,
+          "network_mean_corrected_bias": 0.03931077016162528,
+          "network_bias_correction_pct": 84.49952536365731,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "IJABAL15",
+            "baseline_mae": 2.50751837196156,
+            "corrected_mae": 0.5970302736032872,
+            "mae_reduction_pct": 76.19039284899645,
+            "baseline_bias": -1.9291124929338612,
+            "corrected_bias": -0.030260224935405852,
+            "bias_correction_pct": 98.43139137576239
+          },
+          "worst_station": {
+            "station_id": "IDERNA7",
+            "baseline_mae": 1.715767154973015,
+            "corrected_mae": 0.9135071285808279,
+            "mae_reduction_pct": 46.75809442248034,
+            "baseline_bias": 1.2225520431765613,
+            "corrected_bias": 0.5673944997805788,
+            "bias_correction_pct": 53.58933773434172
+          },
+          "median_station": {
+            "station_id": "INUQAT10",
+            "baseline_mae": 1.6839472896076673,
+            "corrected_mae": 0.5755023148284558,
+            "mae_reduction_pct": 65.8242084903656,
+            "baseline_bias": 0.2646600778676251,
+            "corrected_bias": -0.0951462884095007,
+            "bias_correction_pct": 64.04962577805559
+          },
+          "mean_n_iter_used": 500.0
+        },
+        "d10_lr0.1": {
+          "config": {
+            "max_depth": 10,
+            "learning_rate": 0.1,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 1.8329209033890304,
+          "network_mean_corrected_mae": 0.6223395000285917,
+          "network_mean_mae_reduction_pct": 65.41096494233169,
+          "network_median_mae_reduction_pct": 66.60159138649621,
+          "network_mean_baseline_bias": 0.2536101060380212,
+          "network_mean_corrected_bias": 0.032900902293940416,
+          "network_bias_correction_pct": 87.02697506502051,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "IJABAL15",
+            "baseline_mae": 2.50751837196156,
+            "corrected_mae": 0.5923283908837089,
+            "mae_reduction_pct": 76.37790424560889,
+            "baseline_bias": -1.9291124929338612,
+            "corrected_bias": -0.029855377328948305,
+            "bias_correction_pct": 98.45237758615397
+          },
+          "worst_station": {
+            "station_id": "IDERNA7",
+            "baseline_mae": 1.715767154973015,
+            "corrected_mae": 0.9644130032365734,
+            "mae_reduction_pct": 43.79114902384634,
+            "baseline_bias": 1.2225520431765613,
+            "corrected_bias": 0.6209952869650224,
+            "bias_correction_pct": 49.20500191128975
+          },
+          "median_station": {
+            "station_id": "IJANZO4",
+            "baseline_mae": 1.9729850746268658,
+            "corrected_mae": 0.6589456171073232,
+            "mae_reduction_pct": 66.60159138649621,
+            "baseline_bias": 0.9443283582089553,
+            "corrected_bias": -0.036054264032120344,
+            "bias_correction_pct": 96.1820204043748
+          },
+          "mean_n_iter_used": 500.0
+        }
+      },
+      "best_config_label": "d10_lr0.1",
+      "best_summary": {
+        "config": {
+          "max_depth": 10,
+          "learning_rate": 0.1,
+          "max_iter": 500,
+          "early_stopping": true,
+          "validation_fraction": 0.15,
+          "n_iter_no_change": 25,
+          "random_state": 42
+        },
+        "n_stations": 26,
+        "n_failure_stations": 0,
+        "network_mean_baseline_mae": 1.8329209033890304,
+        "network_mean_corrected_mae": 0.6223395000285917,
+        "network_mean_mae_reduction_pct": 65.41096494233169,
+        "network_median_mae_reduction_pct": 66.60159138649621,
+        "network_mean_baseline_bias": 0.2536101060380212,
+        "network_mean_corrected_bias": 0.032900902293940416,
+        "network_bias_correction_pct": 87.02697506502051,
+        "bias_meaningful": true,
+        "best_station": {
+          "station_id": "IJABAL15",
+          "baseline_mae": 2.50751837196156,
+          "corrected_mae": 0.5923283908837089,
+          "mae_reduction_pct": 76.37790424560889,
+          "baseline_bias": -1.9291124929338612,
+          "corrected_bias": -0.029855377328948305,
+          "bias_correction_pct": 98.45237758615397
+        },
+        "worst_station": {
+          "station_id": "IDERNA7",
+          "baseline_mae": 1.715767154973015,
+          "corrected_mae": 0.9644130032365734,
+          "mae_reduction_pct": 43.79114902384634,
+          "baseline_bias": 1.2225520431765613,
+          "corrected_bias": 0.6209952869650224,
+          "bias_correction_pct": 49.20500191128975
+        },
+        "median_station": {
+          "station_id": "IJANZO4",
+          "baseline_mae": 1.9729850746268658,
+          "corrected_mae": 0.6589456171073232,
+          "mae_reduction_pct": 66.60159138649621,
+          "baseline_bias": 0.9443283582089553,
+          "corrected_bias": -0.036054264032120344,
+          "bias_correction_pct": 96.1820204043748
+        },
+        "mean_n_iter_used": 500.0
+      }
+    },
+    "wind_speed": {
+      "by_config": {
+        "d3_lr0.05": {
+          "config": {
+            "max_depth": 3,
+            "learning_rate": 0.05,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 7.369997143235624,
+          "network_mean_corrected_mae": 1.9614253267830337,
+          "network_mean_mae_reduction_pct": 67.44781242550378,
+          "network_median_mae_reduction_pct": 70.81963403452481,
+          "network_mean_baseline_bias": -5.75844977073262,
+          "network_mean_corrected_bias": 0.07059596433387169,
+          "network_bias_correction_pct": 98.7740456695016,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "INUQAT10",
+            "baseline_mae": 13.742228212039533,
+            "corrected_mae": 0.5623508980119564,
+            "mae_reduction_pct": 95.90786232527209,
+            "baseline_bias": -13.742228212039533,
+            "corrected_bias": 0.04932799435305776,
+            "bias_correction_pct": 99.6410480630074
+          },
+          "worst_station": {
+            "station_id": "IMISRA12",
+            "baseline_mae": 4.287230133210841,
+            "corrected_mae": 2.66251335589256,
+            "mae_reduction_pct": 37.896654176142384,
+            "baseline_bias": -1.4400091869545244,
+            "corrected_bias": 1.3315540559705799,
+            "bias_correction_pct": 7.53155826827163
+          },
+          "median_station": {
+            "station_id": "INUQAT8",
+            "baseline_mae": 5.994062832800852,
+            "corrected_mae": 1.7490894708118172,
+            "mae_reduction_pct": 70.81963403452481,
+            "baseline_bias": -5.568876464323749,
+            "corrected_bias": -0.07873836817809725,
+            "bias_correction_pct": 98.58609957174443
+          },
+          "mean_n_iter_used": 500.0
+        },
+        "d3_lr0.1": {
+          "config": {
+            "max_depth": 3,
+            "learning_rate": 0.1,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 7.369997143235624,
+          "network_mean_corrected_mae": 1.948974818308991,
+          "network_mean_mae_reduction_pct": 67.48770195028959,
+          "network_median_mae_reduction_pct": 70.52003372282715,
+          "network_mean_baseline_bias": -5.75844977073262,
+          "network_mean_corrected_bias": 0.08218546206862652,
+          "network_bias_correction_pct": 98.57278494489375,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "INUQAT10",
+            "baseline_mae": 13.742228212039533,
+            "corrected_mae": 0.4374437398061784,
+            "mae_reduction_pct": 96.81679176727006,
+            "baseline_bias": -13.742228212039533,
+            "corrected_bias": -0.002324562013770612,
+            "bias_correction_pct": 99.98308453346937
+          },
+          "worst_station": {
+            "station_id": "IMISRA12",
+            "baseline_mae": 4.287230133210841,
+            "corrected_mae": 2.7980373946646258,
+            "mae_reduction_pct": 34.73554468210718,
+            "baseline_bias": -1.4400091869545244,
+            "corrected_bias": 1.7469631687292175,
+            "bias_correction_pct": -21.316112741188142
+          },
+          "median_station": {
+            "station_id": "INUQAT8",
+            "baseline_mae": 5.994062832800852,
+            "corrected_mae": 1.7670477017422423,
+            "mae_reduction_pct": 70.52003372282715,
+            "baseline_bias": -5.568876464323749,
+            "corrected_bias": -0.13283109175482635,
+            "bias_correction_pct": 97.61475959099128
+          },
+          "mean_n_iter_used": 500.0
+        },
+        "d6_lr0.05": {
+          "config": {
+            "max_depth": 6,
+            "learning_rate": 0.05,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 7.369997143235624,
+          "network_mean_corrected_mae": 1.999224767263682,
+          "network_mean_mae_reduction_pct": 66.66804791744573,
+          "network_median_mae_reduction_pct": 66.5421940208295,
+          "network_mean_baseline_bias": -5.75844977073262,
+          "network_mean_corrected_bias": 0.08656709046511352,
+          "network_bias_correction_pct": 98.49669452870647,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "INUQAT10",
+            "baseline_mae": 13.742228212039533,
+            "corrected_mae": 0.4042571720156596,
+            "mae_reduction_pct": 97.05828512102943,
+            "baseline_bias": -13.742228212039533,
+            "corrected_bias": 0.027450212549376445,
+            "bias_correction_pct": 99.8002491872073
+          },
+          "worst_station": {
+            "station_id": "IMISRA12",
+            "baseline_mae": 4.287230133210841,
+            "corrected_mae": 3.0210325984314035,
+            "mae_reduction_pct": 29.534162977883863,
+            "baseline_bias": -1.4400091869545244,
+            "corrected_bias": 2.1698179544496052,
+            "bias_correction_pct": -50.68084107425408
+          },
+          "median_station": {
+            "station_id": "INUQAT8",
+            "baseline_mae": 5.994062832800852,
+            "corrected_mae": 2.0054819128680808,
+            "mae_reduction_pct": 66.5421940208295,
+            "baseline_bias": -5.568876464323749,
+            "corrected_bias": 1.212826875013517,
+            "bias_correction_pct": 78.22133633627307
+          },
+          "mean_n_iter_used": 500.0
+        },
+        "d6_lr0.1": {
+          "config": {
+            "max_depth": 6,
+            "learning_rate": 0.1,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 7.369997143235624,
+          "network_mean_corrected_mae": 2.0594450565395372,
+          "network_mean_mae_reduction_pct": 65.51335308340315,
+          "network_median_mae_reduction_pct": 62.866945471634956,
+          "network_mean_baseline_bias": -5.75844977073262,
+          "network_mean_corrected_bias": 0.07902315288321703,
+          "network_bias_correction_pct": 98.62770092595316,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "INUQAT10",
+            "baseline_mae": 13.742228212039533,
+            "corrected_mae": 0.3861346397275352,
+            "mae_reduction_pct": 97.19015989423575,
+            "baseline_bias": -13.742228212039533,
+            "corrected_bias": 0.05006312423856794,
+            "bias_correction_pct": 99.63569864023428
+          },
+          "worst_station": {
+            "station_id": "IMISRA12",
+            "baseline_mae": 4.287230133210841,
+            "corrected_mae": 3.3779611911899057,
+            "mae_reduction_pct": 21.20877381825909,
+            "baseline_bias": -1.4400091869545244,
+            "corrected_bias": 2.7442387537995643,
+            "bias_correction_pct": -90.570919870543
+          },
+          "median_station": {
+            "station_id": "IALWAH18",
+            "baseline_mae": 5.116627027027027,
+            "corrected_mae": 1.8999599039590094,
+            "mae_reduction_pct": 62.866945471634956,
+            "baseline_bias": -4.701881081081082,
+            "corrected_bias": -0.7957516491292437,
+            "bias_correction_pct": 83.07588738619735
+          },
+          "mean_n_iter_used": 496.8076923076923
+        },
+        "d10_lr0.05": {
+          "config": {
+            "max_depth": 10,
+            "learning_rate": 0.05,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 7.369997143235624,
+          "network_mean_corrected_mae": 2.049247256647502,
+          "network_mean_mae_reduction_pct": 65.94672501398503,
+          "network_median_mae_reduction_pct": 65.158097022838,
+          "network_mean_baseline_bias": -5.75844977073262,
+          "network_mean_corrected_bias": 0.050455706936408745,
+          "network_bias_correction_pct": 99.12379704703078,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "INUQAT10",
+            "baseline_mae": 13.742228212039533,
+            "corrected_mae": 0.42135999829686127,
+            "mae_reduction_pct": 96.93383058558358,
+            "baseline_bias": -13.742228212039533,
+            "corrected_bias": 0.03879354226828622,
+            "bias_correction_pct": 99.71770558842634
+          },
+          "worst_station": {
+            "station_id": "IMISRA12",
+            "baseline_mae": 4.287230133210841,
+            "corrected_mae": 2.9446472712302048,
+            "mae_reduction_pct": 31.31585709804511,
+            "baseline_bias": -1.4400091869545244,
+            "corrected_bias": 2.074596915570137,
+            "bias_correction_pct": -44.06831111666047
+          },
+          "median_station": {
+            "station_id": "INUQAT8",
+            "baseline_mae": 5.994062832800852,
+            "corrected_mae": 2.0884455565946003,
+            "mae_reduction_pct": 65.158097022838,
+            "baseline_bias": -5.568876464323749,
+            "corrected_bias": 1.3873491871100965,
+            "bias_correction_pct": 75.0874490393536
+          },
+          "mean_n_iter_used": 500.0
+        },
+        "d10_lr0.1": {
+          "config": {
+            "max_depth": 10,
+            "learning_rate": 0.1,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 7.369997143235624,
+          "network_mean_corrected_mae": 2.060211693844379,
+          "network_mean_mae_reduction_pct": 65.75512318683201,
+          "network_median_mae_reduction_pct": 65.04851251445417,
+          "network_mean_baseline_bias": -5.75844977073262,
+          "network_mean_corrected_bias": 0.04164285171836134,
+          "network_bias_correction_pct": 99.27683919498591,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "INUQAT10",
+            "baseline_mae": 13.742228212039533,
+            "corrected_mae": 0.40131666238702,
+            "mae_reduction_pct": 97.07968273998371,
+            "baseline_bias": -13.742228212039533,
+            "corrected_bias": 0.025960585199767884,
+            "bias_correction_pct": 99.81108896752987
+          },
+          "worst_station": {
+            "station_id": "IMISRA12",
+            "baseline_mae": 4.287230133210841,
+            "corrected_mae": 3.0747379013157086,
+            "mae_reduction_pct": 28.28148231424794,
+            "baseline_bias": -1.4400091869545244,
+            "corrected_bias": 2.298702447522186,
+            "bias_correction_pct": -59.63109599208266
+          },
+          "median_station": {
+            "station_id": "INUQAT8",
+            "baseline_mae": 5.994062832800852,
+            "corrected_mae": 2.095014120882143,
+            "mae_reduction_pct": 65.04851251445417,
+            "baseline_bias": -5.568876464323749,
+            "corrected_bias": 1.4337904218416535,
+            "bias_correction_pct": 74.25350641144517
+          },
+          "mean_n_iter_used": 480.0
+        }
+      },
+      "best_config_label": "d3_lr0.1",
+      "best_summary": {
+        "config": {
+          "max_depth": 3,
+          "learning_rate": 0.1,
+          "max_iter": 500,
+          "early_stopping": true,
+          "validation_fraction": 0.15,
+          "n_iter_no_change": 25,
+          "random_state": 42
+        },
+        "n_stations": 26,
+        "n_failure_stations": 0,
+        "network_mean_baseline_mae": 7.369997143235624,
+        "network_mean_corrected_mae": 1.948974818308991,
+        "network_mean_mae_reduction_pct": 67.48770195028959,
+        "network_median_mae_reduction_pct": 70.52003372282715,
+        "network_mean_baseline_bias": -5.75844977073262,
+        "network_mean_corrected_bias": 0.08218546206862652,
+        "network_bias_correction_pct": 98.57278494489375,
+        "bias_meaningful": true,
+        "best_station": {
+          "station_id": "INUQAT10",
+          "baseline_mae": 13.742228212039533,
+          "corrected_mae": 0.4374437398061784,
+          "mae_reduction_pct": 96.81679176727006,
+          "baseline_bias": -13.742228212039533,
+          "corrected_bias": -0.002324562013770612,
+          "bias_correction_pct": 99.98308453346937
+        },
+        "worst_station": {
+          "station_id": "IMISRA12",
+          "baseline_mae": 4.287230133210841,
+          "corrected_mae": 2.7980373946646258,
+          "mae_reduction_pct": 34.73554468210718,
+          "baseline_bias": -1.4400091869545244,
+          "corrected_bias": 1.7469631687292175,
+          "bias_correction_pct": -21.316112741188142
+        },
+        "median_station": {
+          "station_id": "INUQAT8",
+          "baseline_mae": 5.994062832800852,
+          "corrected_mae": 1.7670477017422423,
+          "mae_reduction_pct": 70.52003372282715,
+          "baseline_bias": -5.568876464323749,
+          "corrected_bias": -0.13283109175482635,
+          "bias_correction_pct": 97.61475959099128
+        },
+        "mean_n_iter_used": 500.0
+      }
+    },
+    "wind_gust": {
+      "by_config": {
+        "d3_lr0.05": {
+          "config": {
+            "max_depth": 3,
+            "learning_rate": 0.05,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 16.99242439272322,
+          "network_mean_corrected_mae": 2.406471793928878,
+          "network_mean_mae_reduction_pct": 82.87008495249766,
+          "network_median_mae_reduction_pct": 85.27935569759951,
+          "network_mean_baseline_bias": -16.710235771550394,
+          "network_mean_corrected_bias": 0.043063648108861215,
+          "network_bias_correction_pct": 99.74229179828703,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "INUQAT10",
+            "baseline_mae": 23.992303084755918,
+            "corrected_mae": 0.7871927614593056,
+            "mae_reduction_pct": 96.71897792105058,
+            "baseline_bias": -23.992303084755918,
+            "corrected_bias": 0.1269689040257329,
+            "bias_correction_pct": 99.47079318072467
+          },
+          "worst_station": {
+            "station_id": "IJABAL13",
+            "baseline_mae": 8.586822493224933,
+            "corrected_mae": 5.397010890405284,
+            "mae_reduction_pct": 37.14775291251722,
+            "baseline_bias": -3.8526761517615173,
+            "corrected_bias": 3.5325698650978024,
+            "bias_correction_pct": 8.308673609053704
+          },
+          "median_station": {
+            "station_id": "IMISRA13",
+            "baseline_mae": 14.032151898734178,
+            "corrected_mae": 2.065623168985192,
+            "mae_reduction_pct": 85.27935569759951,
+            "baseline_bias": -14.006497890295359,
+            "corrected_bias": -0.2752985717697072,
+            "bias_correction_pct": 98.03449389043601
+          },
+          "mean_n_iter_used": 500.0
+        },
+        "d3_lr0.1": {
+          "config": {
+            "max_depth": 3,
+            "learning_rate": 0.1,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 16.99242439272322,
+          "network_mean_corrected_mae": 2.3749984362284957,
+          "network_mean_mae_reduction_pct": 83.06556420210251,
+          "network_median_mae_reduction_pct": 85.34269220212862,
+          "network_mean_baseline_bias": -16.710235771550394,
+          "network_mean_corrected_bias": 0.004904213290601019,
+          "network_bias_correction_pct": 99.97065144168133,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "INUQAT10",
+            "baseline_mae": 23.992303084755918,
+            "corrected_mae": 0.6991544521143065,
+            "mae_reduction_pct": 97.08592189068113,
+            "baseline_bias": -23.992303084755918,
+            "corrected_bias": 0.1268629575776399,
+            "bias_correction_pct": 99.47123476587687
+          },
+          "worst_station": {
+            "station_id": "IJABAL13",
+            "baseline_mae": 8.586822493224933,
+            "corrected_mae": 5.271344652132095,
+            "mae_reduction_pct": 38.61123068176587,
+            "baseline_bias": -3.8526761517615173,
+            "corrected_bias": 3.4130577827260087,
+            "bias_correction_pct": 11.41072728976991
+          },
+          "median_station": {
+            "station_id": "IMISRA13",
+            "baseline_mae": 14.032151898734178,
+            "corrected_mae": 2.056735694462323,
+            "mae_reduction_pct": 85.34269220212862,
+            "baseline_bias": -14.006497890295359,
+            "corrected_bias": -0.462430978603444,
+            "bias_correction_pct": 96.69845394455206
+          },
+          "mean_n_iter_used": 500.0
+        },
+        "d6_lr0.05": {
+          "config": {
+            "max_depth": 6,
+            "learning_rate": 0.05,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 16.99242439272322,
+          "network_mean_corrected_mae": 2.3775255732066722,
+          "network_mean_mae_reduction_pct": 82.8744573951835,
+          "network_median_mae_reduction_pct": 85.62898174294283,
+          "network_mean_baseline_bias": -16.710235771550394,
+          "network_mean_corrected_bias": 0.032311472374657486,
+          "network_bias_correction_pct": 99.80663664584752,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "INUQAT10",
+            "baseline_mae": 23.992303084755918,
+            "corrected_mae": 0.6379747149947368,
+            "mae_reduction_pct": 97.34091924088733,
+            "baseline_bias": -23.992303084755918,
+            "corrected_bias": 0.02000344441469278,
+            "bias_correction_pct": 99.91662557636077
+          },
+          "worst_station": {
+            "station_id": "IJABAL13",
+            "baseline_mae": 8.586822493224933,
+            "corrected_mae": 5.712357120186553,
+            "mae_reduction_pct": 33.47530911820239,
+            "baseline_bias": -3.8526761517615173,
+            "corrected_bias": 3.983397460595089,
+            "bias_correction_pct": -3.3930001818035804
+          },
+          "median_station": {
+            "station_id": "IMURQU7",
+            "baseline_mae": 17.103492063492066,
+            "corrected_mae": 2.457945967038769,
+            "mae_reduction_pct": 85.62898174294283,
+            "baseline_bias": -17.016796536796537,
+            "corrected_bias": -0.05599888458881919,
+            "bias_correction_pct": 99.67091993802869
+          },
+          "mean_n_iter_used": 500.0
+        },
+        "d6_lr0.1": {
+          "config": {
+            "max_depth": 6,
+            "learning_rate": 0.1,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 16.99242439272322,
+          "network_mean_corrected_mae": 2.371665540352357,
+          "network_mean_mae_reduction_pct": 82.8646722458619,
+          "network_median_mae_reduction_pct": 85.67654702230905,
+          "network_mean_baseline_bias": -16.710235771550394,
+          "network_mean_corrected_bias": 0.050967452662421094,
+          "network_bias_correction_pct": 99.69499261794263,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "INUQAT10",
+            "baseline_mae": 23.992303084755918,
+            "corrected_mae": 0.6387428549790354,
+            "mae_reduction_pct": 97.33771763084772,
+            "baseline_bias": -23.992303084755918,
+            "corrected_bias": -0.04959202259163365,
+            "bias_correction_pct": 99.79330028294306
+          },
+          "worst_station": {
+            "station_id": "IJABAL13",
+            "baseline_mae": 8.586822493224933,
+            "corrected_mae": 5.704241914513884,
+            "mae_reduction_pct": 33.569816785958096,
+            "baseline_bias": -3.8526761517615173,
+            "corrected_bias": 4.010197453478935,
+            "bias_correction_pct": -4.088620364454873
+          },
+          "median_station": {
+            "station_id": "IMURQU7",
+            "baseline_mae": 17.103492063492066,
+            "corrected_mae": 2.449810643257388,
+            "mae_reduction_pct": 85.67654702230905,
+            "baseline_bias": -17.016796536796537,
+            "corrected_bias": -0.21349035705645356,
+            "bias_correction_pct": 98.74541394089769
+          },
+          "mean_n_iter_used": 500.0
+        },
+        "d10_lr0.05": {
+          "config": {
+            "max_depth": 10,
+            "learning_rate": 0.05,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 16.99242439272322,
+          "network_mean_corrected_mae": 2.3779231674133485,
+          "network_mean_mae_reduction_pct": 82.92575837021197,
+          "network_median_mae_reduction_pct": 85.75192151853047,
+          "network_mean_baseline_bias": -16.710235771550394,
+          "network_mean_corrected_bias": 0.009339026371272145,
+          "network_bias_correction_pct": 99.94411194133376,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "INUQAT10",
+            "baseline_mae": 23.992303084755918,
+            "corrected_mae": 0.6426865389002497,
+            "mae_reduction_pct": 97.3212803429922,
+            "baseline_bias": -23.992303084755918,
+            "corrected_bias": 0.021575656765227564,
+            "bias_correction_pct": 99.91007258999267
+          },
+          "worst_station": {
+            "station_id": "IJABAL13",
+            "baseline_mae": 8.586822493224933,
+            "corrected_mae": 5.56961109061703,
+            "mae_reduction_pct": 35.13769389070875,
+            "baseline_bias": -3.8526761517615173,
+            "corrected_bias": 3.810678445028965,
+            "bias_correction_pct": 1.090091797966205
+          },
+          "median_station": {
+            "station_id": "IMURQU7",
+            "baseline_mae": 17.103492063492066,
+            "corrected_mae": 2.4369189722782623,
+            "mae_reduction_pct": 85.75192151853047,
+            "baseline_bias": -17.016796536796537,
+            "corrected_bias": -0.16006056593734194,
+            "bias_correction_pct": 99.05939660504706
+          },
+          "mean_n_iter_used": 500.0
+        },
+        "d10_lr0.1": {
+          "config": {
+            "max_depth": 10,
+            "learning_rate": 0.1,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 26,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 16.99242439272322,
+          "network_mean_corrected_mae": 2.4253516643244812,
+          "network_mean_mae_reduction_pct": 82.532516878506,
+          "network_median_mae_reduction_pct": 85.46969534569706,
+          "network_mean_baseline_bias": -16.710235771550394,
+          "network_mean_corrected_bias": 0.015140088541006803,
+          "network_bias_correction_pct": 99.9093963200281,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "INUQAT10",
+            "baseline_mae": 23.992303084755918,
+            "corrected_mae": 0.65512570732323,
+            "mae_reduction_pct": 97.26943384714293,
+            "baseline_bias": -23.992303084755918,
+            "corrected_bias": -0.045095983683345595,
+            "bias_correction_pct": 99.8120397882436
+          },
+          "worst_station": {
+            "station_id": "IJABAL13",
+            "baseline_mae": 8.586822493224933,
+            "corrected_mae": 5.930458335223305,
+            "mae_reduction_pct": 30.935356589675852,
+            "baseline_bias": -3.8526761517615173,
+            "corrected_bias": 4.284330027061753,
+            "bias_correction_pct": -11.204001018950809
+          },
+          "median_station": {
+            "station_id": "IMURQU7",
+            "baseline_mae": 17.103492063492066,
+            "corrected_mae": 2.4851895033499214,
+            "mae_reduction_pct": 85.46969534569706,
+            "baseline_bias": -17.016796536796537,
+            "corrected_bias": -0.38683944027772976,
+            "bias_correction_pct": 97.72671995318719
+          },
+          "mean_n_iter_used": 497.65384615384613
+        }
+      },
+      "best_config_label": "d3_lr0.1",
+      "best_summary": {
+        "config": {
+          "max_depth": 3,
+          "learning_rate": 0.1,
+          "max_iter": 500,
+          "early_stopping": true,
+          "validation_fraction": 0.15,
+          "n_iter_no_change": 25,
+          "random_state": 42
+        },
+        "n_stations": 26,
+        "n_failure_stations": 0,
+        "network_mean_baseline_mae": 16.99242439272322,
+        "network_mean_corrected_mae": 2.3749984362284957,
+        "network_mean_mae_reduction_pct": 83.06556420210251,
+        "network_median_mae_reduction_pct": 85.34269220212862,
+        "network_mean_baseline_bias": -16.710235771550394,
+        "network_mean_corrected_bias": 0.004904213290601019,
+        "network_bias_correction_pct": 99.97065144168133,
+        "bias_meaningful": true,
+        "best_station": {
+          "station_id": "INUQAT10",
+          "baseline_mae": 23.992303084755918,
+          "corrected_mae": 0.6991544521143065,
+          "mae_reduction_pct": 97.08592189068113,
+          "baseline_bias": -23.992303084755918,
+          "corrected_bias": 0.1268629575776399,
+          "bias_correction_pct": 99.47123476587687
+        },
+        "worst_station": {
+          "station_id": "IJABAL13",
+          "baseline_mae": 8.586822493224933,
+          "corrected_mae": 5.271344652132095,
+          "mae_reduction_pct": 38.61123068176587,
+          "baseline_bias": -3.8526761517615173,
+          "corrected_bias": 3.4130577827260087,
+          "bias_correction_pct": 11.41072728976991
+        },
+        "median_station": {
+          "station_id": "IMISRA13",
+          "baseline_mae": 14.032151898734178,
+          "corrected_mae": 2.056735694462323,
+          "mae_reduction_pct": 85.34269220212862,
+          "baseline_bias": -14.006497890295359,
+          "corrected_bias": -0.462430978603444,
+          "bias_correction_pct": 96.69845394455206
+        },
+        "mean_n_iter_used": 500.0
+      }
+    },
+    "pressure": {
+      "by_config": {
+        "d3_lr0.05": {
+          "config": {
+            "max_depth": 3,
+            "learning_rate": 0.05,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 25,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 6.529036434761261,
+          "network_mean_corrected_mae": 0.5077883882757893,
+          "network_mean_mae_reduction_pct": 91.95163358379926,
+          "network_median_mae_reduction_pct": 93.64162369436013,
+          "network_mean_baseline_bias": -4.677628667116194,
+          "network_mean_corrected_bias": 0.07630254586483776,
+          "network_bias_correction_pct": 98.3687771882953,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "IJABAL14",
+            "baseline_mae": 11.171125611745516,
+            "corrected_mae": 0.3053963416088233,
+            "mae_reduction_pct": 97.2661990185866,
+            "baseline_bias": -11.171125611745516,
+            "corrected_bias": -0.07098820606708839,
+            "bias_correction_pct": 99.36453846698807
+          },
+          "worst_station": {
+            "station_id": "IMURQU5",
+            "baseline_mae": 5.926497695852538,
+            "corrected_mae": 1.4202219379340344,
+            "mae_reduction_pct": 76.03606698560046,
+            "baseline_bias": -3.6855831265508705,
+            "corrected_bias": 1.330419367577849,
+            "bias_correction_pct": 63.90206591750615
+          },
+          "median_station": {
+            "station_id": "IMURQU7",
+            "baseline_mae": 6.099261396422391,
+            "corrected_mae": 0.38781399144916046,
+            "mae_reduction_pct": 93.64162369436013,
+            "baseline_bias": -2.4759953837276427,
+            "corrected_bias": -0.03411709672309863,
+            "bias_correction_pct": 98.62208560858726
+          },
+          "mean_n_iter_used": 500.0
+        },
+        "d3_lr0.1": {
+          "config": {
+            "max_depth": 3,
+            "learning_rate": 0.1,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 25,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 6.529036434761261,
+          "network_mean_corrected_mae": 0.5163689520210553,
+          "network_mean_mae_reduction_pct": 92.03009062770337,
+          "network_median_mae_reduction_pct": 93.46414237905681,
+          "network_mean_baseline_bias": -4.677628667116194,
+          "network_mean_corrected_bias": 0.07547940243805944,
+          "network_bias_correction_pct": 98.38637463959718,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "IJABAL14",
+            "baseline_mae": 11.171125611745516,
+            "corrected_mae": 0.30511418532143136,
+            "mae_reduction_pct": 97.26872478275038,
+            "baseline_bias": -11.171125611745516,
+            "corrected_bias": -0.08180152974037588,
+            "bias_correction_pct": 99.26774138449962
+          },
+          "worst_station": {
+            "station_id": "IJABAL16",
+            "baseline_mae": 6.616273402674592,
+            "corrected_mae": 1.2819281789741233,
+            "mae_reduction_pct": 80.62461901202707,
+            "baseline_bias": -4.758056463595842,
+            "corrected_bias": 1.105563643330001,
+            "bias_correction_pct": 76.76438579935461
+          },
+          "median_station": {
+            "station_id": "IJABAL15",
+            "baseline_mae": 6.2622167889160565,
+            "corrected_mae": 0.4092895732383539,
+            "mae_reduction_pct": 93.46414237905681,
+            "baseline_bias": -3.852860635696824,
+            "corrected_bias": 0.2433592004191537,
+            "bias_correction_pct": 93.68367497738106
+          },
+          "mean_n_iter_used": 468.36
+        },
+        "d6_lr0.05": {
+          "config": {
+            "max_depth": 6,
+            "learning_rate": 0.05,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 25,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 6.529036434761261,
+          "network_mean_corrected_mae": 0.5403289489896653,
+          "network_mean_mae_reduction_pct": 91.80005959119215,
+          "network_median_mae_reduction_pct": 93.63840358681347,
+          "network_mean_baseline_bias": -4.677628667116194,
+          "network_mean_corrected_bias": 0.08953951628937348,
+          "network_bias_correction_pct": 98.08579255299085,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "IJABAL14",
+            "baseline_mae": 11.171125611745516,
+            "corrected_mae": 0.3040810555089527,
+            "mae_reduction_pct": 97.2779729986275,
+            "baseline_bias": -11.171125611745516,
+            "corrected_bias": -0.04775154269052371,
+            "bias_correction_pct": 99.57254493101111
+          },
+          "worst_station": {
+            "station_id": "IMISRA13",
+            "baseline_mae": 8.019884669479607,
+            "corrected_mae": 1.8415784995556055,
+            "mae_reduction_pct": 77.03734435778237,
+            "baseline_bias": -8.019884669479607,
+            "corrected_bias": 1.7937733716779032,
+            "bias_correction_pct": 77.63342684335262
+          },
+          "median_station": {
+            "station_id": "IMURQU6",
+            "baseline_mae": 6.550121212121213,
+            "corrected_mae": 0.416692276089673,
+            "mae_reduction_pct": 93.63840358681347,
+            "baseline_bias": -4.654121212121214,
+            "corrected_bias": -0.04671592200019314,
+            "bias_correction_pct": 98.99624612529372
+          },
+          "mean_n_iter_used": 366.52
+        },
+        "d6_lr0.1": {
+          "config": {
+            "max_depth": 6,
+            "learning_rate": 0.1,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 25,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 6.529036434761261,
+          "network_mean_corrected_mae": 0.5543050633970843,
+          "network_mean_mae_reduction_pct": 91.5809054281043,
+          "network_median_mae_reduction_pct": 93.55064660359895,
+          "network_mean_baseline_bias": -4.677628667116194,
+          "network_mean_corrected_bias": 0.06939442024035998,
+          "network_bias_correction_pct": 98.51646154111796,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "IJABAL14",
+            "baseline_mae": 11.171125611745516,
+            "corrected_mae": 0.30624035149038126,
+            "mae_reduction_pct": 97.25864373802767,
+            "baseline_bias": -11.171125611745516,
+            "corrected_bias": -0.06885684815469033,
+            "bias_correction_pct": 99.3836176357887
+          },
+          "worst_station": {
+            "station_id": "ITAHLI1",
+            "baseline_mae": 5.391861118920441,
+            "corrected_mae": 1.0952110853026138,
+            "mae_reduction_pct": 79.68769853030085,
+            "baseline_bias": -2.5468287883047553,
+            "corrected_bias": 0.9874592843696021,
+            "bias_correction_pct": 61.227889016171986
+          },
+          "median_station": {
+            "station_id": "IZAWIY5",
+            "baseline_mae": 5.654017504234897,
+            "corrected_mae": 0.3646475699424829,
+            "mae_reduction_pct": 93.55064660359895,
+            "baseline_bias": -3.319172783738001,
+            "corrected_bias": -0.05504764791798531,
+            "bias_correction_pct": 98.3415250875855
+          },
+          "mean_n_iter_used": 311.8
+        },
+        "d10_lr0.05": {
+          "config": {
+            "max_depth": 10,
+            "learning_rate": 0.05,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 25,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 6.529036434761261,
+          "network_mean_corrected_mae": 0.47015717933766527,
+          "network_mean_mae_reduction_pct": 92.68480073461393,
+          "network_median_mae_reduction_pct": 93.77577002717798,
+          "network_mean_baseline_bias": -4.677628667116194,
+          "network_mean_corrected_bias": 0.018207013094358862,
+          "network_bias_correction_pct": 99.61076403472651,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "IJABAL14",
+            "baseline_mae": 11.171125611745516,
+            "corrected_mae": 0.29907281398925356,
+            "mae_reduction_pct": 97.32280502087629,
+            "baseline_bias": -11.171125611745516,
+            "corrected_bias": -0.04540804047625716,
+            "bias_correction_pct": 99.59352314122657
+          },
+          "worst_station": {
+            "station_id": "I90583612",
+            "baseline_mae": 6.106776556776561,
+            "corrected_mae": 0.8432092093582758,
+            "mae_reduction_pct": 86.19223740186492,
+            "baseline_bias": -4.994981684981687,
+            "corrected_bias": 0.17366676086658467,
+            "bias_correction_pct": 96.52317522226868
+          },
+          "median_station": {
+            "station_id": "IMURQU6",
+            "baseline_mae": 6.550121212121213,
+            "corrected_mae": 0.4076946077410221,
+            "mae_reduction_pct": 93.77577002717798,
+            "baseline_bias": -4.654121212121214,
+            "corrected_bias": -0.06305205937625258,
+            "bias_correction_pct": 98.64524243133077
+          },
+          "mean_n_iter_used": 296.32
+        },
+        "d10_lr0.1": {
+          "config": {
+            "max_depth": 10,
+            "learning_rate": 0.1,
+            "max_iter": 500,
+            "early_stopping": true,
+            "validation_fraction": 0.15,
+            "n_iter_no_change": 25,
+            "random_state": 42
+          },
+          "n_stations": 25,
+          "n_failure_stations": 0,
+          "network_mean_baseline_mae": 6.529036434761261,
+          "network_mean_corrected_mae": 0.4897619140023526,
+          "network_mean_mae_reduction_pct": 92.51145826991686,
+          "network_median_mae_reduction_pct": 93.04286050621332,
+          "network_mean_baseline_bias": -4.677628667116194,
+          "network_mean_corrected_bias": 0.02532097434262568,
+          "network_bias_correction_pct": 99.45867925513984,
+          "bias_meaningful": true,
+          "best_station": {
+            "station_id": "IJABAL14",
+            "baseline_mae": 11.171125611745516,
+            "corrected_mae": 0.29956815554935445,
+            "mae_reduction_pct": 97.3183708968917,
+            "baseline_bias": -11.171125611745516,
+            "corrected_bias": -0.052961567622992436,
+            "bias_correction_pct": 99.52590661439429
+          },
+          "worst_station": {
+            "station_id": "I90583612",
+            "baseline_mae": 6.106776556776561,
+            "corrected_mae": 0.7999741859495247,
+            "mae_reduction_pct": 86.90022176983354,
+            "baseline_bias": -4.994981684981687,
+            "corrected_bias": 0.16771703126805254,
+            "bias_correction_pct": 96.64228936469728
+          },
+          "median_station": {
+            "station_id": "IMISRA12",
+            "baseline_mae": 5.755382128159908,
+            "corrected_mae": 0.40040996305655346,
+            "mae_reduction_pct": 93.04286050621332,
+            "baseline_bias": -1.9006848912404481,
+            "corrected_bias": 0.10663894305314686,
+            "bias_correction_pct": 94.38944648086559
+          },
+          "mean_n_iter_used": 197.96
+        }
+      },
+      "best_config_label": "d10_lr0.05",
+      "best_summary": {
+        "config": {
+          "max_depth": 10,
+          "learning_rate": 0.05,
+          "max_iter": 500,
+          "early_stopping": true,
+          "validation_fraction": 0.15,
+          "n_iter_no_change": 25,
+          "random_state": 42
+        },
+        "n_stations": 25,
+        "n_failure_stations": 0,
+        "network_mean_baseline_mae": 6.529036434761261,
+        "network_mean_corrected_mae": 0.47015717933766527,
+        "network_mean_mae_reduction_pct": 92.68480073461393,
+        "network_median_mae_reduction_pct": 93.77577002717798,
+        "network_mean_baseline_bias": -4.677628667116194,
+        "network_mean_corrected_bias": 0.018207013094358862,
+        "network_bias_correction_pct": 99.61076403472651,
+        "bias_meaningful": true,
+        "best_station": {
+          "station_id": "IJABAL14",
+          "baseline_mae": 11.171125611745516,
+          "corrected_mae": 0.29907281398925356,
+          "mae_reduction_pct": 97.32280502087629,
+          "baseline_bias": -11.171125611745516,
+          "corrected_bias": -0.04540804047625716,
+          "bias_correction_pct": 99.59352314122657
+        },
+        "worst_station": {
+          "station_id": "I90583612",
+          "baseline_mae": 6.106776556776561,
+          "corrected_mae": 0.8432092093582758,
+          "mae_reduction_pct": 86.19223740186492,
+          "baseline_bias": -4.994981684981687,
+          "corrected_bias": 0.17366676086658467,
+          "bias_correction_pct": 96.52317522226868
+        },
+        "median_station": {
+          "station_id": "IMURQU6",
+          "baseline_mae": 6.550121212121213,
+          "corrected_mae": 0.4076946077410221,
+          "mae_reduction_pct": 93.77577002717798,
+          "baseline_bias": -4.654121212121214,
+          "corrected_bias": -0.06305205937625258,
+          "bias_correction_pct": 98.64524243133077
+        },
+        "mean_n_iter_used": 296.32
+      }
+    }
+  }
+}
