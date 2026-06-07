@@ -1,0 +1,202 @@
+{
+  "temperature": {
+    "model": "HGB",
+    "leads": {
+      "1": {
+        "loso": 48.84512707678054,
+        "within_station": 57.95870116167182,
+        "metric": "mae_red_pct"
+      },
+      "24": {
+        "loso": 18.978626879679663,
+        "within_station": 38.22936565978077,
+        "metric": "mae_red_pct"
+      },
+      "72": {
+        "loso": 16.00259024964461,
+        "within_station": 36.196275622491235,
+        "metric": "mae_red_pct"
+      }
+    }
+  },
+  "relative_humidity": {
+    "model": "HGB",
+    "leads": {
+      "1": {
+        "loso": 68.70552633908008,
+        "within_station": 69.82089978794266,
+        "metric": "mae_red_pct"
+      },
+      "24": {
+        "loso": 39.18295705161325,
+        "within_station": 43.07749034556999,
+        "metric": "mae_red_pct"
+      },
+      "72": {
+        "loso": 37.475010428994274,
+        "within_station": 42.72907657318316,
+        "metric": "mae_red_pct"
+      }
+    }
+  },
+  "dew_point": {
+    "model": "HGB",
+    "leads": {
+      "1": {
+        "loso": 65.41096494233169,
+        "within_station": 69.95622885608017,
+        "metric": "mae_red_pct"
+      },
+      "24": {
+        "loso": 43.91880760981995,
+        "within_station": 51.798703491737385,
+        "metric": "mae_red_pct"
+      },
+      "72": {
+        "loso": 41.49109777082007,
+        "within_station": 50.945999085595055,
+        "metric": "mae_red_pct"
+      }
+    }
+  },
+  "wind_speed": {
+    "model": "Ridge",
+    "leads": {
+      "1": {
+        "loso": 67.06429780985681,
+        "within_station": 76.27032153696986,
+        "metric": "mae_red_pct"
+      },
+      "24": {
+        "loso": 39.54268633895762,
+        "within_station": 53.90774290335609,
+        "metric": "mae_red_pct"
+      },
+      "72": {
+        "loso": 33.5241068211501,
+        "within_station": 49.02268557727979,
+        "metric": "mae_red_pct"
+      }
+    }
+  },
+  "wind_gust": {
+    "model": "Ridge",
+    "leads": {
+      "1": {
+        "loso": 82.9711541839775,
+        "within_station": 86.56812944029984,
+        "metric": "mae_red_pct"
+      },
+      "24": {
+        "loso": 68.6790445278395,
+        "within_station": 75.2590530433239,
+        "metric": "mae_red_pct"
+      },
+      "72": {
+        "loso": 65.67119618052821,
+        "within_station": 72.59018007457007,
+        "metric": "mae_red_pct"
+      }
+    }
+  },
+  "pressure": {
+    "model": "Ridge",
+    "leads": {
+      "1": {
+        "loso": 92.59097146162534,
+        "within_station": 94.16443273382212,
+        "metric": "mae_red_pct"
+      },
+      "24": {
+        "loso": 66.9800469386234,
+        "within_station": 72.77597822330486,
+        "metric": "mae_red_pct"
+      },
+      "72": {
+        "loso": 50.31179461240939,
+        "within_station": 58.81455793416842,
+        "metric": "mae_red_pct"
+      }
+    }
+  },
+  "uv": {
+    "model": "HGB",
+    "leads": {
+      "1": {
+        "loso": 0.30191934299329304,
+        "within_station": 0.2435311600933288,
+        "metric": "abs_mae"
+      },
+      "24": {
+        "loso": 0.31301635428071684,
+        "within_station": 0.2528073039494079,
+        "metric": "abs_mae"
+      },
+      "72": {
+        "loso": 0.31978293323959733,
+        "within_station": 0.2542808181125235,
+        "metric": "abs_mae"
+      }
+    }
+  },
+  "wind_direction": {
+    "model": "Ridge",
+    "leads": {
+      "1": {
+        "loso": 19.520199506456606,
+        "within_station": 22.36245833514783,
+        "metric": "mae_red_pct"
+      },
+      "24": {
+        "loso": 9.13558208975952,
+        "within_station": 14.362465593621597,
+        "metric": "mae_red_pct"
+      },
+      "72": {
+        "loso": 7.595362309248572,
+        "within_station": 13.240744093650328,
+        "metric": "mae_red_pct"
+      }
+    }
+  },
+  "rain_occurrence": {
+    "model": "HGB",
+    "leads": {
+      "1": {
+        "loso": 0.8682294508120606,
+        "within_station": 0.901010101010101,
+        "metric": "f1_at_0.3"
+      },
+      "24": {
+        "loso": 0.37527040034737363,
+        "within_station": 0.42401878564240186,
+        "metric": "f1_at_0.3"
+      },
+      "72": {
+        "loso": 0.38535311191995925,
+        "within_station": 0.44407233757535164,
+        "metric": "f1_at_0.3"
+      }
+    }
+  },
+  "rain_amount": {
+    "model": "HGB",
+    "leads": {
+      "1": {
+        "loso": 81.7857882740103,
+        "within_station": 86.6967488918473,
+        "metric": "mae_red_pct"
+      },
+      "24": {
+        "loso": 14.637537509125375,
+        "within_station": 40.977749028372294,
+        "metric": "mae_red_pct"
+      },
+      "72": {
+        "loso": 9.146120351910954,
+        "within_station": 33.674240307694625,
+        "metric": "mae_red_pct"
+      }
+    }
+  }
+}

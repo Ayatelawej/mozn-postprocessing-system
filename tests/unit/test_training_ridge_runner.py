@@ -112,10 +112,10 @@ def test_train_ridge_reduces_mae_on_learnable_signal():
     )
 
 
-def test_train_ridge_rejects_non_residual_target():
+def test_train_ridge_rejects_unsupported_target():
     df = _make_synthetic_canonical()
     with pytest.raises(NotImplementedError):
-        train_ridge(df, "uv", lead=1, holdout_station="S01")
+        train_ridge(df, "rain_occurrence", lead=1, holdout_station="S01")
 
 
 def test_train_ridge_unknown_holdout_raises():

@@ -1,0 +1,92 @@
+{
+  "total_fits": 576,
+  "completed": 576,
+  "failed": 0,
+  "wall_time_sec": 1148.751170873642,
+  "per_target": {
+    "temperature": {
+      "model_class": "HGB",
+      "hp": {
+        "max_depth": 10,
+        "learning_rate": 0.1
+      },
+      "completed": 72,
+      "failed": 0,
+      "wall_time_sec": 278.19923400878906,
+      "wall_time_min": 4.636653900146484
+    },
+    "relative_humidity": {
+      "model_class": "HGB",
+      "hp": {
+        "max_depth": 10,
+        "learning_rate": 0.1
+      },
+      "completed": 72,
+      "failed": 0,
+      "wall_time_sec": 258.1111533641815,
+      "wall_time_min": 4.301852556069692
+    },
+    "dew_point": {
+      "model_class": "HGB",
+      "hp": {
+        "max_depth": 10,
+        "learning_rate": 0.1
+      },
+      "completed": 72,
+      "failed": 0,
+      "wall_time_sec": 248.91951179504395,
+      "wall_time_min": 4.148658529917399
+    },
+    "wind_speed": {
+      "model_class": "Ridge",
+      "hp": {
+        "alpha": 10.0
+      },
+      "completed": 72,
+      "failed": 0,
+      "wall_time_sec": 40.75718903541565,
+      "wall_time_min": 0.6792864839235941
+    },
+    "wind_gust": {
+      "model_class": "Ridge",
+      "hp": {
+        "alpha": 0.1
+      },
+      "completed": 72,
+      "failed": 0,
+      "wall_time_sec": 40.1669442653656,
+      "wall_time_min": 0.6694490710894266
+    },
+    "pressure": {
+      "model_class": "Ridge",
+      "hp": {
+        "alpha": 0.1
+      },
+      "completed": 72,
+      "failed": 0,
+      "wall_time_sec": 45.83305072784424,
+      "wall_time_min": 0.763884178797404
+    },
+    "uv": {
+      "model_class": "HGB",
+      "hp": {
+        "max_depth": 10,
+        "learning_rate": 0.1
+      },
+      "completed": 72,
+      "failed": 0,
+      "wall_time_sec": 198.25956916809082,
+      "wall_time_min": 3.3043261528015138
+    },
+    "wind_direction": {
+      "model_class": "Ridge",
+      "hp": {
+        "alpha": 10.0
+      },
+      "completed": 72,
+      "failed": 0,
+      "wall_time_sec": 38.50444579124451,
+      "wall_time_min": 0.6417407631874085
+    }
+  }
+}

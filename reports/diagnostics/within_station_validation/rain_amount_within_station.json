@@ -1,0 +1,95 @@
+{
+  "target": "rain_amount",
+  "model_class": "HGB",
+  "hp": {
+    "max_depth": 10,
+    "learning_rate": 0.1
+  },
+  "split_config": {
+    "fraction": 0.1,
+    "block_hours": 48,
+    "seed": 42
+  },
+  "results_by_lead": {
+    "1": {
+      "metric_type": "rain_amount_conditional_mm",
+      "n_train": 10590,
+      "n_val_positive": 947,
+      "baseline_mae_mm": 4.019002111932418,
+      "corrected_mae_mm": 0.5346579429923294,
+      "mae_reduction_pct": 86.6967488918473,
+      "actual_mean_mm": 4.0824445617740235,
+      "target": "rain_amount",
+      "lead": 1,
+      "model_class": "HGB",
+      "hp": {
+        "max_depth": 10,
+        "learning_rate": 0.1
+      }
+    },
+    "6": {
+      "metric_type": "rain_amount_conditional_mm",
+      "n_train": 10590,
+      "n_val_positive": 947,
+      "baseline_mae_mm": 4.019002111932418,
+      "corrected_mae_mm": 1.487248845240851,
+      "mae_reduction_pct": 62.99457417986399,
+      "actual_mean_mm": 4.0824445617740235,
+      "target": "rain_amount",
+      "lead": 6,
+      "model_class": "HGB",
+      "hp": {
+        "max_depth": 10,
+        "learning_rate": 0.1
+      }
+    },
+    "24": {
+      "metric_type": "rain_amount_conditional_mm",
+      "n_train": 10590,
+      "n_val_positive": 947,
+      "baseline_mae_mm": 4.019002111932418,
+      "corrected_mae_mm": 2.3721055130597697,
+      "mae_reduction_pct": 40.977749028372294,
+      "actual_mean_mm": 4.0824445617740235,
+      "target": "rain_amount",
+      "lead": 24,
+      "model_class": "HGB",
+      "hp": {
+        "max_depth": 10,
+        "learning_rate": 0.1
+      }
+    },
+    "48": {
+      "metric_type": "rain_amount_conditional_mm",
+      "n_train": 10590,
+      "n_val_positive": 947,
+      "baseline_mae_mm": 4.019002111932418,
+      "corrected_mae_mm": 2.495615430037196,
+      "mae_reduction_pct": 37.90460018352036,
+      "actual_mean_mm": 4.0824445617740235,
+      "target": "rain_amount",
+      "lead": 48,
+      "model_class": "HGB",
+      "hp": {
+        "max_depth": 10,
+        "learning_rate": 0.1
+      }
+    },
+    "72": {
+      "metric_type": "rain_amount_conditional_mm",
+      "n_train": 10590,
+      "n_val_positive": 947,
+      "baseline_mae_mm": 4.019002111932418,
+      "corrected_mae_mm": 2.665633682788974,
+      "mae_reduction_pct": 33.674240307694625,
+      "actual_mean_mm": 4.0824445617740235,
+      "target": "rain_amount",
+      "lead": 72,
+      "model_class": "HGB",
+      "hp": {
+        "max_depth": 10,
+        "learning_rate": 0.1
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "persistence_table": [
+    {
+      "lead": 1,
+      "n_stations": 25,
+      "actual_mean_mm": 4.423325640237001,
+      "persistence_mae_mm": 0.2787257575771562,
+      "baseline_mae_mm": 4.428179144821546,
+      "hgb_mae_mm": 0.786159415749268,
+      "persistence_vs_baseline_pct": 93.70563501471915,
+      "hgb_vs_baseline_pct": 82.24644057888607,
+      "hgb_vs_persistence_pct": -182.05481351383364
+    },
+    {
+      "lead": 6,
+      "n_stations": 25,
+      "actual_mean_mm": 4.236358072653086,
+      "persistence_mae_mm": 1.579871103938173,
+      "baseline_mae_mm": 4.428179144821546,
+      "hgb_mae_mm": 2.2349544161545203,
+      "persistence_vs_baseline_pct": 64.3223308662721,
+      "hgb_vs_baseline_pct": 49.52881662955873,
+      "hgb_vs_persistence_pct": -41.46435178056041
+    },
+    {
+      "lead": 24,
+      "n_stations": 25,
+      "actual_mean_mm": 4.445170700040442,
+      "persistence_mae_mm": 3.4072109619885214,
+      "baseline_mae_mm": 4.428179144821546,
+      "hgb_mae_mm": 3.3866112775070296,
+      "persistence_vs_baseline_pct": 23.05616257704879,
+      "hgb_vs_baseline_pct": 23.521357949859798,
+      "hgb_vs_persistence_pct": 0.604590813756637
+    },
+    {
+      "lead": 48,
+      "n_stations": 25,
+      "actual_mean_mm": 4.239344776387359,
+      "persistence_mae_mm": 3.534644100211309,
+      "baseline_mae_mm": 4.428179144821546,
+      "hgb_mae_mm": 3.5615043161996796,
+      "persistence_vs_baseline_pct": 20.178385186949022,
+      "hgb_vs_baseline_pct": 19.57181045024756,
+      "hgb_vs_persistence_pct": -0.7599128859045424
+    },
+    {
+      "lead": 72,
+      "n_stations": 25,
+      "actual_mean_mm": 4.328272893539078,
+      "persistence_mae_mm": 3.6492488726628833,
+      "baseline_mae_mm": 4.428179144821546,
+      "hgb_mae_mm": 3.614697411312223,
+      "persistence_vs_baseline_pct": 17.59030623387422,
+      "hgb_vs_baseline_pct": 18.37056963832718,
+      "hgb_vs_persistence_pct": 0.9468102219470684
+    }
+  ]
+}

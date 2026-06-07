@@ -136,10 +136,36 @@ def test_residual_targets_include_residual_feature_at_issue_time():
             )
 
 
-def test_residual_feature_not_added_to_uv_or_rain():
-    for target in ("uv", "rain_occurrence", "rain_amount", "wind_direction"):
-        for lead in (1, 12, 72):
-            features = features_for(target, lead)
-            assert not any(c.endswith("_residual_c") or c.endswith("_residual_pct") or c.endswith("_residual_kmh") or c.endswith("_residual_hpa") for c in features), (
-                f"Unexpected residual-style feature in {target} at lead={lead}: {features}"
-            )
+def test_residual_feature_not_added_to_rain_amount():
+    for lead in (1, 12, 72):
+        features = features_for("rain_amount", lead)
+        assert not any(
+            c.endswith("_residual_c") or c.endswith("_residual_pct")
+            or c.endswith("_residual_kmh") or c.endswith("_residual_hpa")
+            for c in features
+        ), f"Unexpected residual-style feature in rain_amount at lead={lead}: {features}"
+
+
+def test_uv_includes_uv_index_at_issue_time():
+    for lead in (1, 12, 72):
+        features = features_for("uv", lead)
+        assert "uv_index" in features, f"uv_index missing from UV features at lead={lead}"
+        assert f"uv_index_lead_{lead}h" not in features, "leaded UV (target) must not be a feature"
+
+
+def test_wind_direction_includes_sin_cos_at_issue_time():
+    for lead in (1, 12, 72):
+        features = features_for("wind_direction", lead)
+        assert "winddir_residual_sin" in features
+        assert "winddir_residual_cos" in features
+        assert f"winddir_residual_sin_lead_{lead}h" not in features
+        assert f"winddir_residual_cos_lead_{lead}h" not in features
+        assert "wind_speed_kmh" in features
+
+
+def test_rain_occurrence_includes_station_rain_event_at_issue_time():
+    for lead in (1, 12, 72):
+        features = features_for("rain_occurrence", lead)
+        assert "station_rain_event" in features
+        assert f"station_rain_event_lead_{lead}h" not in features
+        assert "station_rain_rolling_3h_mm" in features

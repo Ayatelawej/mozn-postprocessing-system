@@ -1,0 +1,115 @@
+{
+  "target": "temperature",
+  "model_class": "HGB",
+  "hp": {
+    "max_depth": 10,
+    "learning_rate": 0.1
+  },
+  "split_config": {
+    "fraction": 0.1,
+    "block_hours": 48,
+    "seed": 42
+  },
+  "results_by_lead": {
+    "1": {
+      "metric_type": "residual_or_absolute",
+      "n_train": 69288,
+      "n_val": 6960,
+      "baseline_mae": 1.2439655172413793,
+      "baseline_rmse": 1.6322389601368135,
+      "baseline_bias": -0.4549425287356321,
+      "corrected_mae": 0.5229792605492032,
+      "corrected_rmse": 0.6833930472695792,
+      "corrected_bias": -0.0014903548223336419,
+      "mae_reduction_pct": 57.95870116167182,
+      "rmse_reduction_pct": 58.13155647183563,
+      "target": "temperature",
+      "lead": 1,
+      "model_class": "HGB",
+      "hp": {
+        "max_depth": 10,
+        "learning_rate": 0.1
+      }
+    },
+    "6": {
+      "metric_type": "residual_or_absolute",
+      "n_train": 69288,
+      "n_val": 6960,
+      "baseline_mae": 1.2439655172413793,
+      "baseline_rmse": 1.6322389601368135,
+      "baseline_bias": -0.4549425287356321,
+      "corrected_mae": 0.7420918642707722,
+      "corrected_rmse": 0.9897509892292565,
+      "corrected_bias": -0.012935732122724504,
+      "mae_reduction_pct": 40.34465955966072,
+      "rmse_reduction_pct": 39.36237196872839,
+      "target": "temperature",
+      "lead": 6,
+      "model_class": "HGB",
+      "hp": {
+        "max_depth": 10,
+        "learning_rate": 0.1
+      }
+    },
+    "24": {
+      "metric_type": "residual_or_absolute",
+      "n_train": 69288,
+      "n_val": 6960,
+      "baseline_mae": 1.2439655172413793,
+      "baseline_rmse": 1.6322389601368135,
+      "baseline_bias": -0.4549425287356321,
+      "corrected_mae": 0.7684053909735892,
+      "corrected_rmse": 1.0216333749589024,
+      "corrected_bias": 0.019266541556601107,
+      "mae_reduction_pct": 38.22936565978077,
+      "rmse_reduction_pct": 37.409080415941695,
+      "target": "temperature",
+      "lead": 24,
+      "model_class": "HGB",
+      "hp": {
+        "max_depth": 10,
+        "learning_rate": 0.1
+      }
+    },
+    "48": {
+      "metric_type": "residual_or_absolute",
+      "n_train": 69288,
+      "n_val": 6960,
+      "baseline_mae": 1.2439655172413793,
+      "baseline_rmse": 1.6322389601368135,
+      "baseline_bias": -0.4549425287356321,
+      "corrected_mae": 0.7808432595948218,
+      "corrected_rmse": 1.0382470217537538,
+      "corrected_bias": 0.007040989006389015,
+      "mae_reduction_pct": 37.229509277200734,
+      "rmse_reduction_pct": 36.391236386936356,
+      "target": "temperature",
+      "lead": 48,
+      "model_class": "HGB",
+      "hp": {
+        "max_depth": 10,
+        "learning_rate": 0.1
+      }
+    },
+    "72": {
+      "metric_type": "residual_or_absolute",
+      "n_train": 69288,
+      "n_val": 6960,
+      "baseline_mae": 1.2439655172413793,
+      "baseline_rmse": 1.6322389601368135,
+      "baseline_bias": -0.4549425287356321,
+      "corrected_mae": 0.7936963299719408,
+      "corrected_rmse": 1.057663935737187,
+      "corrected_bias": 0.023108503169112313,
+      "mae_reduction_pct": 36.196275622491235,
+      "rmse_reduction_pct": 35.20164868209406,
+      "target": "temperature",
+      "lead": 72,
+      "model_class": "HGB",
+      "hp": {
+        "max_depth": 10,
+        "learning_rate": 0.1
+      }
+    }
+  }
+}

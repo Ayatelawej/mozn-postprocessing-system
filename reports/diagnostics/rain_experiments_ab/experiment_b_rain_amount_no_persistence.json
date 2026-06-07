@@ -1,0 +1,57 @@
+[
+  {
+    "lead": 1,
+    "n_features": 13,
+    "n_stations": 25,
+    "avg_n_val_positive": 432.68,
+    "persistence_mae_mm": 0.2787257575771562,
+    "baseline_mae_mm": 4.336493314167633,
+    "hgb_no_persistence_mae_mm": 3.9158347097299058,
+    "hgb_vs_baseline_pct": 9.700432445344854,
+    "hgb_vs_persistence_pct": -1304.9059346967365
+  },
+  {
+    "lead": 6,
+    "n_features": 13,
+    "n_stations": 25,
+    "avg_n_val_positive": 381.92,
+    "persistence_mae_mm": 1.579871103938173,
+    "baseline_mae_mm": 4.155460916697266,
+    "hgb_no_persistence_mae_mm": 3.7456544077959397,
+    "hgb_vs_baseline_pct": 9.861878552500936,
+    "hgb_vs_persistence_pct": -137.08607610197313
+  },
+  {
+    "lead": 24,
+    "n_features": 13,
+    "n_stations": 25,
+    "avg_n_val_positive": 373.88,
+    "persistence_mae_mm": 3.4072109619885214,
+    "baseline_mae_mm": 4.360066379853841,
+    "hgb_no_persistence_mae_mm": 3.9024286448459886,
+    "hgb_vs_baseline_pct": 10.496118525222844,
+    "hgb_vs_persistence_pct": -14.534400375621226
+  },
+  {
+    "lead": 48,
+    "n_features": 13,
+    "n_stations": 25,
+    "avg_n_val_positive": 367.84,
+    "persistence_mae_mm": 3.534644100211309,
+    "baseline_mae_mm": 4.162095462957882,
+    "hgb_no_persistence_mae_mm": 3.781591527229891,
+    "hgb_vs_baseline_pct": 9.142124180342021,
+    "hgb_vs_persistence_pct": -6.986486334050401
+  },
+  {
+    "lead": 72,
+    "n_features": 13,
+    "n_stations": 25,
+    "avg_n_val_positive": 369.12,
+    "persistence_mae_mm": 3.6492488726628833,
+    "baseline_mae_mm": 4.244868534810044,
+    "hgb_no_persistence_mae_mm": 3.782937711222286,
+    "hgb_vs_baseline_pct": 10.882099641006407,
+    "hgb_vs_persistence_pct": -3.6634618033559576
+  }
+]

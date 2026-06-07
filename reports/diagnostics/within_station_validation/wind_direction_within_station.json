@@ -1,0 +1,84 @@
+{
+  "target": "wind_direction",
+  "model_class": "Ridge",
+  "hp": {
+    "alpha": 10.0
+  },
+  "split_config": {
+    "fraction": 0.1,
+    "block_hours": 48,
+    "seed": 42
+  },
+  "results_by_lead": {
+    "1": {
+      "metric_type": "circular_mae_deg",
+      "n_train": 69288,
+      "n_val": 6960,
+      "baseline_mae_deg": 89.12241379310345,
+      "corrected_mae_deg": 69.19245114134264,
+      "mae_reduction_pct": 22.36245833514783,
+      "target": "wind_direction",
+      "lead": 1,
+      "model_class": "Ridge",
+      "hp": {
+        "alpha": 10.0
+      }
+    },
+    "6": {
+      "metric_type": "circular_mae_deg",
+      "n_train": 69288,
+      "n_val": 6960,
+      "baseline_mae_deg": 89.12241379310345,
+      "corrected_mae_deg": 76.0493563109158,
+      "mae_reduction_pct": 14.668652840279425,
+      "target": "wind_direction",
+      "lead": 6,
+      "model_class": "Ridge",
+      "hp": {
+        "alpha": 10.0
+      }
+    },
+    "24": {
+      "metric_type": "circular_mae_deg",
+      "n_train": 69288,
+      "n_val": 6960,
+      "baseline_mae_deg": 89.12241379310345,
+      "corrected_mae_deg": 76.3222377758639,
+      "mae_reduction_pct": 14.362465593621597,
+      "target": "wind_direction",
+      "lead": 24,
+      "model_class": "Ridge",
+      "hp": {
+        "alpha": 10.0
+      }
+    },
+    "48": {
+      "metric_type": "circular_mae_deg",
+      "n_train": 69288,
+      "n_val": 6960,
+      "baseline_mae_deg": 89.12241379310345,
+      "corrected_mae_deg": 76.47961288908067,
+      "mae_reduction_pct": 14.185882502434103,
+      "target": "wind_direction",
+      "lead": 48,
+      "model_class": "Ridge",
+      "hp": {
+        "alpha": 10.0
+      }
+    },
+    "72": {
+      "metric_type": "circular_mae_deg",
+      "n_train": 69288,
+      "n_val": 6960,
+      "baseline_mae_deg": 89.12241379310345,
+      "corrected_mae_deg": 77.3219430526745,
+      "mae_reduction_pct": 13.240744093650328,
+      "target": "wind_direction",
+      "lead": 72,
+      "model_class": "Ridge",
+      "hp": {
+        "alpha": 10.0
+      }
+    }
+  }
+}

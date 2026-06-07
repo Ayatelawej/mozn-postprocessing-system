@@ -133,9 +133,11 @@ FEATURE_SPECS: dict[str, dict[str, tuple[str, ...]]] = {
     },
     "wind_direction": {
         "issue_time": (
+            "winddir_residual_sin", "winddir_residual_cos",
             *SHARED_METADATA,
             *_lags("wind_speed_kmh"),
             *ISSUE_TIME_WIND_CIRCULAR,
+            "wind_speed_kmh",
         ),
         "validity_time": (
             "base_wind_speed_kmh",
@@ -147,13 +149,13 @@ FEATURE_SPECS: dict[str, dict[str, tuple[str, ...]]] = {
     },
     "rain_occurrence": {
         "issue_time": (
+            "station_rain_event",
+            "station_rain_rolling_3h_mm", "station_rain_rolling_6h_mm",
             *SHARED_METADATA,
             *_lags("rain_total_mm"),
             *_rolls("rain_total_mm"),
             *_lags("relative_humidity_pct"),
             *_lags("pressure_max_hpa"),
-            "station_rain_event",
-            "station_rain_rolling_3h_mm", "station_rain_rolling_6h_mm",
         ),
         "validity_time": (
             "base_precipitation_mm", "base_rain_total_mm",
@@ -181,6 +183,7 @@ FEATURE_SPECS: dict[str, dict[str, tuple[str, ...]]] = {
     },
     "uv": {
         "issue_time": (
+            "uv_index",
             *SHARED_METADATA,
         ),
         "validity_time": (

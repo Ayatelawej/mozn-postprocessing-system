@@ -28,4 +28,9 @@ data/processed/
 data/predictions/
 models/artifacts/
 data/external/openmeteo/
+data/external/april_holdout/
+.wu_cache/
 .tmp/
+scripts/diagnostics/test_twc_api.py
+scripts/april_holdout/
+scripts/scratch/

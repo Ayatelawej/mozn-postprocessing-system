@@ -1,0 +1,456 @@
+{
+  "stations_of_interest": [
+    "IALWAH18",
+    "IBARAS3",
+    "INUQAT10",
+    "IJABAL13"
+  ],
+  "targets": [
+    "temperature",
+    "relative_humidity",
+    "dew_point",
+    "wind_speed",
+    "wind_gust",
+    "pressure"
+  ],
+  "stations": {
+    "IALWAH18": {
+      "meta": {
+        "elevation_m": 16.0,
+        "station_latitude": 29.124472,
+        "station_longitude": 21.285446,
+        "raw_rows": 5234
+      },
+      "targets": {
+        "temperature": {
+          "n_trainable": 4625,
+          "residual_mean": 0.37811891891891897,
+          "residual_std": 1.1756893903642438,
+          "residual_mae": 0.9750486486486487,
+          "residual_max_abs": 5.5,
+          "lag1_autocorr": 0.7875912099096483,
+          "first_half_mean": 0.39416089965397927,
+          "second_half_mean": 0.3620838737570255,
+          "drift": -0.03207702589695377,
+          "n_3sigma_outliers": 26,
+          "flags": []
+        },
+        "relative_humidity": {
+          "n_trainable": 4625,
+          "residual_mean": 0.07535135135135135,
+          "residual_std": 6.220054576175862,
+          "residual_mae": 4.659783783783784,
+          "residual_max_abs": 45.0,
+          "lag1_autocorr": 0.8443894031500839,
+          "first_half_mean": 0.6176470588235294,
+          "second_half_mean": -0.46670990056204065,
+          "drift": -1.0843569593855702,
+          "n_3sigma_outliers": 51,
+          "flags": [
+            "OUTLIERS"
+          ]
+        },
+        "dew_point": {
+          "n_trainable": 4625,
+          "residual_mean": 0.7488216216216217,
+          "residual_std": 1.867311759192608,
+          "residual_mae": 1.5754594594594595,
+          "residual_max_abs": 13.5,
+          "lag1_autocorr": 0.8522192367252548,
+          "first_half_mean": 0.9208044982698962,
+          "second_half_mean": 0.5769130998702984,
+          "drift": -0.3438913983995978,
+          "n_3sigma_outliers": 34,
+          "flags": []
+        },
+        "wind_speed": {
+          "n_trainable": 4625,
+          "residual_mean": -4.701881081081082,
+          "residual_std": 4.111891617947898,
+          "residual_mae": 5.116627027027027,
+          "residual_max_abs": 21.1,
+          "lag1_autocorr": 0.7870839781372623,
+          "first_half_mean": -3.7923442906574403,
+          "second_half_mean": -5.611024643320363,
+          "drift": -1.8186803526629225,
+          "n_3sigma_outliers": 26,
+          "flags": []
+        },
+        "wind_gust": {
+          "n_trainable": 4625,
+          "residual_mean": -13.303178378378378,
+          "residual_std": 6.2494883384566355,
+          "residual_mae": 13.368951351351352,
+          "residual_max_abs": 43.0,
+          "lag1_autocorr": 0.8330199016333564,
+          "first_half_mean": -11.703719723183392,
+          "second_half_mean": -14.901945525291827,
+          "drift": -3.1982258021084355,
+          "n_3sigma_outliers": 45,
+          "flags": [
+            "DRIFT"
+          ]
+        },
+        "pressure": {
+          "n_trainable": 4625,
+          "residual_mean": -8.098495135135138,
+          "residual_std": 3.921604391093855,
+          "residual_mae": 8.710170810810812,
+          "residual_max_abs": 12.580000000000041,
+          "lag1_autocorr": 0.9926843206029781,
+          "first_half_mean": -9.350160034602078,
+          "second_half_mean": -6.847371379161266,
+          "drift": 2.5027886554408125,
+          "n_3sigma_outliers": 134,
+          "flags": [
+            "DRIFT",
+            "OUTLIERS"
+          ]
+        }
+      }
+    },
+    "IBARAS3": {
+      "meta": {
+        "elevation_m": 216.0,
+        "station_latitude": 32.143264,
+        "station_longitude": 13.018256,
+        "raw_rows": 4228
+      },
+      "targets": {
+        "temperature": {
+          "n_trainable": 3052,
+          "residual_mean": -3.3631716906946267,
+          "residual_std": 1.265796712163895,
+          "residual_mae": 3.3704456094364352,
+          "residual_max_abs": 8.4,
+          "lag1_autocorr": 0.8073859624128819,
+          "first_half_mean": -3.210681520314548,
+          "second_half_mean": -3.515661861074705,
+          "drift": -0.304980340760157,
+          "n_3sigma_outliers": 19,
+          "flags": []
+        },
+        "relative_humidity": {
+          "n_trainable": 3052,
+          "residual_mean": 3.399246395806029,
+          "residual_std": 7.37926561596967,
+          "residual_mae": 6.681356487549148,
+          "residual_max_abs": 33.0,
+          "lag1_autocorr": 0.8478357173459657,
+          "first_half_mean": 2.5104849279161208,
+          "second_half_mean": 4.288007863695937,
+          "drift": 1.7775229357798166,
+          "n_3sigma_outliers": 17,
+          "flags": []
+        },
+        "dew_point": {
+          "n_trainable": 3052,
+          "residual_mean": -1.4384993446920054,
+          "residual_std": 2.057240062153305,
+          "residual_mae": 2.1187745740498034,
+          "residual_max_abs": 8.9,
+          "lag1_autocorr": 0.8791312622306311,
+          "first_half_mean": -1.707142857142857,
+          "second_half_mean": -1.1698558322411534,
+          "drift": 0.5372870249017037,
+          "n_3sigma_outliers": 21,
+          "flags": []
+        },
+        "wind_speed": {
+          "n_trainable": 3052,
+          "residual_mean": -8.750294888597642,
+          "residual_std": 6.442024688610193,
+          "residual_mae": 9.01759501965924,
+          "residual_max_abs": 39.4,
+          "lag1_autocorr": 0.8682763444856958,
+          "first_half_mean": -6.630668414154653,
+          "second_half_mean": -10.869921363040628,
+          "drift": -4.239252948885976,
+          "n_3sigma_outliers": 24,
+          "flags": [
+            "DRIFT"
+          ]
+        },
+        "wind_gust": {
+          "n_trainable": 3052,
+          "residual_mean": -18.923918741808652,
+          "residual_std": 10.636668350948806,
+          "residual_mae": 18.97883355176933,
+          "residual_max_abs": 66.2,
+          "lag1_autocorr": 0.8998353783651153,
+          "first_half_mean": -15.248558322411533,
+          "second_half_mean": -22.599279161205768,
+          "drift": -7.350720838794235,
+          "n_3sigma_outliers": 22,
+          "flags": [
+            "DRIFT"
+          ]
+        },
+        "pressure": {
+          "n_trainable": 3522,
+          "residual_mean": -3.5013628620102213,
+          "residual_std": 5.2488712195647125,
+          "residual_mae": 5.163537762634864,
+          "residual_max_abs": 15.950000000000045,
+          "lag1_autocorr": 0.9890704368748953,
+          "first_half_mean": -5.0895343554798425,
+          "second_half_mean": -1.9131913685406003,
+          "drift": 3.1763429869392423,
+          "n_3sigma_outliers": 0,
+          "flags": [
+            "DRIFT"
+          ]
+        }
+      }
+    },
+    "INUQAT10": {
+      "meta": {
+        "elevation_m": 2.0,
+        "station_latitude": 32.771523,
+        "station_longitude": 12.320158,
+        "raw_rows": 4088
+      },
+      "targets": {
+        "temperature": {
+          "n_trainable": 3339,
+          "residual_mean": -0.5373465109314165,
+          "residual_std": 1.2372370761239515,
+          "residual_mae": 1.0302485774183887,
+          "residual_max_abs": 6.300000000000001,
+          "lag1_autocorr": 0.7811526353411173,
+          "first_half_mean": -0.4928699820251648,
+          "second_half_mean": -0.5817964071856288,
+          "drift": -0.08892642516046395,
+          "n_3sigma_outliers": 33,
+          "flags": []
+        },
+        "relative_humidity": {
+          "n_trainable": 3339,
+          "residual_mean": 0.5730757711889788,
+          "residual_std": 7.966455382053348,
+          "residual_mae": 6.382899071578317,
+          "residual_max_abs": 45.0,
+          "lag1_autocorr": 0.8404235271292638,
+          "first_half_mean": 0.2019173157579389,
+          "second_half_mean": 0.9440119760479042,
+          "drift": 0.7420946602899653,
+          "n_3sigma_outliers": 16,
+          "flags": []
+        },
+        "dew_point": {
+          "n_trainable": 3339,
+          "residual_mean": 0.2646600778676251,
+          "residual_std": 2.247241821409058,
+          "residual_mae": 1.6839472896076673,
+          "residual_max_abs": 13.2,
+          "lag1_autocorr": 0.8548195344230771,
+          "first_half_mean": 0.2204313960455363,
+          "second_half_mean": 0.3088622754491018,
+          "drift": 0.08843087940356548,
+          "n_3sigma_outliers": 30,
+          "flags": []
+        },
+        "wind_speed": {
+          "n_trainable": 3339,
+          "residual_mean": -13.742228212039533,
+          "residual_std": 7.278845721340102,
+          "residual_mae": 13.742228212039533,
+          "residual_max_abs": 45.3,
+          "lag1_autocorr": 0.9340607489249467,
+          "first_half_mean": -11.91006590772918,
+          "second_half_mean": -15.573293413173653,
+          "drift": -3.663227505444473,
+          "n_3sigma_outliers": 28,
+          "flags": [
+            "DRIFT"
+          ]
+        },
+        "wind_gust": {
+          "n_trainable": 3339,
+          "residual_mean": -23.992303084755918,
+          "residual_std": 12.297683502334632,
+          "residual_mae": 23.992303084755918,
+          "residual_max_abs": 76.6,
+          "lag1_autocorr": 0.9416373473541054,
+          "first_half_mean": -20.67567405632115,
+          "second_half_mean": -27.306946107784434,
+          "drift": -6.631272051463284,
+          "n_3sigma_outliers": 28,
+          "flags": [
+            "DRIFT"
+          ]
+        },
+        "pressure": {
+          "n_trainable": 3339,
+          "residual_mean": -4.812512728361786,
+          "residual_std": 4.5329764809275614,
+          "residual_mae": 6.423545971847859,
+          "residual_max_abs": 10.230000000000018,
+          "lag1_autocorr": 0.9951141842726527,
+          "first_half_mean": -6.192294787297785,
+          "second_half_mean": -3.4335568862275467,
+          "drift": 2.758737901070238,
+          "n_3sigma_outliers": 34,
+          "flags": [
+            "DRIFT",
+            "OUTLIERS"
+          ]
+        }
+      }
+    },
+    "IJABAL13": {
+      "meta": {
+        "elevation_m": 640.0,
+        "station_latitude": 32.101958,
+        "station_longitude": 12.551183,
+        "raw_rows": 4273
+      },
+      "targets": {
+        "temperature": {
+          "n_trainable": 2952,
+          "residual_mean": -0.28777100271002704,
+          "residual_std": 1.8623124060414091,
+          "residual_mae": 1.536890243902439,
+          "residual_max_abs": 6.199999999999999,
+          "lag1_autocorr": 0.8798101966849688,
+          "first_half_mean": 0.13252032520325205,
+          "second_half_mean": -0.7080623306233061,
+          "drift": -0.8405826558265582,
+          "n_3sigma_outliers": 6,
+          "flags": []
+        },
+        "relative_humidity": {
+          "n_trainable": 2952,
+          "residual_mean": 0.8507791327913279,
+          "residual_std": 9.259828115960119,
+          "residual_mae": 7.445630081300813,
+          "residual_max_abs": 49.0,
+          "lag1_autocorr": 0.8747835637224676,
+          "first_half_mean": -1.3705962059620596,
+          "second_half_mean": 3.0721544715447155,
+          "drift": 4.442750677506775,
+          "n_3sigma_outliers": 15,
+          "flags": []
+        },
+        "dew_point": {
+          "n_trainable": 2952,
+          "residual_mean": 0.637940379403794,
+          "residual_std": 2.034658261317567,
+          "residual_mae": 1.6037262872628726,
+          "residual_max_abs": 8.4,
+          "lag1_autocorr": 0.8774402107681456,
+          "first_half_mean": 0.3545392953929539,
+          "second_half_mean": 0.9213414634146342,
+          "drift": 0.5668021680216803,
+          "n_3sigma_outliers": 18,
+          "flags": []
+        },
+        "wind_speed": {
+          "n_trainable": 2952,
+          "residual_mean": 8.279844173441735,
+          "residual_std": 9.952024326090656,
+          "residual_mae": 9.450711382113822,
+          "residual_max_abs": 53.0,
+          "lag1_autocorr": 0.8576970375999304,
+          "first_half_mean": 6.466666666666666,
+          "second_half_mean": 10.093021680216802,
+          "drift": 3.6263550135501363,
+          "n_3sigma_outliers": 33,
+          "flags": [
+            "OUTLIERS"
+          ]
+        },
+        "wind_gust": {
+          "n_trainable": 2952,
+          "residual_mean": -3.8526761517615173,
+          "residual_std": 10.222949613505458,
+          "residual_mae": 8.586822493224933,
+          "residual_max_abs": 58.3,
+          "lag1_autocorr": 0.798713135026102,
+          "first_half_mean": -3.69579945799458,
+          "second_half_mean": -4.0095528455284555,
+          "drift": -0.3137533875338754,
+          "n_3sigma_outliers": 31,
+          "flags": [
+            "OUTLIERS"
+          ]
+        },
+        "pressure": null
+      }
+    }
+  },
+  "network_medians": {
+    "temperature": {
+      "n_trainable": 3225.5,
+      "residual_mean": -0.21908915437169585,
+      "residual_std": 1.2577198531348197,
+      "residual_mae": 1.0523260269904946,
+      "residual_max_abs": 5.75,
+      "lag1_autocorr": 0.781802222334427,
+      "first_half_mean": -0.12748555722580834,
+      "second_half_mean": -0.31137274234187634,
+      "drift": -0.09411747164945031,
+      "n_3sigma_outliers": 23.5
+    },
+    "relative_humidity": {
+      "n_trainable": 3225.5,
+      "residual_mean": 0.1355842418102598,
+      "residual_std": 8.516313682610008,
+      "residual_mae": 6.962747193856519,
+      "residual_max_abs": 42.0,
+      "lag1_autocorr": 0.862544788238506,
+      "first_half_mean": 0.12792658790812397,
+      "second_half_mean": 0.5513611486582288,
+      "drift": 0.7128811410332347,
+      "n_3sigma_outliers": 16.5
+    },
+    "dew_point": {
+      "n_trainable": 3225.5,
+      "residual_mean": 0.6316062928537595,
+      "residual_std": 2.224317820770366,
+      "residual_mae": 1.7924410076355126,
+      "residual_max_abs": 11.5,
+      "lag1_autocorr": 0.8691135974120846,
+      "first_half_mean": 0.4869422765708521,
+      "second_half_mean": 0.5487068161758308,
+      "drift": 0.05137828546451895,
+      "n_3sigma_outliers": 27.0
+    },
+    "wind_speed": {
+      "n_trainable": 3225.5,
+      "residual_mean": -5.224913076706815,
+      "residual_std": 5.452455557926626,
+      "residual_mae": 6.010734040307131,
+      "residual_max_abs": 27.4,
+      "lag1_autocorr": 0.7994126373497639,
+      "first_half_mean": -5.169209455950552,
+      "second_half_mean": -5.869179943436686,
+      "drift": -0.6873960938855481,
+      "n_3sigma_outliers": 18.5
+    },
+    "wind_gust": {
+      "n_trainable": 3225.5,
+      "residual_mean": -16.259922083188506,
+      "residual_std": 8.474633597188818,
+      "residual_mae": 16.323755715087835,
+      "residual_max_abs": 57.7,
+      "lag1_autocorr": 0.8479481194915532,
+      "first_half_mean": -14.481176865817213,
+      "second_half_mean": -17.852372956831807,
+      "drift": -2.8148193429844053,
+      "n_3sigma_outliers": 17.0
+    },
+    "pressure": {
+      "n_trainable": 3466.0,
+      "residual_mean": -3.9864784546805345,
+      "residual_std": 5.54241167900949,
+      "residual_mae": 6.099261396422391,
+      "residual_max_abs": 14.830000000000041,
+      "lag1_autocorr": 0.9913881816862201,
+      "first_half_mean": -4.493809523809525,
+      "second_half_mean": -2.964884591391145,
+      "drift": 2.217841892671667,
+      "n_3sigma_outliers": 1.0
+    }
+  }
+}

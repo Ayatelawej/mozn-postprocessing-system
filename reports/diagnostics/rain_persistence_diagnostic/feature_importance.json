@@ -1,0 +1,185 @@
+{
+  "lead": 1,
+  "holdout_station": "IZAWIY5",
+  "n_train": 10970,
+  "n_val_positive": 567,
+  "base_mae_mm": 0.7227241300481831,
+  "n_features": 35,
+  "importances": [
+    {
+      "feature": "rain_total_mm_roll_mean_3h",
+      "mean_importance": 4.66709734943934,
+      "std_importance": 0.11858131905878333
+    },
+    {
+      "feature": "hour_cos_lead_1h",
+      "mean_importance": 0.2018197478647175,
+      "std_importance": 0.02780194981136517
+    },
+    {
+      "feature": "rain_total_mm_lag_2h",
+      "mean_importance": 0.17424611966732964,
+      "std_importance": 0.01182694820693191
+    },
+    {
+      "feature": "rain_total_mm_roll_std_24h",
+      "mean_importance": 0.14114363244108125,
+      "std_importance": 0.0324014293909071
+    },
+    {
+      "feature": "rain_total_mm_roll_std_3h",
+      "mean_importance": 0.12374325856775895,
+      "std_importance": 0.008332872645818112
+    },
+    {
+      "feature": "rain_total_mm_roll_mean_24h",
+      "mean_importance": 0.08568760975346054,
+      "std_importance": 0.012808539686965192
+    },
+    {
+      "feature": "station_rain_rolling_3h_mm",
+      "mean_importance": 0.0713925956961822,
+      "std_importance": 0.006370815042629903
+    },
+    {
+      "feature": "rain_total_mm_lag_1h",
+      "mean_importance": 0.05155481725455828,
+      "std_importance": 0.007510713112862707
+    },
+    {
+      "feature": "rain_total_mm_lag_3h",
+      "mean_importance": 0.04872972331771579,
+      "std_importance": 0.006687324823358678
+    },
+    {
+      "feature": "station_rain_rolling_6h_mm",
+      "mean_importance": 0.03495858786093235,
+      "std_importance": 0.009280676096382147
+    },
+    {
+      "feature": "base_rain_rolling_3h_mm_lead_1h",
+      "mean_importance": 0.029846046843533314,
+      "std_importance": 0.008452203145117897
+    },
+    {
+      "feature": "rain_total_mm_roll_mean_12h",
+      "mean_importance": 0.02884425147098175,
+      "std_importance": 0.0029000977140291383
+    },
+    {
+      "feature": "rain_total_mm_lag_24h",
+      "mean_importance": 0.024971989353076873,
+      "std_importance": 0.010998035972125947
+    },
+    {
+      "feature": "base_cloud_cover_pct_lead_1h",
+      "mean_importance": 0.021614928828985747,
+      "std_importance": 0.007680844073515966
+    },
+    {
+      "feature": "base_rain_rolling_6h_mm_lead_1h",
+      "mean_importance": 0.017220133613071353,
+      "std_importance": 0.006144277431392386
+    },
+    {
+      "feature": "relative_humidity_pct_lag_24h",
+      "mean_importance": 0.012711577195662804,
+      "std_importance": 0.004206798903319089
+    },
+    {
+      "feature": "relative_humidity_pct_lag_6h",
+      "mean_importance": 0.011799571447219614,
+      "std_importance": 0.0035005678887588257
+    },
+    {
+      "feature": "rain_total_mm_lag_12h",
+      "mean_importance": 0.010797115525117728,
+      "std_importance": 0.006324591384863583
+    },
+    {
+      "feature": "relative_humidity_pct_lag_12h",
+      "mean_importance": 0.010654719471215235,
+      "std_importance": 0.00853905175770524
+    },
+    {
+      "feature": "relative_humidity_pct_lag_3h",
+      "mean_importance": 0.01063255624116941,
+      "std_importance": 0.0018507487809770727
+    },
+    {
+      "feature": "rain_total_mm_roll_std_6h",
+      "mean_importance": 0.010006908841329421,
+      "std_importance": 0.0018267191354041077
+    },
+    {
+      "feature": "base_msl_pressure_hpa_lead_1h",
+      "mean_importance": 0.00919237538078499,
+      "std_importance": 0.0026107559775669013
+    },
+    {
+      "feature": "relative_humidity_pct_lag_2h",
+      "mean_importance": 0.009046461937456595,
+      "std_importance": 0.0016621448689300396
+    },
+    {
+      "feature": "rain_total_mm_roll_std_12h",
+      "mean_importance": 0.005291930541031764,
+      "std_importance": 0.0018177612059175543
+    },
+    {
+      "feature": "base_relative_humidity_pct_lead_1h",
+      "mean_importance": 0.004465661552197697,
+      "std_importance": 0.003764819826115699
+    },
+    {
+      "feature": "hour_sin_lead_1h",
+      "mean_importance": 0.0015547808203066448,
+      "std_importance": 0.001364646532864022
+    },
+    {
+      "feature": "is_day_flag_lead_1h",
+      "mean_importance": 0.00023425783396515686,
+      "std_importance": 0.0001571978753004073
+    },
+    {
+      "feature": "elevation_m",
+      "mean_importance": 0.0,
+      "std_importance": 0.0
+    },
+    {
+      "feature": "station_latitude",
+      "mean_importance": 0.0,
+      "std_importance": 0.0
+    },
+    {
+      "feature": "station_longitude",
+      "mean_importance": 0.0,
+      "std_importance": 0.0
+    },
+    {
+      "feature": "relative_humidity_pct_lag_1h",
+      "mean_importance": -0.0005652523231226781,
+      "std_importance": 0.0010349185494909112
+    },
+    {
+      "feature": "base_rain_total_mm_lead_1h",
+      "mean_importance": -0.001033155566878774,
+      "std_importance": 0.00035424810819941204
+    },
+    {
+      "feature": "rain_total_mm_roll_mean_6h",
+      "mean_importance": -0.030368831586752985,
+      "std_importance": 0.006401316856490089
+    },
+    {
+      "feature": "base_precipitation_mm_lead_1h",
+      "mean_importance": -0.04003597605672238,
+      "std_importance": 0.003997093030028902
+    },
+    {
+      "feature": "rain_total_mm_lag_6h",
+      "mean_importance": -0.04530529981862348,
+      "std_importance": 0.007036209300583653
+    }
+  ]
+}

@@ -32,6 +32,7 @@ BASELINE_COLUMN: dict[str, str] = {
     "wind_speed": "base_wind_speed_kmh",
     "wind_gust": "base_wind_gust_kmh",
     "pressure": "base_msl_pressure_hpa",
+    "uv": "uv_proxy",
 }
 
 
@@ -73,13 +74,15 @@ def fit_ridge(
     *,
     alpha: float = 1.0,
 ) -> tuple[TrainResult, dict]:
-    if not predicts_residual(target):
+    if target not in BASELINE_COLUMN:
         raise NotImplementedError(
-            f"ridge_runner.fit_ridge supports residual targets only; got '{target}'"
+            f"ridge_runner.fit_ridge does not yet support target '{target}'"
         )
 
     target_col_base = target_columns_for(target)[0]
     target_col = f"{target_col_base}_lead_{lead}h"
+    baseline_col = baseline_column_for(target)
+    baseline_lead_col = f"{baseline_col}_lead_{lead}h"
 
     feature_list = features_for(target, lead)
     present_features = [c for c in feature_list if c in framed.columns]
@@ -98,10 +101,30 @@ def fit_ridge(
     y_train = train_df[target_col].to_numpy(dtype=float)
     y_val = val_df[target_col].to_numpy(dtype=float)
 
-    keep_train = ~np.any(np.isnan(X_train), axis=1) & ~np.isnan(y_train)
-    keep_val = ~np.any(np.isnan(X_val), axis=1) & ~np.isnan(y_val)
+    if predicts_residual(target):
+        baseline_pred_full = np.zeros_like(y_val)
+        baseline_pred_train_full = np.zeros_like(y_train)
+    else:
+        if baseline_lead_col not in val_df.columns:
+            raise RuntimeError(
+                f"Baseline column '{baseline_lead_col}' not in framed DataFrame for target '{target}'"
+            )
+        baseline_pred_full = val_df[baseline_lead_col].to_numpy(dtype=float)
+        baseline_pred_train_full = train_df[baseline_lead_col].to_numpy(dtype=float)
+
+    keep_train = (
+        ~np.any(np.isnan(X_train), axis=1)
+        & ~np.isnan(y_train)
+        & ~np.isnan(baseline_pred_train_full)
+    )
+    keep_val = (
+        ~np.any(np.isnan(X_val), axis=1)
+        & ~np.isnan(y_val)
+        & ~np.isnan(baseline_pred_full)
+    )
     X_train, y_train = X_train[keep_train], y_train[keep_train]
     X_val, y_val = X_val[keep_val], y_val[keep_val]
+    baseline_pred = baseline_pred_full[keep_val]
 
     if len(X_train) == 0:
         raise RuntimeError("No training rows remain after NaN filter")
@@ -116,7 +139,7 @@ def fit_ridge(
     model.fit(X_train_scaled, y_train)
     y_pred = model.predict(X_val_scaled)
 
-    baseline_errors = y_val
+    baseline_errors = y_val - baseline_pred
     corrected_errors = y_val - y_pred
 
     baseline_mae = float(np.mean(np.abs(baseline_errors)))
@@ -161,7 +184,7 @@ def fit_ridge(
         "missing_features": missing_features,
         "target": target,
         "lead": lead,
-        "baseline_column": baseline_column_for(target),
+        "baseline_column": baseline_col,
         "predicts_residual": predicts_residual(target),
         "trained_at": datetime.now(timezone.utc).isoformat(),
         "holdout_station": holdout_station,
@@ -179,9 +202,9 @@ def train_ridge(
     *,
     alpha: float = 1.0,
 ) -> tuple[TrainResult, dict]:
-    if not predicts_residual(target):
+    if target not in BASELINE_COLUMN:
         raise NotImplementedError(
-            f"ridge_runner.fit_ridge supports residual targets only; got '{target}'"
+            f"ridge_runner.fit_ridge does not yet support target '{target}'"
         )
     framed = prepare_for_target(canonical, target, lead)
     return fit_ridge(framed, target, lead, holdout_station, alpha=alpha)

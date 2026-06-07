@@ -1,0 +1,109 @@
+{
+  "target": "pressure",
+  "model_class": "Ridge",
+  "hp": {
+    "alpha": 0.1
+  },
+  "split_config": {
+    "fraction": 0.1,
+    "block_hours": 48,
+    "seed": 42
+  },
+  "results_by_lead": {
+    "1": {
+      "metric_type": "residual_or_absolute",
+      "n_train": 70664,
+      "n_val": 7200,
+      "baseline_mae": 6.752148611111112,
+      "baseline_rmse": 7.753109278612751,
+      "baseline_bias": -4.7768763888888905,
+      "corrected_mae": 0.39402617411368446,
+      "corrected_rmse": 0.822529829571623,
+      "corrected_bias": 0.00269361193135911,
+      "mae_reduction_pct": 94.16443273382212,
+      "rmse_reduction_pct": 89.39096819077989,
+      "target": "pressure",
+      "lead": 1,
+      "model_class": "Ridge",
+      "hp": {
+        "alpha": 0.1
+      }
+    },
+    "6": {
+      "metric_type": "residual_or_absolute",
+      "n_train": 70664,
+      "n_val": 7200,
+      "baseline_mae": 6.752148611111112,
+      "baseline_rmse": 7.753109278612751,
+      "baseline_bias": -4.7768763888888905,
+      "corrected_mae": 0.9383421499711808,
+      "corrected_rmse": 1.7168521841574953,
+      "corrected_bias": 0.04504576255174615,
+      "mae_reduction_pct": 86.10305838904262,
+      "rmse_reduction_pct": 77.85595272217434,
+      "target": "pressure",
+      "lead": 6,
+      "model_class": "Ridge",
+      "hp": {
+        "alpha": 0.1
+      }
+    },
+    "24": {
+      "metric_type": "residual_or_absolute",
+      "n_train": 70664,
+      "n_val": 7200,
+      "baseline_mae": 6.752148611111112,
+      "baseline_rmse": 7.753109278612751,
+      "baseline_bias": -4.7768763888888905,
+      "corrected_mae": 1.838206408283707,
+      "corrected_rmse": 2.9306752800926805,
+      "corrected_bias": 0.19886278579609648,
+      "mae_reduction_pct": 72.77597822330486,
+      "rmse_reduction_pct": 62.20000035112286,
+      "target": "pressure",
+      "lead": 24,
+      "model_class": "Ridge",
+      "hp": {
+        "alpha": 0.1
+      }
+    },
+    "48": {
+      "metric_type": "residual_or_absolute",
+      "n_train": 70664,
+      "n_val": 7200,
+      "baseline_mae": 6.752148611111112,
+      "baseline_rmse": 7.753109278612751,
+      "baseline_bias": -4.7768763888888905,
+      "corrected_mae": 2.3721677891401627,
+      "corrected_rmse": 3.459968724275125,
+      "corrected_bias": 0.32020965274428753,
+      "mae_reduction_pct": 64.86795647186139,
+      "rmse_reduction_pct": 55.373146437912574,
+      "target": "pressure",
+      "lead": 48,
+      "model_class": "Ridge",
+      "hp": {
+        "alpha": 0.1
+      }
+    },
+    "72": {
+      "metric_type": "residual_or_absolute",
+      "n_train": 70664,
+      "n_val": 7200,
+      "baseline_mae": 6.752148611111112,
+      "baseline_rmse": 7.753109278612751,
+      "baseline_bias": -4.7768763888888905,
+      "corrected_mae": 2.780902254428019,
+      "corrected_rmse": 3.9171326512532136,
+      "corrected_bias": 0.2998472688937003,
+      "mae_reduction_pct": 58.81455793416842,
+      "rmse_reduction_pct": 49.47662272659081,
+      "target": "pressure",
+      "lead": 72,
+      "model_class": "Ridge",
+      "hp": {
+        "alpha": 0.1
+      }
+    }
+  }
+}

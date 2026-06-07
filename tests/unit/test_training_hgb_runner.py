@@ -95,11 +95,11 @@ def test_train_hgb_reduces_mae_on_learnable_signal():
     assert result.mae_reduction_pct > 40.0
 
 
-def test_train_hgb_rejects_non_residual_target():
+def test_train_hgb_rejects_unsupported_target():
     df = _make_synthetic_canonical()
     cfg = HGBConfig(max_depth=6, learning_rate=0.1)
     with pytest.raises(NotImplementedError):
-        train_hgb(df, "uv", lead=1, holdout_station="S01", config=cfg)
+        train_hgb(df, "rain_occurrence", lead=1, holdout_station="S01", config=cfg)
 
 
 def test_fit_hgb_matches_train_hgb_on_same_frame():
