@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import os
 import sys
-import warnings
 
 import numpy as np
 import pandas as pd
@@ -10,31 +9,57 @@ import pandas as pd
 from postprocessing.inference.assembly import assemble_inference_frame
 from postprocessing.inference.forecast_api import fetch_base_and_daily
 from postprocessing.inference.frame import build_inference_frame
+from postprocessing.inference.gating import run_gated_inference
 from postprocessing.inference.observations_api import DEFAULT_OBS_URL, fetch_observations, parse_observations
-from postprocessing.inference.reconstruct import correct
 from postprocessing.inference.station_metadata import load_registry, print_reconciliation, resolve_stations
-from postprocessing.training.artifact_training import load_artifact
-
 
 MODELS = {
-    "temperature": "HGB",
-    "relative_humidity": "HGB",
-    "dew_point": "HGB",
-    "wind_speed": "Ridge",
-    "wind_gust": "Ridge",
-    "pressure": "Ridge",
-    "uv": "HGB",
-    "wind_direction": "Ridge",
+    "temperature": "HGB", "relative_humidity": "HGB", "dew_point": "HGB",
+    "wind_speed": "Ridge", "wind_gust": "Ridge", "pressure": "Ridge",
+    "uv": "HGB", "wind_direction": "Ridge",
 }
-LEAD = 24
+LEADS = (1, 24, 72)
+BOARD_LEAD = 24
+GLYPH = {"ok": "", "low_confidence": "~", "fallback": "!"}
+
+
+def status_board(g, resolutions, lead):
+    sub = g[g["lead"] == lead]
+    targets = list(MODELS.keys())
+    print(f"\nstatus board @ lead {lead}h   (~ low_confidence, ! fallback to raw):")
+    print("  " + f"{'station':>11}{'obs%':>6}  " + "".join(f"{t[:9]:>11}" for t in targets))
+    for sid in resolutions["station_id"]:
+        rs = {r["target"]: r for _, r in sub[sub["station_id"] == sid].iterrows()}
+        mv = resolutions.loc[resolutions["station_id"] == sid, "matched_wu_id"].iloc[0]
+        wu = ("NEW" if pd.isna(mv) else str(mv))[:11]
+        of = (rs[targets[0]]["recent_obs_frac"] if targets[0] in rs else 0.0)
+        cells = []
+        for t in targets:
+            r = rs.get(t)
+            if r is None:
+                cells.append(f"{'-':>11}")
+            else:
+                v = r["value"]
+                txt = f"{v:.1f}{GLYPH[r['status']]}" if pd.notna(v) else f"nan{GLYPH[r['status']]}"
+                cells.append(f"{txt:>11}")
+        print(f"  {wu:>11}{of:>6.0%}  " + "".join(cells))
+
+
+def summary(g):
+    print("\nstatus counts (all leads x stations x targets):")
+    for k, v in g["status"].value_counts().items():
+        print(f"  {k:16} {v}")
+    fb = g[g["status"] == "fallback"]
+    if len(fb):
+        print("fallback reasons:")
+        for k, v in fb["reason"].value_counts().items():
+            print(f"  {k:24} {v}")
 
 
 def main():
-    warnings.filterwarnings("ignore", category=pd.errors.PerformanceWarning)
-
     token = os.environ.get("AI_API_KEY", "").strip()
     if not token:
-        print("NO TOKEN: set AI_API_KEY first")
+        print("NO TOKEN: run  $env:AI_API_KEY = \"...\"  first")
         sys.exit(1)
     obs_url = os.environ.get("AI_OBS_URL", DEFAULT_OBS_URL).strip()
 
@@ -51,35 +76,19 @@ def main():
 
     print()
     print_reconciliation(res)
+    matched = int((~res["needs_openmeteo_elevation"].astype(bool)).sum())
+    print(f"\nbackend check: {len(res)} stations, {matched} matched to registry, {len(res) - matched} new/unmatched")
 
     T = obs_df["valid_time_utc"].max().floor("h")
-    print("\nissue_time T =", T)
-
-    empty = obs_df.groupby("station_id")["sample_count"].apply(lambda s: int((s.fillna(0) == 0).sum()))
-    name_of = dict(zip(res["station_id"], res["matched_wu_id"], strict=False))
+    print("issue_time T =", T)
 
     asm, t = assemble_inference_frame(base, obs_df, res, T, daily=daily)
     inf = build_inference_frame(asm, T).reset_index(drop=True)
-    sids = inf["station_id"].tolist()
     print("issue rows built:", len(inf), "of", len(res), "stations")
 
-    results = {}
-    n_finite = 0
-    for tgt, mc in MODELS.items():
-        art = load_artifact(f"models/artifacts/{tgt}_{mc}_lead{LEAD}h.joblib")
-        corrected, keep = correct(art, inf, clamp=True)
-        results[tgt] = {sids[i]: (corrected[i] if keep[i] else np.nan) for i in range(len(sids))}
-        n_finite += int(np.isfinite(corrected[keep]).sum())
-
-    print(f"\ncorrected values at lead {LEAD}h per station:")
-    print("  " + f"{'station':>10} {'empty_h':>8}  " + "  ".join(f"{t[:7]:>8}" for t in MODELS))
-    for sid in sids:
-        wu = str(name_of.get(sid, "-"))[:10]
-        vals = "  ".join(f"{results[t][sid]:>8.2f}" if np.isfinite(results[t][sid]) else f"{'nan':>8}" for t in MODELS)
-        print(f"  {wu:>10} {empty.get(sid, 0):>8}  {vals}")
-
-    print(f"\ntotal finite predictions: {n_finite} over {len(sids)} stations x {len(MODELS)} targets at L{LEAD}")
-    print("note: fully-empty stations still produce values here via imputation; the Part 4 gate routes them to fallback")
+    g = run_gated_inference(inf, res, obs_df, T, LEADS, MODELS)
+    status_board(g, res, BOARD_LEAD)
+    summary(g)
 
 
 if __name__ == "__main__":
