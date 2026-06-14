@@ -1,0 +1,16 @@
+[Unit]
+Description=Mozn corrected-forecasts API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=mozn
+WorkingDirectory=/opt/mozn-postprocessing
+EnvironmentFile=/etc/mozn-forecasts.env
+ExecStart=/opt/mozn-postprocessing/.venv/bin/python -m uvicorn postprocessing.inference.api:app --host 127.0.0.1 --port 8000
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

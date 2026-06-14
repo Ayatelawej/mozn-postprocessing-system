@@ -1,0 +1,27 @@
+services:
+  forecast-api:
+    build: .
+    image: mozn-forecast:latest
+    command: python -m uvicorn postprocessing.inference.api:app --host 0.0.0.0 --port 8000
+    env_file: deploy/mozn-forecasts.env
+    environment:
+      - FORECAST_DIR=/data/forecasts
+    volumes:
+      - forecast-data:/data/forecasts
+    ports:
+      - "127.0.0.1:8000:8000"
+    restart: unless-stopped
+
+  forecast-pipeline:
+    build: .
+    image: mozn-forecast:latest
+    command: python scripts/inference/run_scheduler.py
+    env_file: deploy/mozn-forecasts.env
+    environment:
+      - FORECAST_DIR=/data/forecasts
+    volumes:
+      - forecast-data:/data/forecasts
+    restart: unless-stopped
+
+volumes:
+  forecast-data:

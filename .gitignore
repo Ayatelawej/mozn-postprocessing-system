@@ -34,3 +34,6 @@ data/external/april_holdout/
 scripts/diagnostics/test_twc_api.py
 scripts/april_holdout/
 scripts/scratch/
+presentation_demo/
+outputs/
+deploy/*.env

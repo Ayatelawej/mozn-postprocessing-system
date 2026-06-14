@@ -1,0 +1,11 @@
+[Unit]
+Description=Mozn forecast pipeline (single run)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=mozn
+WorkingDirectory=/opt/mozn-postprocessing
+EnvironmentFile=/etc/mozn-forecasts.env
+ExecStart=/opt/mozn-postprocessing/.venv/bin/python scripts/inference/run_pipeline.py
