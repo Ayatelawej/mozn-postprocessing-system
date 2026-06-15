@@ -4,21 +4,20 @@ Open-source weather forecast post-processing system for correcting baseline fore
 
 ## Current status
 
-The repository currently contains the data foundation, preprocessing pipeline, and station-side validation layer for the post-processing system.
+The repository contains the data foundation, model training pipeline, production inference pipeline, validation diagnostics, and deployment assets for the post-processing system.
 
 Completed so far:
 
 - project scaffold and environment setup
 - data contract and data-source documentation
-- landed pooled hourly station dataset
-- station registry and raw file manifest
-- raw CSV inspection and profiling
-- raw CSV to partitioned parquet conversion
-- standardized station table generation
-- target-specific station validation and gating
-- station-level readiness diagnostics
-- target-level readiness diagnostics
-- variable-level missingness and range diagnostics
+- pooled hourly station dataset and station registry
+- raw CSV inspection, profiling, validation, and partitioned parquet conversion
+- Open-Meteo baseline ingestion and canonical training-frame generation
+- target-specific feature engineering and validation gates
+- LOSO, within-station, and April out-of-sample model validation
+- full 72-lead artifact training for the eight shipped targets
+- live inference assembly, reconstruction, confidence gating, and JSON output
+- FastAPI forecast endpoint and systemd/Docker deployment assets
 
 ## Project goal
 
@@ -34,29 +33,21 @@ Build a reproducible, portable, open-source post-processing pipeline that:
 
 ## Target groups
 
-### Core
+### Shipped in v1
 
 - temperature
 - relative_humidity
 - dew_point
 - wind_speed
-- uv
-
-### Experimental
-
-- pressure
 - wind_gust
+- pressure
+- uv
+- wind_direction
 
-### Specialized
+### Investigated but not shipped in v1
 
 - rain_occurrence
 - rain_amount
-- wind_direction
-
-### Derived
-
-- wind_chill
-- heat_index
 
 ## Repository structure
 
@@ -81,8 +72,11 @@ Build a reproducible, portable, open-source post-processing pipeline that:
 - `tests/`
   - unit, integration, and smoke tests
 
-- `deployment/`
-  - deployment-related assets
+- `deploy/`
+  - systemd and Docker deployment assets
+
+- `Dockerfile`, `docker-compose.yml`
+  - container deployment entry points for the forecast API and scheduled pipeline
 
 ## Data policy
 
@@ -117,14 +111,24 @@ Weather-station manuals and supporting setup references are stored under:
 
 These documents support interpretation of installation-sensitive variables such as wind direction, wind speed, gust, pressure, humidity drift, rainfall behavior, and sunlight-related measurements.
 
-## Next steps
+## Inference and deployment
 
-- begin baseline forecast ingestion through project code
-- standardize baseline forecast schema
-- prepare station and forecast alignment
-- build canonical training and inference tables
-- begin target-specific modeling and evaluation
-- prepare inference outputs for backend integration and deployment
+Production inference writes corrected forecasts to:
+
+- `outputs/forecasts/latest.json`
+
+The forecast API serves that file at:
+
+- `GET /health`
+- `GET /forecasts`
+- `GET /forecasts?station=<station_id_or_wu_id>`
+
+Deployment options are documented in:
+
+- `deploy/README.md`
+- `deploy/DOCKER.md`
+
+Generated forecast output and local secrets are ignored by Git.
 
 ## Reproducibility
 
