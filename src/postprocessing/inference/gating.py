@@ -93,7 +93,8 @@ def run_gated_inference(inf, resolutions, obs_df, issue_time, leads, models,
                     float(corrected[i]) if keep[i] else np.nan, bool(keep[i]),
                     suff, is_new.get(sid, False),
                 )
+                base_val = fallback_value(target, art, row, lead)
                 out.append({"station_id": sid, "wu_id": wu.get(sid), "target": target, "lead": lead,
-                            "value": val, "status": status, "reason": reason,
+                            "value": val, "baseline": base_val, "status": status, "reason": reason,
                             "recent_obs_frac": round(frac.get(sid, 0.0), 3)})
     return pd.DataFrame(out)

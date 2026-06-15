@@ -22,10 +22,12 @@ def build_payload(gated, resolutions, issue_time):
             entries = []
             for _, r in tdf.sort_values("lead").iterrows():
                 v = r["value"]
+                b = r["baseline"]
                 entries.append({
                     "lead": int(r["lead"]),
                     "valid_time_utc": _iso(t + pd.Timedelta(hours=int(r["lead"]))),
                     "value": None if pd.isna(v) else round(float(v), 2),
+                    "baseline": None if pd.isna(b) else round(float(b), 2),
                     "status": str(r["status"]),
                     "reason": str(r["reason"]),
                 })

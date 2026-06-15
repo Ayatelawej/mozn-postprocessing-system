@@ -44,7 +44,7 @@ def main():
         "n_stations==2": payload["n_stations"] == 2,
         "each station has 8 targets": all(len(s["targets"]) == 8 for s in payload["stations"]),
         "each target has len(LEADS) entries": all(len(v) == len(LEADS) for s in payload["stations"] for v in s["targets"].values()),
-        "entry keys correct": all(set(e) == {"lead", "valid_time_utc", "value", "status", "reason"}
+        "entry keys correct": all(set(e) == {"lead", "valid_time_utc", "value", "baseline", "status", "reason"}
                                   for s in payload["stations"] for v in s["targets"].values() for e in v),
         "valid_time = issue + lead": all(e["valid_time_utc"] == (T + pd.Timedelta(hours=e["lead"])).strftime("%Y-%m-%dT%H:%M:%SZ")
                                          for s in payload["stations"] for v in s["targets"].values() for e in v),
