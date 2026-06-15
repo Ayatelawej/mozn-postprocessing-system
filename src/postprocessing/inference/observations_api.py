@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import ssl
 import urllib.request
 
@@ -9,7 +10,9 @@ import pandas as pd
 from postprocessing.inference.station_metadata import resolve_stations
 
 
-DEFAULT_OBS_URL = "https://mozn.org.ly/api/ai/observations"
+DEFAULT_BACKEND_BASE_URL = "https://mozn.org.ly"
+OBSERVATIONS_PATH = "/api/ai/observations"
+DEFAULT_OBS_URL = f"{DEFAULT_BACKEND_BASE_URL}{OBSERVATIONS_PATH}"
 
 CANONICAL_OBS_COLUMNS = [
     "temperature_c",
@@ -26,7 +29,16 @@ CANONICAL_OBS_COLUMNS = [
 ]
 
 
-def fetch_observations(token, base_url=DEFAULT_OBS_URL, station_id=None, timeout=60):
+def observations_url():
+    full = os.environ.get("AI_OBS_URL", "").strip()
+    if full:
+        return full
+    base = os.environ.get("BACKEND_BASE_URL", DEFAULT_BACKEND_BASE_URL).rstrip("/")
+    return f"{base}{OBSERVATIONS_PATH}"
+
+
+def fetch_observations(token, base_url=None, station_id=None, timeout=60):
+    base_url = base_url or observations_url()
     url = base_url + (f"?station_id={station_id}" if station_id else "")
     req = urllib.request.Request(
         url,

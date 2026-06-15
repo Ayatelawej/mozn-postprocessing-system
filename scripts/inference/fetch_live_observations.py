@@ -4,9 +4,9 @@ import os
 import sys
 
 from postprocessing.inference.observations_api import (
-    DEFAULT_OBS_URL,
     build_station_frame,
     fetch_observations,
+    observations_url,
 )
 from postprocessing.inference.station_metadata import load_registry, print_reconciliation
 
@@ -30,7 +30,7 @@ CANONICAL_NEED = [
 
 def main():
     token = os.environ.get("AI_API_KEY", "").strip()
-    base = os.environ.get("AI_OBS_URL", DEFAULT_OBS_URL).strip()
+    base = observations_url()
     if not token:
         print("NO TOKEN: set AI_API_KEY first")
         sys.exit(1)

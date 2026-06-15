@@ -3,7 +3,7 @@
 Two processes on the same server as the Mozn backend:
 
 - **pipeline** - runs hourly, writes `latest.json` by fetching observations and Open-Meteo data, predicting, gating, and writing output.
-- **api** - always-on, serves `latest.json` at `http://127.0.0.1:8000/forecasts` on localhost only.
+- **api** - always-on, serves `latest.json` at `http://127.0.0.1:${FORECAST_API_PORT}/forecasts` on localhost only.
 
 ## Fill These Blanks First
 
@@ -35,6 +35,8 @@ Use:
 
 - `AI_API_KEY`: token used to read the backend observations API
 - `FORECAST_API_TOKEN`: a new strong secret for the backend to call this forecasts API
+- `BACKEND_BASE_URL`: internal backend base URL; `/api/ai/observations` is appended automatically
+- `FORECAST_API_PORT`: localhost port for this forecasts API
 
 Generate `FORECAST_API_TOKEN` with:
 
@@ -71,6 +73,8 @@ journalctl -u mozn-forecast-pipeline.service -n 50
 curl http://127.0.0.1:8000/health
 curl -H "Authorization: Bearer <FORECAST_API_TOKEN>" http://127.0.0.1:8000/forecasts
 ```
+
+Replace `8000` with `FORECAST_API_PORT` if you set a different port.
 
 Expected `/health` response after the first pipeline run:
 

@@ -8,7 +8,7 @@ Type=simple
 User=mozn
 WorkingDirectory=/opt/mozn-postprocessing
 EnvironmentFile=/etc/mozn-forecasts.env
-ExecStart=/opt/mozn-postprocessing/.venv/bin/python -m uvicorn postprocessing.inference.api:app --host 127.0.0.1 --port 8000
+ExecStart=/opt/mozn-postprocessing/.venv/bin/python -m uvicorn postprocessing.inference.api:app --host 127.0.0.1 --port ${FORECAST_API_PORT}
 Restart=always
 RestartSec=5
 

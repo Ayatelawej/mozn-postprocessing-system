@@ -9,7 +9,7 @@ from postprocessing.inference.assembly import assemble_inference_frame
 from postprocessing.inference.forecast_api import fetch_base_and_daily
 from postprocessing.inference.frame import build_inference_frame
 from postprocessing.inference.gating import run_gated_inference
-from postprocessing.inference.observations_api import DEFAULT_OBS_URL, fetch_observations, parse_observations
+from postprocessing.inference.observations_api import fetch_observations, observations_url, parse_observations
 from postprocessing.inference.output import build_payload, write_payload
 from postprocessing.inference.station_metadata import load_registry, print_reconciliation, resolve_stations
 
@@ -27,7 +27,7 @@ def main():
     if not token:
         print("NO TOKEN: run  $env:AI_API_KEY = \"...\"  first")
         sys.exit(1)
-    obs_url = os.environ.get("AI_OBS_URL", DEFAULT_OBS_URL).strip()
+    obs_url = observations_url()
 
     print("Fetching observations:", obs_url)
     obs_df, meta = parse_observations(fetch_observations(token, obs_url))

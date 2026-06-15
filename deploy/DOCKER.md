@@ -3,20 +3,22 @@
 Two containers are built from one image and share a volume for the forecast file:
 
 - **forecast-pipeline** - runs the pipeline once an hour and writes `latest.json` to the shared volume.
-- **forecast-api** - serves `GET /forecasts` from that volume, published on `127.0.0.1:8000`.
+- **forecast-api** - serves `GET /forecasts` from that volume, published on `127.0.0.1:${FORECAST_API_PORT:-8000}`.
 
 ## Setup
 
-1. Create the secrets file from the template and fill in the two tokens:
+1. Create the env file from the template and fill in the tokens and service addresses:
 
 ```bash
-cp deploy/mozn-forecasts.env.example deploy/mozn-forecasts.env
+cp .env.example .env
 ```
 
-Edit `deploy/mozn-forecasts.env`:
+Edit `.env`:
 
 - `AI_API_KEY`: token for the backend observations API
 - `FORECAST_API_TOKEN`: a strong secret the backend uses to call this API
+- `BACKEND_BASE_URL`: internal backend base URL; `/api/ai/observations` is appended automatically
+- `FORECAST_API_PORT`: local port for this forecasts API
 
 This file is gitignored. Do not commit it.
 
@@ -35,15 +37,19 @@ curl http://127.0.0.1:8000/health
 curl -H "Authorization: Bearer <FORECAST_API_TOKEN>" http://127.0.0.1:8000/forecasts
 ```
 
+Replace `8000` with `FORECAST_API_PORT` if you set a different port.
+
 `/health` returns `has_forecast: true` after the first successful pipeline run.
 
 ## How The Backend Reaches The API
 
-Backend on the host:
+Backend on the host, using the default port:
 
 ```text
 http://127.0.0.1:8000/forecasts
 ```
+
+Replace `8000` with `FORECAST_API_PORT` if you set a different port.
 
 Backend in Docker:
 
